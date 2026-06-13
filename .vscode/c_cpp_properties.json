@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "name": "Rools Firmware",
+      "includePath": [
+        "${workspaceFolder}/firmware/src",
+        "${workspaceFolder}/../libDaisy/src",
+        "${workspaceFolder}/../libDaisy",
+        "${workspaceFolder}/../libDaisy/core",
+        "${workspaceFolder}/../DaisySP/Source",
+        "${workspaceFolder}/../libDaisy/Drivers/CMSIS_5/CMSIS/Core/Include",
+        "${workspaceFolder}/../libDaisy/Drivers/CMSIS-Device/ST/STM32H7xx/Include",
+        "${workspaceFolder}/../libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc"
+      ],
+      "defines": [
+        "STM32H750xx",
+        "USE_HAL_DRIVER",
+        "CORE_CM7"
+      ],
+      "compilerPath": "/usr/bin/clang++",
+      "cStandard": "c11",
+      "cppStandard": "c++14",
+      "intelliSenseMode": "macos-clang-arm64",
+      "compileCommands": "${workspaceFolder}/firmware/compile_commands.json"
+    }
+  ],
+  "version": 4
+}

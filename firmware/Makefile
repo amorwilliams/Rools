@@ -1,18 +1,13 @@
-# libDaisy project Makefile — placeholder
-# M1: copy from Daisy examples and set TARGET=rools
-
 TARGET = rools
 
-# TODO: set paths to libDaisy / DaisySP
-# LIBDAISY_DIR ?= $(HOME)/DaisyToolchain/libDaisy
-# DAISYSP_DIR  ?= $(HOME)/DaisyToolchain/DaisySP
+CPP_SOURCES = \
+src/main.cpp \
+src/app_shell.cpp
 
-# include $(LIBDAISY_DIR)/core/Makefile
+LIBDAISY_DIR ?= $(or $(LIBDAISY_PATH),../../libDaisy)
+DAISYSP_DIR  ?= $(or $(DAISYSP_PATH),../../DaisySP)
 
-.PHONY: all
-all:
-	@echo "Rools firmware: configure LIBDAISY_DIR then uncomment Makefile includes."
+C_INCLUDES += -Isrc
 
-.PHONY: program-dfu
-program-dfu:
-	@echo "Build first."
+SYSTEM_FILES_DIR = $(LIBDAISY_DIR)/core
+include $(SYSTEM_FILES_DIR)/Makefile

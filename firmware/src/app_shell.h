@@ -80,6 +80,12 @@ public:
     void init();
     void run_forever(); // blocks; calls Daisy inner loop
 
+    void process_audio(const float* inL,
+                       const float* inR,
+                       float*       outL,
+                       float*       outR,
+                       size_t       n);
+
     bool load_app(size_t index);
     size_t app_count() const;
 
