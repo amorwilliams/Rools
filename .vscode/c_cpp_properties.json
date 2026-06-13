@@ -4,13 +4,13 @@
       "name": "Rools Firmware",
       "includePath": [
         "${workspaceFolder}/firmware/src",
-        "${workspaceFolder}/../libDaisy/src",
-        "${workspaceFolder}/../libDaisy",
-        "${workspaceFolder}/../libDaisy/core",
-        "${workspaceFolder}/../DaisySP/Source",
-        "${workspaceFolder}/../libDaisy/Drivers/CMSIS_5/CMSIS/Core/Include",
-        "${workspaceFolder}/../libDaisy/Drivers/CMSIS-Device/ST/STM32H7xx/Include",
-        "${workspaceFolder}/../libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc"
+        "${workspaceFolder}/lib/libDaisy/src",
+        "${workspaceFolder}/lib/libDaisy",
+        "${workspaceFolder}/lib/libDaisy/core",
+        "${workspaceFolder}/lib/DaisySP/Source",
+        "${workspaceFolder}/lib/libDaisy/Drivers/CMSIS_5/CMSIS/Core/Include",
+        "${workspaceFolder}/lib/libDaisy/Drivers/CMSIS-Device/ST/STM32H7xx/Include",
+        "${workspaceFolder}/lib/libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc"
       ],
       "defines": [
         "STM32H750xx",

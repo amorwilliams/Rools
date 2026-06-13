@@ -4,8 +4,8 @@ CPP_SOURCES = \
 src/main.cpp \
 src/app_shell.cpp
 
-LIBDAISY_DIR ?= $(or $(LIBDAISY_PATH),../../libDaisy)
-DAISYSP_DIR  ?= $(or $(DAISYSP_PATH),../../DaisySP)
+LIBDAISY_DIR ?= ../lib/libDaisy
+DAISYSP_DIR  ?= ../lib/DaisySP
 
 C_INCLUDES += -Isrc
 

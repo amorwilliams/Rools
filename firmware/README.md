@@ -1,12 +1,15 @@
 # firmware/
 
-libDaisy + DaisySP 固件。当前为 M0 占位，不可编译。
+libDaisy + DaisySP 固件。
 
-## 构建（M1 起）
+## 构建
 
-需安装 [Daisy Toolchain](https://daisy.audio/software/)，并设置 `LIBDAISY_PATH` / `DAISYSP_PATH`。
+需安装 [Daisy Toolchain](https://daisy.audio/software/)。依赖在 `lib/` submodule：
 
 ```bash
+git submodule update --init --recursive
+make -C lib/libDaisy
+make -C lib/DaisySP
 make
 make program-dfu   # Micro USB 刷机
 ```
