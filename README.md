@@ -27,6 +27,15 @@ git clone --recursive <repo>
 
 详见 [firmware/README.md](firmware/README.md)。
 
+## 依赖版本（git submodule，固定 tag）
+
+| 库 | Tag | Commit |
+|----|-----|--------|
+| [libDaisy](https://github.com/electro-smith/libDaisy) | **v8.1.0** | `9498417` |
+| [DaisySP](https://github.com/electro-smith/DaisySP) | **V1.0.0** | `a0494a3` |
+
+克隆务必带 submodule：`git clone --recursive`。升级依赖时在 `lib/` 内 checkout 新 tag，编译验证后 commit 父仓库的 submodule 指针。
+
 ## 目录结构
 
 ```
