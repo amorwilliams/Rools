@@ -260,7 +260,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "0.1"
+      "sch_revision": "0.2"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -683,7 +683,7 @@
         "uuid": "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
       }
     ],
-    "used_designators": "U3",
+    "used_designators": "#G27549e1-2,#J2,#PWR13-17",
     "variants": []
   },
   "sheets": [
@@ -696,20 +696,20 @@
       "Power"
     ],
     [
-      "ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31",
-      "CV"
-    ],
-    [
-      "5303161d-9629-4121-9b8d-eb317bf3612e",
-      "Seed"
+      "de2894c0-6401-42e6-937c-98dc0f3f6845",
+      "Audio"
     ],
     [
       "f04b212c-120a-4768-a529-443de5f485ec",
       "UI"
     ],
     [
-      "de2894c0-6401-42e6-937c-98dc0f3f6845",
-      "Audio"
+      "5303161d-9629-4121-9b8d-eb317bf3612e",
+      "Seed"
+    ],
+    [
+      "ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31",
+      "CV"
     ]
   ],
   "text_variables": {

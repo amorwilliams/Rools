@@ -7,33 +7,13 @@
 	(title_block
 		(title "Rools Core 10HP")
 		(date "2026-06-14")
-		(rev "0.1")
+		(rev "0.2")
 		(company "Rools")
 		(comment 1 "Eurorack Core — 不含 Exp 2HP")
 	)
 	(lib_symbols)
-	(wire
-		(pts
-			(xy 76.2 57.15) (xy 88.9 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "85249cb3-f149-46bd-85b9-3c55ae40133c")
-	)
-	(wire
-		(pts
-			(xy 76.2 49.53) (xy 88.9 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c6185645-751f-4d9c-872e-24a8279065f8")
-	)
 	(sheet
-		(at 88.9 38.1)
+		(at 189.23 73.66)
 		(size 50.8 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -49,7 +29,8 @@
 		)
 		(uuid "5303161d-9629-4121-9b8d-eb317bf3612e")
 		(property "Sheetname" "Seed"
-			(at 88.9 37.3886 0)
+			(at 189.23 72.9486 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -60,7 +41,7 @@
 			)
 		)
 		(property "Sheetfile" "sheets/seed.kicad_sch"
-			(at 88.9 64.1344 0)
+			(at 189.23 99.6944 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -70,29 +51,9 @@
 				(justify left top)
 			)
 		)
-		(pin "+5V" input
-			(at 88.9 49.53 180)
-			(uuid "ed1ddf2f-c424-4be3-a1e5-a6b43806d214")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "GND" passive
-			(at 88.9 57.15 180)
-			(uuid "5616bfe7-59da-44c8-87d3-5f2c92bd1087")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 	)
 	(sheet
-		(at 25.4 38.1)
+		(at 127 73.66)
 		(size 50.8 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -108,7 +69,7 @@
 		)
 		(uuid "93f4332e-1360-4c3a-9be4-5a5bc27a1424")
 		(property "Sheetname" "Power"
-			(at 25.4 37.3886 0)
+			(at 127 72.9486 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -119,7 +80,7 @@
 			)
 		)
 		(property "Sheetfile" "sheets/power.kicad_sch"
-			(at 25.4 64.1344 0)
+			(at 127 99.6944 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -129,59 +90,9 @@
 				(justify left top)
 			)
 		)
-		(pin "+12V" output
-			(at 76.2 41.91 0)
-			(uuid "2a2ede9b-7509-457e-9172-df67f5e6dad3")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "-12V" output
-			(at 76.2 45.72 0)
-			(uuid "f1248238-10d8-4240-b12e-c2de47792112")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "+5V" output
-			(at 76.2 49.53 0)
-			(uuid "d4e6a420-f7d3-4d43-a698-5e008ce30a1b")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "+3.3V" output
-			(at 76.2 53.34 0)
-			(uuid "de2a7df1-72cb-44df-9a75-b94bf3031432")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "GND" passive
-			(at 76.2 57.15 0)
-			(uuid "4f974b1e-b480-4246-85c5-4c6d6ffe497e")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 	)
 	(sheet
-		(at 25.4 88.9)
+		(at 189.23 107.95)
 		(size 50.8 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -197,7 +108,7 @@
 		)
 		(uuid "ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31")
 		(property "Sheetname" "CV"
-			(at 25.4 88.1886 0)
+			(at 189.23 107.2386 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -208,7 +119,7 @@
 			)
 		)
 		(property "Sheetfile" "sheets/cv.kicad_sch"
-			(at 25.4 114.9344 0)
+			(at 189.23 133.9844 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -220,7 +131,7 @@
 		)
 	)
 	(sheet
-		(at 152.4 38.1)
+		(at 127 107.95)
 		(size 50.8 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -236,7 +147,7 @@
 		)
 		(uuid "de2894c0-6401-42e6-937c-98dc0f3f6845")
 		(property "Sheetname" "Audio"
-			(at 152.4 37.3886 0)
+			(at 127 107.2386 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -247,7 +158,7 @@
 			)
 		)
 		(property "Sheetfile" "sheets/audio.kicad_sch"
-			(at 152.4 64.1344 0)
+			(at 127 133.9844 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -259,7 +170,7 @@
 		)
 	)
 	(sheet
-		(at 88.9 88.9)
+		(at 127 140.97)
 		(size 50.8 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -275,7 +186,7 @@
 		)
 		(uuid "f04b212c-120a-4768-a529-443de5f485ec")
 		(property "Sheetname" "UI"
-			(at 88.9 88.1886 0)
+			(at 127 140.2586 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -286,7 +197,7 @@
 			)
 		)
 		(property "Sheetfile" "sheets/ui.kicad_sch"
-			(at 88.9 114.9344 0)
+			(at 127 167.0044 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
