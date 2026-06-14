@@ -7,6 +7,7 @@
 | 宽度 | 10 HP（~50.3 mm） | +2 HP（~10.16 mm） |
 | 高度 | 3U（128.5 mm） | 同左 |
 | 深度 | 目标 35–40 mm | 同核心 PCB |
+| PCB | **4 层 1.6 mm** | [ADR-014](decisions/ADR-014-pcb-4-layer.md) |
 | 面板 | 2 mm 阳极氧化铝 | 同左 |
 
 ## 显示
@@ -44,7 +45,9 @@
 |------|--------|
 | +12V | 150–200 mA（Core）；+50–100 mA（Exp USB Host） |
 | -12V | 视 Codec 负轨需求 |
-| +5V | 内部产生 |
+| +5V | **模块内部 Buck 自 +12V 产生**（不用机箱 +5V；禁线性 7805 主路径） |
+
+电流预算与 USB 限流见 [ADR-011](decisions/ADR-011-power-supply.md)。
 
 ## MCU
 

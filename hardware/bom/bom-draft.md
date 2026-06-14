@@ -17,7 +17,9 @@
 |  Ref | 件 | 数量 | 备注 |
 |------|-----|------|------|
 | — | Eurorack 电源入口 | 1 | 16-pin 2×5 shrouded |
-| — | ±12V → 5V/3.3V DC-DC | 1 | |
+| — | **+12V → +5V Buck** | 1 | ≥1 A；**禁 7805/1117 主路径**（[ADR-011](../../docs/decisions/ADR-011-power-supply.md)） |
+| — | +5V → +3.3V LDO | 1 | 压差小可 LDO |
+| — | USB VBUS 限流开关 | 1 | ~500 mA；Exp Host（[ADR-011](../../docs/decisions/ADR-011-power-supply.md)） |
 | — | 运放（CV in/out 调理） | 若干 | OPA1612 等 |
 | — | 保护/TVS | 若干 | CV/Audio 输入 |
 
@@ -34,14 +36,15 @@
 
 |  Ref | 件 | 数量 | 备注 |
 |------|-----|------|------|
-| J1–J12 | 3.5 mm mono jack | 12 | Thonkiconn；IN_R normalled |
+| J1–J12 | 3.5 mm mono jack | 12 | Thonkiconn **PJ398SM** 等；IN_R Switch→IN_L Tip（[ADR-010](../../docs/decisions/ADR-010-mono-stereo-normaling.md)） |
 | — | MIDI jack | 2 | Exp |
-| — | USB-A 母座 | 1 | Exp |
+| — | USB-A 母座 | 1 | Exp；**沉板或垂直子板**（[ADR-013](../../docs/decisions/ADR-013-mechanical-depth.md)） |
 
 ## 面板 / 机械
 
 |  Ref | 件 | 数量 | 备注 |
 |------|-----|------|------|
+| — | **PCB 4 层 1.6 mm** | 1 | [ADR-014](../../docs/decisions/ADR-014-pcb-4-layer.md)；JLC 等 |
 | — | 10HP 面板 | 1 | 2 mm Alu |
 | — | 2HP Exp 面板 | 1 | 可选 |
 | — | M3 螺丝/柱 | 套 | |

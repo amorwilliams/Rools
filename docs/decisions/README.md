@@ -13,6 +13,10 @@ Architecture Decision Records — 记录已确认的设计决策。
 | [ADR-008](ADR-008-usb-ota-updater.md) | USB OTA 固件更新 | 已接受 |
 | [ADR-009](ADR-009-center-button.md) | 双 Enc 中间单键 | 已接受 |
 | [ADR-010](ADR-010-mono-stereo-normaling.md) | Mono/Stereo 与 Normalled | 已接受 |
+| [ADR-011](ADR-011-power-supply.md) | 内部 Buck 电源与 USB 限流 | 已接受 |
+| [ADR-012](ADR-012-display-spi-dma.md) | 显示 SPI DMA 与局部刷新 | 已接受 |
+| [ADR-013](ADR-013-mechanical-depth.md) | 模块深度与机械布局 | 已接受 |
+| [ADR-014](ADR-014-pcb-4-layer.md) | 4 层 PCB 叠层与分区 | 已接受 |
 
 ## 如何新增 ADR
 

@@ -15,7 +15,8 @@ Exp Panel (+2HP)
 ├── MIDI IN/OUT ── UART ──► Seed
 └── USB-A Host ── OTG ──► Seed (+ 5V 供电)
 
-Power: Eurorack ±12V → 5V/3.3V → Seed / Codec / Display
+Power: Eurorack ±12V → **Buck +5V** → Seed / Codec / Display / USB VBUS（限流）
+       详见 [ADR-011](decisions/ADR-011-power-supply.md)
 ```
 
 ## 为何外置 Audio Codec
@@ -24,7 +25,9 @@ Daisy Seed onboard 音频为 line level ±1.8V AC 耦合。Eurorack 需要 ±10V
 
 ## IN_R Normalled
 
-IN_R jack **normalize 到 IN_L**（ switching jack 或 PCB 飞线方案，KiCad 阶段定稿）。空插 R 时 Codec 右声道收到左声道信号。
+IN_R jack **normalize 到 IN_L**（ switching jack，KiCad 阶段定稿）。空插 R 时 Codec 右声道收到左声道信号。
+
+接法详见 [ADR-010](decisions/ADR-010-mono-stereo-normaling.md)（PJ398SM / Thonkiconn Switch → IN_L Tip）。
 
 ## Daisy Seed 引脚预算（概念）
 
@@ -58,8 +61,14 @@ IN_R jack **normalize 到 IN_L**（ switching jack 或 PCB 飞线方案，KiCad 
 ## 深度与机械
 
 - 目标深度 **35 mm**（对齐 O_C 4.1）
-- 1.77" 屏 + 竖插 USB-A 为深度主要约束
+- 1.77" 屏 + USB-A 为深度主要约束
 - Core + Exp 同 PCB 侧出或 FFC 连接（KiCad 阶段定）
+- 机械方案（Seed 贴片 / 沉板 USB / 矮排针）见 [ADR-013](decisions/ADR-013-mechanical-depth.md)
+
+## PCB
+
+- **4 层 / 1.6 mm**（[ADR-014](decisions/ADR-014-pcb-4-layer.md)）：L2 完整地、L3 电源；数字/模拟分区
+- KiCad 工程后续置于 [hardware/](../hardware/)
 
 ## BOM 关键件（见 hardware/bom/bom-draft.md）
 

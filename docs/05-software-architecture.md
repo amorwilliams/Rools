@@ -23,7 +23,7 @@ Boot → AppShell → AppMenu → [当前 App]
 | 模块 | 职责 |
 |------|------|
 | AudioEngine | I/O、Mono 复制、AC/DC 高通、callback 分发 |
-| UIRenderer | ST7735 菜单/波形/频谱 |
+| UIRenderer | ST7735 菜单/波形/频谱；**SPI DMA + 局部刷新**（[ADR-012](decisions/ADR-012-display-spi-dma.md)） |
 | IOMapper | K1–K4 + CV1–CV4 列映射 |
 | CVRouter | CV A–D 输出分配 |
 | ClockSync | CV3/CV4 边沿检测（App 可选） |

@@ -12,20 +12,24 @@
 
 ## M1 原型清单
 
-- [ ] Daisy Seed + libDaisy 工具链
-- [ ] ST7735 1.77" 横屏驱动
+- [x] Daisy Seed + libDaisy 工具链
+- [x] ST7735 1.77" 横屏驱动（blocking SPI，M1 可接受）
 - [ ] 外置 Codec breadboard（或 Patch 子板参考）
 - [ ] FFT 频谱显示 30 fps
-- [ ] Enc A/B + 单键 UI 框架
+- [x] Enc A/B + 单键 UI 框架
 
 ## M2 硬件清单
 
-- [ ] KiCad 原理图 / PCB
-- [ ] 10HP 面板 Gerber
+- [ ] KiCad 原理图 / PCB（[ADR-011](decisions/ADR-011-power-supply.md) Buck；[ADR-014](decisions/ADR-014-pcb-4-layer.md) **4 层**）
+- [ ] 10HP 面板 Gerber（[ADR-013](decisions/ADR-013-mechanical-depth.md) 深度预算）
 - [ ] 2HP Exp 面板（可选）
 - [ ] MCP4728 CV Out 校准
-- [ ] IN_R normalled 验证
-- [ ] 功耗实测
+- [ ] IN_R normalled 验证（[ADR-010](decisions/ADR-010-mono-stereo-normaling.md)）
+- [ ] 功耗实测（Core / Core+Exp / USB U 盘）
+
+## M2 软件清单
+
+- [ ] **ST7735 SPI DMA + 局部刷新**（[ADR-012](decisions/ADR-012-display-spi-dma.md)，P0）
 
 ## M3 软件清单
 
@@ -45,7 +49,15 @@
 
 ## 风险跟踪
 
-见 [docs/decisions/](decisions/) ADR 与各文档「待验证」项。
+| 风险 | ADR | 阶段 |
+|------|-----|------|
+| +5V 发热 / USB 500 mA | [ADR-011](decisions/ADR-011-power-supply.md) | M2 PCB |
+| SPI 阻塞拖慢 UI | [ADR-012](decisions/ADR-012-display-spi-dma.md) | M2 固件 |
+| 深度超标 | [ADR-013](decisions/ADR-013-mechanical-depth.md) | M2 机械 |
+| 2 层 PCB 噪声 / USB | [ADR-014](decisions/ADR-014-pcb-4-layer.md) | M2 Layout |
+| Normalled 接错 | [ADR-010](decisions/ADR-010-mono-stereo-normaling.md) | M2 验证 |
+
+另见 [docs/decisions/](decisions/) 与各文档「待验证」项。
 
 ## 版本命名
 

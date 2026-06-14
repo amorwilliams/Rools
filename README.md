@@ -14,7 +14,8 @@
 | [docs/05-software-architecture.md](docs/05-software-architecture.md) | 软件架构 |
 | [docs/06-ui-ux.md](docs/06-ui-ux.md) | 交互规范 |
 | [docs/07-roadmap.md](docs/07-roadmap.md) | 开发里程碑 |
-| [docs/decisions/](docs/decisions/) | ADR 决策记录 |
+| [docs/08-app-switching.md](docs/08-app-switching.md) | App 丝滑切换 |
+| [docs/decisions/](docs/decisions/) | ADR 决策记录（含电源/显示/机械） |
 | [docs/references/modules-comparison.md](docs/references/modules-comparison.md) | 参考模块对比 |
 
 ## 快速开始
