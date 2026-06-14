@@ -1,0 +1,14 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "d25182f7-af4f-401d-b20b-5fb69dcccb2e")
+	(paper "A4")
+	(title_block
+		(title "UI")
+		(date "2026-06-14")
+		(rev "0.1")
+		(comment 1 "ST7735 SPI + Enc×2 + Btn — 引脚见 firmware/src/board/pins.h")
+	)
+	(lib_symbols)
+)

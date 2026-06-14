@@ -1,0 +1,14 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "a4d09e64-87f4-4939-a26b-db3b6adf5765")
+	(paper "A4")
+	(title_block
+		(title "Audio")
+		(date "2026-06-14")
+		(rev "0.1")
+		(comment 1 "PCM3060 + ±10V 调理 — 对照 Patch Rev8")
+	)
+	(lib_symbols)
+)

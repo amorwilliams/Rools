@@ -2,33 +2,42 @@
 
 #include "daisy_seed.h"
 
-// M1 breadboard pin map — change here only before PCB.
+// Rools Core Seed map — grouped for PCB routing (see seed.kicad_sch).
+// Dn == GPIOn on symbol; physical pin number != D (audio/power pads in between).
 
 namespace rools {
 namespace pins {
 
 using Pin = daisy::Pin;
 
-// ST7735 SPI (landscape 160x128)
-constexpr Pin kLcdSck  = daisy::seed::D8;
-constexpr Pin kLcdMosi = daisy::seed::D10;
-constexpr Pin kLcdCs   = daisy::seed::D7;
-constexpr Pin kLcdDc   = daisy::seed::D9;
-constexpr Pin kLcdRst  = daisy::seed::D6;
-constexpr Pin kLcdBlk  = daisy::seed::D5;
+// Enc A — D0–D2, Seed pins 1–3
+constexpr Pin kEncA_A  = daisy::seed::D0;
+constexpr Pin kEncA_B  = daisy::seed::D1;
+constexpr Pin kEncA_Sw = daisy::seed::D2;
 
-// Enc A (libDaisy Encoder example pins)
-constexpr Pin kEncA_A    = daisy::seed::D20;
-constexpr Pin kEncA_B    = daisy::seed::D16;
-constexpr Pin kEncA_Sw   = daisy::seed::D19;
-
-// Enc B
-constexpr Pin kEncB_A    = daisy::seed::D22;
-constexpr Pin kEncB_B    = daisy::seed::D23;
-constexpr Pin kEncB_Sw   = daisy::seed::D21;
-
-// Center button (O_C style, between encoders)
+// Btn + ST7735 SPI — D4–D10, Seed pins 5–11
 constexpr Pin kBtnCenter = daisy::seed::D4;
+constexpr Pin kLcdBlk    = daisy::seed::D5;
+constexpr Pin kLcdRst    = daisy::seed::D6;
+constexpr Pin kLcdCs     = daisy::seed::D7;
+constexpr Pin kLcdSck    = daisy::seed::D8;
+constexpr Pin kLcdDc     = daisy::seed::D9;
+constexpr Pin kLcdMosi   = daisy::seed::D10;
+
+// I2C (codec + MCP4728) — D11–D12, Seed pins 12–13 — wired on Audio sheet
+
+// CV in (K+jack sum) — D15–D18, Seed pins 22–25
+constexpr Pin kCv1Adc = daisy::seed::D15;
+constexpr Pin kCv2Adc = daisy::seed::D16;
+constexpr Pin kCv3Adc = daisy::seed::D17;
+constexpr Pin kCv4Adc = daisy::seed::D18;
+
+// Enc B — D21–D23, Seed pins 28–30
+constexpr Pin kEncB_A  = daisy::seed::D21;
+constexpr Pin kEncB_B  = daisy::seed::D22;
+constexpr Pin kEncB_Sw = daisy::seed::D23;
+
+// SAI2 (PCM3060) — D24–D28, Seed pins 31–35 — wired on Audio sheet
 
 } // namespace pins
 } // namespace rools
