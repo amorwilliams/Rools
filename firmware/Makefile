@@ -6,6 +6,7 @@ src/app_shell.cpp \
 src/display/st7735.cpp \
 src/display/gfx.cpp \
 src/dsp/fft_analyzer.cpp \
+src/dsp/dsp_memory_pool.cpp \
 src/ui/spectrum_view.cpp \
 src/apps/app_registry.cpp \
 src/apps/spectrum_app.cpp

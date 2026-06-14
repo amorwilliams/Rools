@@ -4,7 +4,7 @@
 
 - [libDaisy](https://daisy.audio/software/) + DaisySP
 - C++17
-- 96 kHz stereo audio callback
+- 48 kHz stereo audio callback（float，Codec 24-bit）
 
 ## 单 App 模式
 
@@ -14,7 +14,9 @@ Boot → AppShell → AppMenu → [当前 App]
                     on_enter / process / on_exit
 ```
 
-切换：Enc A 长按 → 选 App → 确认 → 50 ms crossfade → 新 App `on_enter()`。
+切换：Enc A 长按 → 选 App → 确认 → **~10 ms crossfade** → 新 App `on_enter()`。
+
+丝滑切换设计详见 **[08-app-switching.md](08-app-switching.md)**（MFX 式：UI 递 flag、ISR fade、静态 DSP 池）。
 
 ## AppShell 职责
 

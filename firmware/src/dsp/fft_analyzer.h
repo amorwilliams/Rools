@@ -1,14 +1,15 @@
 #pragma once
 
+#include "board/audio_config.h"
+
 #include <cstddef>
 
 namespace rools {
 
 class FftAnalyzer {
 public:
-    static constexpr size_t kMaxFftSize  = 1024;
-    static constexpr size_t kMaxOutBins  = 64;
-    static constexpr float  kSampleRate  = 48000.f;
+    static constexpr size_t kMaxFftSize = 1024;
+    static constexpr size_t kMaxOutBins = 64;
 
     FftAnalyzer();
 

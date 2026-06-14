@@ -54,7 +54,7 @@
 | MCU | STM32H750，480 MHz |
 | RAM | 64 MB SDRAM |
 | Flash | 8 MB |
-| 音频 | 96 kHz / 24-bit（经外置 Codec） |
+| 音频 | 48 kHz / 24-bit（经外置 Codec，libDaisy 默认） |
 
 ## 功能路线图
 

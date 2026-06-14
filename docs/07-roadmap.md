@@ -30,6 +30,8 @@
 ## M3 软件清单
 
 - [ ] AppShell 完整实现
+- [ ] **App 丝滑切换**（[08-app-switching.md](08-app-switching.md)：`request_app_switch`、fade、DspMemoryPool）
+- [ ] App 菜单 UI（Enc A 长按）
 - [ ] Delay / Reverb（DaisySP）
 - [ ] 预设 JSON 读写（Flash）
 - [ ] CV 列映射 API

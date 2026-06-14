@@ -40,6 +40,23 @@ public:
 - 读 `AppShell::columns[i].sum` 获取 Knob+CV
 - 写 `AppShell::cv_out` 设置 CV A–D（由 shell 送 DAC）
 
+## App 切换（MFX 式）
+
+设计文档：[docs/08-app-switching.md](../../docs/08-app-switching.md)
+
+| API | 线程 | 说明 |
+|-----|------|------|
+| `request_app_switch(i)` | UI | 运行时切换（TODO M3 fade） |
+| `load_app(i)` | 任意 | 立即切换，仅 boot / 调试 |
+| `uses_shared_dsp_memory()` | — | FX App 使用 `dsp_pool()` 时覆写 |
+| `on_release_shared_memory()` | 音频 | pool Reset 前清尾音 |
+
+```cpp
+// TODO(M3) DelayApp 示例
+bool uses_shared_dsp_memory() const override { return true; }
+void on_release_shared_memory() override { /* 丢弃 delay 状态 */ }
+```
+
 ## 路线图 App
 
 | 文件（计划） | App |
