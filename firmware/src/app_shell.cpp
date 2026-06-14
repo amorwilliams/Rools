@@ -13,8 +13,9 @@ namespace rools {
 
 using namespace daisy;
 
+// 文件作用域外设；init() 前不可用
 static DaisySeed   hw;
-static AppShell*   shell_instance = nullptr;
+static AppShell*   shell_instance = nullptr; // ISR → process_audio 桥接
 static St7735      display;
 static Gfx         gfx(display);
 static Encoder     enc_a;
@@ -40,12 +41,11 @@ void AppShell::init()
 
     enc_a.Init(pins::kEncA_A, pins::kEncA_B, pins::kEncA_Sw);
     enc_b.Init(pins::kEncB_A, pins::kEncB_B, pins::kEncB_Sw);
-
     btn_center.Init(pins::kBtnCenter);
 
     AppRegistry::BindUi(&gfx);
 
-    load_app(0);
+    load_app(0); // M1：仅 Spectrum；多 App 时改 DefaultApp 或菜单选中 index
 }
 
 void AppShell::run_forever()
@@ -54,6 +54,7 @@ void AppShell::run_forever()
 
     while(true)
     {
+        // --- 输入轮询（主线程）---
         enc_a.Debounce();
         enc_b.Debounce();
         btn_center.Debounce();
@@ -66,6 +67,7 @@ void AppShell::run_forever()
         if(btn_center.FallingEdge() && current_)
             current_->on_btn(Btn::Center, false);
 
+        // --- UI 刷新 ~30 fps ---
         const uint32_t now = System::GetNow();
         if(now - last_ui_ms >= 33)
         {
@@ -134,6 +136,7 @@ void AppShell::audio_cb_internal(const float* inL,
         return;
     }
 
+    // 无 App 时透明 passthrough
     for(size_t i = 0; i < n; i++)
     {
         outL[i] = inL[i];
