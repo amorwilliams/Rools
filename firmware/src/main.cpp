@@ -1,12 +1,8 @@
 /**
- * Rools — firmware entry (placeholder)
- *
- * M1: wire DaisyHW, AppShell, register apps.
+ * Rools — firmware entry
  */
 
 #include "app_shell.h"
-
-// #include "daisy_seed.h"
 
 int main(void)
 {

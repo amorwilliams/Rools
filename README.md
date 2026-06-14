@@ -17,13 +17,25 @@
 | [docs/decisions/](docs/decisions/) | ADR 决策记录 |
 | [docs/references/modules-comparison.md](docs/references/modules-comparison.md) | 参考模块对比 |
 
+## 快速开始
+
+```bash
+git clone --recursive <repo>
+./build.sh          # 编译
+./build.sh flash    # 刷机（Seed DFU 模式）
+```
+
+详见 [firmware/README.md](firmware/README.md)。
+
 ## 目录结构
 
 ```
 Rools/
+├── lib/            # libDaisy / DaisySP submodule
 ├── docs/           # 设计文档
 ├── hardware/       # 面板规格、BOM（KiCad 后续）
-└── firmware/       # libDaisy 固件（占位）
+├── firmware/       # libDaisy 固件
+└── build.sh        # 编译脚本
 ```
 
 ## 参考

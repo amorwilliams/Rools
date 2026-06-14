@@ -3,6 +3,4 @@
     "--compile-commands-dir=${workspaceFolder}/firmware",
     "--query-driver=**/arm-none-eabi-*"
   ],
-  "C_Cpp.default.compileCommands": "${workspaceFolder}/firmware/compile_commands.json",
-  "C_Cpp.errorSquiggles": "enabled"
 }

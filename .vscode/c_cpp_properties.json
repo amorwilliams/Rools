@@ -20,8 +20,7 @@
       "compilerPath": "/usr/bin/clang++",
       "cStandard": "c11",
       "cppStandard": "c++14",
-      "intelliSenseMode": "macos-clang-arm64",
-      "compileCommands": "${workspaceFolder}/firmware/compile_commands.json"
+      "intelliSenseMode": "macos-clang-arm64"
     }
   ],
   "version": 4

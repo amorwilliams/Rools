@@ -3,6 +3,10 @@
 #include <cstddef>
 #include <cstdint>
 
+namespace daisy {
+class Encoder;
+}
+
 namespace rools {
 
 enum class Enc : uint8_t { A, B };
@@ -100,6 +104,7 @@ public:
 
 private:
     App* current_ = nullptr;
+    void PollEnc(daisy::Encoder& enc, Enc id);
     void audio_cb_internal(const float* inL, const float* inR, float* outL, float* outR, size_t n);
     void apply_mono_out(float* outL, float* outR, size_t n);
 };
