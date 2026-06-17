@@ -6,6 +6,7 @@
 #include "daisy_seed.h"
 #include "display/gfx.h"
 #include "display/st7735.h"
+#include "board/enc_debug.h"
 #include "hid/encoder.h"
 #include "hid/switch.h"
 
@@ -21,11 +22,36 @@ static Gfx         gfx(display);
 static Encoder     enc_a;
 static Encoder     enc_b;
 static Switch      btn_center;
+static volatile int32_t enc_a_delta_accum  = 0;
+static volatile int32_t enc_b_delta_accum  = 0;
+static volatile uint8_t enc_a_press_events = 0; // bit0 rise, bit1 fall
+static volatile uint8_t enc_b_press_events = 0; // bit0 rise, bit1 fall
+static volatile uint8_t btn_events         = 0; // bit0 rise, bit1 fall
 
 static void AudioCallback(AudioHandle::InputBuffer  in,
                           AudioHandle::OutputBuffer out,
                           size_t                    size)
 {
+    enc_a.Debounce();
+    enc_b.Debounce();
+    btn_center.Debounce();
+
+    enc_a_delta_accum += enc_a.Increment();
+    enc_b_delta_accum += enc_b.Increment();
+
+    if(enc_a.RisingEdge())
+        enc_a_press_events |= 0x01;
+    if(enc_a.FallingEdge())
+        enc_a_press_events |= 0x02;
+    if(enc_b.RisingEdge())
+        enc_b_press_events |= 0x01;
+    if(enc_b.FallingEdge())
+        enc_b_press_events |= 0x02;
+    if(btn_center.RisingEdge())
+        btn_events |= 0x01;
+    if(btn_center.FallingEdge())
+        btn_events |= 0x02;
+
     if(shell_instance)
         shell_instance->process_audio(in[0], in[1], out[0], out[1], size);
 }
@@ -35,7 +61,6 @@ void AppShell::init()
     shell_instance = this;
 
     hw.Init();
-    hw.StartAudio(AudioCallback);
 
     display.Init();
 
@@ -46,6 +71,8 @@ void AppShell::init()
     AppRegistry::BindUi(&gfx);
 
     load_app(0); // M1：boot 立即加载；运行时切换用 request_app_switch()
+
+    hw.StartAudio(AudioCallback);
 }
 
 void AppShell::run_forever()
@@ -54,47 +81,66 @@ void AppShell::run_forever()
 
     while(true)
     {
-        // --- 输入轮询（主线程）---
-        enc_a.Debounce();
-        enc_b.Debounce();
-        btn_center.Debounce();
+        int32_t da = 0;
+        int32_t db = 0;
+        uint8_t a_events = 0;
+        uint8_t b_events = 0;
+        uint8_t c_events = 0;
 
-        PollEnc(enc_a, Enc::A);
-        PollEnc(enc_b, Enc::B);
+        __disable_irq();
+        da                = enc_a_delta_accum;
+        db                = enc_b_delta_accum;
+        a_events          = enc_a_press_events;
+        b_events          = enc_b_press_events;
+        c_events          = btn_events;
+        enc_a_delta_accum = 0;
+        enc_b_delta_accum = 0;
+        enc_a_press_events = 0;
+        enc_b_press_events = 0;
+        btn_events         = 0;
+        __enable_irq();
 
-        if(btn_center.RisingEdge() && current_)
+        bool ui_dirty = false;
+        if(current_ && da != 0)
+            current_->on_enc(Enc::A, static_cast<int>(da));
+        if(current_ && db != 0)
+            current_->on_enc(Enc::B, static_cast<int>(db));
+        ui_dirty |= (da != 0 || db != 0);
+        ui_dirty |= (a_events != 0 || b_events != 0 || c_events != 0);
+
+        if((a_events & 0x01) && current_)
+            current_->on_enc_press(Enc::A, true);
+        if((a_events & 0x02) && current_)
+            current_->on_enc_press(Enc::A, false);
+        if((b_events & 0x01) && current_)
+            current_->on_enc_press(Enc::B, true);
+        if((b_events & 0x02) && current_)
+            current_->on_enc_press(Enc::B, false);
+
+        if((c_events & 0x01) && current_)
             current_->on_btn(Btn::Center, true);
-        if(btn_center.FallingEdge() && current_)
+        if((c_events & 0x02) && current_)
             current_->on_btn(Btn::Center, false);
 
-        // --- UI 刷新 ~30 fps ---
+        InputDebugUpdate(static_cast<int>(da),
+                         static_cast<int>(db),
+                         a_events,
+                         b_events,
+                         c_events,
+                         enc_a.Pressed(),
+                         enc_b.Pressed(),
+                         btn_center.Pressed());
+
+        // --- UI 刷新 ~30 fps；编码器变化时立即重绘 ---
         const uint32_t now = System::GetNow();
-        if(now - last_ui_ms >= 33)
+        if(ui_dirty || now - last_ui_ms >= 33)
         {
             last_ui_ms = now;
             if(current_)
                 current_->ui_draw();
         }
-
-        // TODO(M2): App 菜单 — Enc A 长按 → 列表 → request_app_switch(selected)
-
         System::Delay(1);
     }
-}
-
-void AppShell::PollEnc(Encoder& enc, Enc id)
-{
-    if(!current_)
-        return;
-
-    const int delta = enc.Increment();
-    if(delta != 0)
-        current_->on_enc(id, delta);
-
-    if(enc.RisingEdge())
-        current_->on_enc_press(id, true);
-    if(enc.FallingEdge())
-        current_->on_enc_press(id, false);
 }
 
 bool AppShell::load_app(size_t index)

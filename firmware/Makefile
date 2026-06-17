@@ -3,12 +3,14 @@ TARGET = rools
 CPP_SOURCES = \
 src/main.cpp \
 src/app_shell.cpp \
+src/board/enc_debug.cpp \
 src/display/st7735.cpp \
 src/display/gfx.cpp \
 src/dsp/fft_analyzer.cpp \
 src/dsp/dsp_memory_pool.cpp \
 src/ui/spectrum_view.cpp \
 src/apps/app_registry.cpp \
+src/apps/display_test_app.cpp \
 src/apps/spectrum_app.cpp
 
 LIBDAISY_DIR ?= ../lib/libDaisy

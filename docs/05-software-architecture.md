@@ -29,6 +29,13 @@ Boot → AppShell → AppMenu → [当前 App]
 | ClockSync | CV3/CV4 边沿检测（App 可选） |
 | UsbStorage | FAT32、样本/预设/OTA（HAS_EXP） |
 
+## 输入采集约束（必须遵守）
+
+- Encoder / Switch 的 `Debounce()` 必须在固定频率中断里执行（当前用 `AudioCallback`）。
+- 中断里只做采集与累计：读取 `Increment()` 并累加到共享计数器，记录按下/抬起事件位。
+- 主循环只做消费：原子读取并清零累计值，再分发到 `on_enc / on_btn`。
+- 禁止在 UI 主循环里直接 `Debounce()`；SPI 刷屏会阻塞主循环，导致漏采样和手感变差。
+
 ## App 接口（见 firmware/src/app_shell.h）
 
 ```cpp

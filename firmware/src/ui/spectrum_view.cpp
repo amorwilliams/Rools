@@ -1,14 +1,16 @@
 #include "ui/spectrum_view.h"
 
+#include "display/theme.h"
+
 namespace rools {
 
 Color565 SpectrumView::BarColor(float level) const
 {
     if(level < 0.33f)
-        return color::Green;
+        return theme::kDefault.bar_low;
     if(level < 0.66f)
-        return color::Yellow;
-    return color::Red;
+        return theme::kDefault.bar_mid;
+    return theme::kDefault.bar_high;
 }
 
 void SpectrumView::Draw(Gfx&           gfx,
@@ -20,11 +22,12 @@ void SpectrumView::Draw(Gfx&           gfx,
     const int bottom = Gfx::kHeight - 2;
     const int height = bottom - top;
 
-    gfx.FillRect(0, 0, Gfx::kWidth, Gfx::kHeight, color::Black);
+    const auto& t = theme::kDefault;
+    gfx.FillRect(0, 0, Gfx::kWidth, Gfx::kHeight, t.bg);
 
     if(!fullscreen)
     {
-        gfx.DrawString(2, 2, "Spectrum", color::Cyan, color::Black);
+        gfx.DrawString(2, 2, "Spectrum", t.accent, t.bg);
     }
 
     const size_t bins = fft.num_bins();
@@ -47,11 +50,11 @@ void SpectrumView::Draw(Gfx&           gfx,
         if(peak_hold && fft.peaks()[i] > fft.bins()[i])
         {
             const int py = bottom - static_cast<int>(fft.peaks()[i] * height);
-            gfx.DrawHLine(x, py, bar_w - gap, color::White);
+            gfx.DrawHLine(x, py, bar_w - gap, t.peak);
         }
     }
 
-    gfx.DrawRect(0, top, Gfx::kWidth, Gfx::kHeight - top, color::DkGray);
+    gfx.DrawRect(0, top, Gfx::kWidth, Gfx::kHeight - top, t.border);
 }
 
 } // namespace rools

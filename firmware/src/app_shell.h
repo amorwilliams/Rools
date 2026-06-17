@@ -104,6 +104,11 @@ public:
  *
  * 主循环 ~1 ms tick，UI 目标 30 fps（33 ms）。
  * M1：init() 用 load_app(0)。多 App 菜单应调用 request_app_switch()。
+ *
+ * 输入采集规则（关键）：
+ *   - 中断采集累计：在 AudioCallback 内 Debounce + Increment 累加 + 事件置位
+ *   - 主循环消费清零：run_forever() 原子读出累计值并清零后再分发 on_enc/on_btn
+ *   - 禁止在主循环直接 Debounce（刷屏会阻塞采样，导致漏步）
  */
 class AppShell {
 public:
@@ -153,7 +158,6 @@ private:
     float            fade_gain_     = 1.f;
     DspMemoryPool    dsp_pool_;
 
-    void PollEnc(daisy::Encoder& enc, Enc id);
     void audio_cb_internal(const float* inL, const float* inR, float* outL, float* outR, size_t n);
     void apply_mono_out(float* outL, float* outR, size_t n);
 

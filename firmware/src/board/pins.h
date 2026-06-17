@@ -17,12 +17,12 @@ constexpr Pin kEncA_Sw = daisy::seed::D2;
 
 // Btn + ST7735 SPI — D4–D10, Seed pins 5–11
 constexpr Pin kBtnCenter = daisy::seed::D4;
-constexpr Pin kLcdBlk    = daisy::seed::D5;
-constexpr Pin kLcdRst    = daisy::seed::D6;
-constexpr Pin kLcdCs     = daisy::seed::D7;
-constexpr Pin kLcdSck    = daisy::seed::D8;
-constexpr Pin kLcdDc     = daisy::seed::D9;
-constexpr Pin kLcdMosi   = daisy::seed::D10;
+constexpr Pin kLcdBlk    = daisy::seed::D5; // SD_CMD
+constexpr Pin kLcdRst    = daisy::seed::D6; // SD_CK
+constexpr Pin kLcdCs     = daisy::seed::D7; // SPI_CS
+constexpr Pin kLcdSck    = daisy::seed::D8; // SPI_SCK
+constexpr Pin kLcdDc     = daisy::seed::D9; // SPI_MISO
+constexpr Pin kLcdMosi   = daisy::seed::D10; // SPI_MOSI
 
 // I2C (codec + MCP4728) — D11–D12, Seed pins 12–13 — wired on Audio sheet
 
