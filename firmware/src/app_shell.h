@@ -3,14 +3,17 @@
 #include <cstddef>
 #include <cstdint>
 
-#include "board/audio_config.h"
 #include "dsp/dsp_memory_pool.h"
+#include "input/input_gesture_controller.h"
+#include "ui/menu_controller.h"
 
 namespace daisy {
 class Encoder;
 }
 
 namespace rools {
+
+class Gfx;
 
 enum class Enc : uint8_t { A, B };
 enum class Btn : uint8_t { Center };
@@ -83,10 +86,16 @@ public:
     virtual void ui_draw() = 0;
 
     virtual void on_enc(Enc enc, int delta) {}
+    virtual void on_enc_shift(Enc enc, int delta) {}
     virtual void on_enc_press(Enc enc, bool pressed) {}
+    virtual void on_enc_press_shift(Enc enc, bool pressed) {}
     virtual void on_btn(Btn btn, bool pressed) {}
+    virtual void on_btn_shift(Btn btn, bool pressed) {}
 
     virtual const ParamMap* param_map() const = 0;
+    virtual const char*     current_a_hint() const { return nullptr; }
+    virtual const char*     current_b_hint() const { return nullptr; }
+    virtual const char*     current_shift_hint() const { return nullptr; }
 
     /** 默认耦合偏好 */
     virtual CouplingMode in_coupling() const { return CouplingMode::DC; }
@@ -112,8 +121,8 @@ public:
  */
 class AppShell {
 public:
-    static constexpr size_t   kInvalidAppIndex = SIZE_MAX;
-    static constexpr float kSwitchFadeMs = 10.f;
+    static constexpr size_t    kInvalidAppIndex = SIZE_MAX;
+    static constexpr float     kSwitchFadeMs    = 10.f;
 
     void init();
     void run_forever(); // 阻塞；不返回
@@ -157,9 +166,12 @@ private:
     AppSwitchPhase   switch_phase_  = AppSwitchPhase::Idle;
     float            fade_gain_     = 1.f;
     DspMemoryPool    dsp_pool_;
+    InputGestureController gesture_controller_;
+    MenuController   menu_controller_;
 
     void audio_cb_internal(const float* inL, const float* inR, float* outL, float* outR, size_t n);
     void apply_mono_out(float* outL, float* outR, size_t n);
+    void RouteInputToCurrentApp(const GestureFrameResult& gesture_result, bool& ui_dirty);
 
     /** 音频 ISR：fade 状态机 + 处理 pending 切换 */
     void TickSwitchStateMachine(size_t num_samples);

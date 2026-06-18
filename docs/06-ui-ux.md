@@ -8,7 +8,8 @@
 | Enc A 按压 | 确认 / 进入 | 是 |
 | Enc B 旋转 | 参数微调 | 是 |
 | Enc B 按压 | 返回 | 是 |
-| Btn（中） | Shift / 全屏切换 / 确认 | App 定义 |
+| Btn（中）短按 | App 二级动作（Fullscreen/Hold/Toggle） | 是 |
+| Btn（中）长按 | Shift（按住有效，松开退出） | 否（全局） |
 | K1–K4 | 当前 App 第 1–4 列参数 | 语义随 App |
 | CV1–CV4 | 叠加到 K1–K4 | 始终 |
 | CV A–D | App 分配输出 | App 定义 |
@@ -49,6 +50,19 @@ App 切换时**物理列不变**，仅语义变。
        ↑
 [Global Settings] ← 从 App Menu 进入（耦合、Mono、USB…）
 ```
+
+## Shift 约定
+
+- 长按 Btn（>220 ms）进入 Shift，松开退出。
+- Shift 期间：`Enc A/B` 进入二级参数或快捷动作。
+- 非 Shift 期间：保持主流程（A 导航、B 参数、Btn 次动作）。
+
+## 手势优先级与冲突规则
+
+- 菜单态优先：App 菜单打开时，手势仅供菜单消费，不透传到 App。
+- Shift 次之：菜单关闭时，`Shift + Enc` 优先于普通 `Enc` 旋转。
+- `CenterTap` 仅在短按时触发；长按进入 Shift 后，释放不会再触发短按。
+- `Enc A` 长按开菜单与 `Btn` 长按进 Shift 相互独立，避免同帧双触发。
 
 ## 反馈
 

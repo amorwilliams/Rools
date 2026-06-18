@@ -51,7 +51,7 @@ void DisplayTestApp::Bind(Gfx* gfx)
 void DisplayTestApp::on_enter()
 {
     pattern_  = 0;
-    debug_on_ = true;
+    debug_on_ = false;
 }
 
 void DisplayTestApp::on_exit() {}
@@ -133,15 +133,12 @@ void DisplayTestApp::ui_draw()
     DrawPattern(pattern_);
     if(debug_on_)
         DrawInputDebug();
-    gfx_->Flush();
 }
 
 void DisplayTestApp::on_btn(Btn btn, bool pressed)
 {
-    if(btn != Btn::Center || !pressed)
-        return;
-
-    debug_on_ = !debug_on_;
+    (void)btn;
+    (void)pressed;
 }
 
 void DisplayTestApp::on_enc(Enc enc, int delta)
@@ -154,6 +151,19 @@ void DisplayTestApp::on_enc(Enc enc, int delta)
         pattern_ = 2;
     if(pattern_ > 2)
         pattern_ = 0;
+}
+
+void DisplayTestApp::on_enc_shift(Enc enc, int delta)
+{
+    (void)enc;
+    (void)delta;
+}
+
+void DisplayTestApp::on_enc_press_shift(Enc enc, bool pressed)
+{
+    if(enc != Enc::A || !pressed)
+        return;
+    debug_on_ = !debug_on_;
 }
 
 const ParamMap* DisplayTestApp::param_map() const

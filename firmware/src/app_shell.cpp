@@ -1,7 +1,6 @@
 #include "app_shell.h"
 
 #include "apps/app_registry.h"
-#include "apps/spectrum_app.h"
 #include "board/pins.h"
 #include "daisy_seed.h"
 #include "display/gfx.h"
@@ -9,6 +8,9 @@
 #include "board/enc_debug.h"
 #include "hid/encoder.h"
 #include "hid/switch.h"
+#include "ui/app_menu_view.h"
+#include "ui/app_hint_bar_view.h"
+#include "ui/menu_controller.h"
 
 namespace rools {
 
@@ -27,6 +29,8 @@ static volatile int32_t enc_b_delta_accum  = 0;
 static volatile uint8_t enc_a_press_events = 0; // bit0 rise, bit1 fall
 static volatile uint8_t enc_b_press_events = 0; // bit0 rise, bit1 fall
 static volatile uint8_t btn_events         = 0; // bit0 rise, bit1 fall
+static constexpr uint8_t kEventRise        = 0x01;
+static constexpr uint8_t kEventFall        = 0x02;
 
 static void AudioCallback(AudioHandle::InputBuffer  in,
                           AudioHandle::OutputBuffer out,
@@ -40,17 +44,17 @@ static void AudioCallback(AudioHandle::InputBuffer  in,
     enc_b_delta_accum += enc_b.Increment();
 
     if(enc_a.RisingEdge())
-        enc_a_press_events |= 0x01;
+        enc_a_press_events |= kEventRise;
     if(enc_a.FallingEdge())
-        enc_a_press_events |= 0x02;
+        enc_a_press_events |= kEventFall;
     if(enc_b.RisingEdge())
-        enc_b_press_events |= 0x01;
+        enc_b_press_events |= kEventRise;
     if(enc_b.FallingEdge())
-        enc_b_press_events |= 0x02;
+        enc_b_press_events |= kEventFall;
     if(btn_center.RisingEdge())
-        btn_events |= 0x01;
+        btn_events |= kEventRise;
     if(btn_center.FallingEdge())
-        btn_events |= 0x02;
+        btn_events |= kEventFall;
 
     if(shell_instance)
         shell_instance->process_audio(in[0], in[1], out[0], out[1], size);
@@ -88,39 +92,39 @@ void AppShell::run_forever()
         uint8_t c_events = 0;
 
         __disable_irq();
-        da                = enc_a_delta_accum;
-        db                = enc_b_delta_accum;
-        a_events          = enc_a_press_events;
-        b_events          = enc_b_press_events;
-        c_events          = btn_events;
-        enc_a_delta_accum = 0;
-        enc_b_delta_accum = 0;
+        da                 = enc_a_delta_accum;
+        db                 = enc_b_delta_accum;
+        a_events           = enc_a_press_events;
+        b_events           = enc_b_press_events;
+        c_events           = btn_events;
+        enc_a_delta_accum  = 0;
+        enc_b_delta_accum  = 0;
         enc_a_press_events = 0;
         enc_b_press_events = 0;
         btn_events         = 0;
         __enable_irq();
 
-        bool ui_dirty = false;
-        if(current_ && da != 0)
-            current_->on_enc(Enc::A, static_cast<int>(da));
-        if(current_ && db != 0)
-            current_->on_enc(Enc::B, static_cast<int>(db));
-        ui_dirty |= (da != 0 || db != 0);
-        ui_dirty |= (a_events != 0 || b_events != 0 || c_events != 0);
+        const uint32_t now = System::GetNow();
+        bool           ui_dirty = false;
 
-        if((a_events & 0x01) && current_)
-            current_->on_enc_press(Enc::A, true);
-        if((a_events & 0x02) && current_)
-            current_->on_enc_press(Enc::A, false);
-        if((b_events & 0x01) && current_)
-            current_->on_enc_press(Enc::B, true);
-        if((b_events & 0x02) && current_)
-            current_->on_enc_press(Enc::B, false);
+        const GestureFrameInput gesture_input{
+            now, da, db, a_events, b_events, c_events, btn_center.Pressed(), enc_a.Pressed()};
+        const GestureFrameResult gesture_result = gesture_controller_.Update(gesture_input);
+        ui_dirty |= gesture_result.ui_dirty;
 
-        if((c_events & 0x01) && current_)
-            current_->on_btn(Btn::Center, true);
-        if((c_events & 0x02) && current_)
-            current_->on_btn(Btn::Center, false);
+        const MenuUpdateInput menu_input{now,
+                                         enc_a.Pressed(),
+                                         AppRegistry::Count(),
+                                         current_index_,
+                                         gesture_result.events,
+                                         gesture_result.count};
+        const MenuResult menu_result = menu_controller_.Update(menu_input);
+        ui_dirty |= menu_result.ui_dirty;
+        if(menu_result.request_switch)
+            request_app_switch(menu_result.switch_index);
+
+        if(!menu_result.consumed)
+            RouteInputToCurrentApp(gesture_result, ui_dirty);
 
         InputDebugUpdate(static_cast<int>(da),
                          static_cast<int>(db),
@@ -131,16 +135,89 @@ void AppShell::run_forever()
                          enc_b.Pressed(),
                          btn_center.Pressed());
 
-        // --- UI 刷新 ~30 fps；编码器变化时立即重绘 ---
-        const uint32_t now = System::GetNow();
         if(ui_dirty || now - last_ui_ms >= 33)
         {
             last_ui_ms = now;
-            if(current_)
+            if(menu_result.menu_open)
+                DrawAppMenuView(gfx, menu_result.selected, AppRegistry::Count(), AppRegistry::Name);
+            else if(current_ && pending_index_ == kInvalidAppIndex)
+            {
                 current_->ui_draw();
+                DrawAppHintBarView(gfx,
+                                   current_->current_a_hint(),
+                                   current_->current_b_hint(),
+                                   gesture_result.shift_active,
+                                   current_->current_shift_hint());
+                gfx.Flush();
+            }
         }
         System::Delay(1);
     }
+}
+
+void AppShell::RouteInputToCurrentApp(const GestureFrameResult& gesture_result, bool& ui_dirty)
+{
+    if(!current_)
+        return;
+
+    for(size_t i = 0; i < gesture_result.count; ++i)
+    {
+        const GestureEvent& e = gesture_result.events[i];
+        switch(e.type)
+        {
+        case GestureType::EncTurnA: current_->on_enc(Enc::A, static_cast<int>(e.value)); break;
+        case GestureType::EncTurnB: current_->on_enc(Enc::B, static_cast<int>(e.value)); break;
+        case GestureType::ShiftEncTurnA:
+            current_->on_enc_shift(Enc::A, static_cast<int>(e.value));
+            break;
+        case GestureType::ShiftEncTurnB:
+            current_->on_enc_shift(Enc::B, static_cast<int>(e.value));
+            break;
+        case GestureType::EncPressA:
+            if(gesture_result.shift_active)
+                current_->on_enc_press_shift(Enc::A, true);
+            else
+                current_->on_enc_press(Enc::A, true);
+            break;
+        case GestureType::EncReleaseA:
+            if(gesture_result.shift_active)
+                current_->on_enc_press_shift(Enc::A, false);
+            else
+                current_->on_enc_press(Enc::A, false);
+            break;
+        case GestureType::EncPressB:
+            if(gesture_result.shift_active)
+                current_->on_enc_press_shift(Enc::B, true);
+            else
+                current_->on_enc_press(Enc::B, true);
+            break;
+        case GestureType::EncReleaseB:
+            if(gesture_result.shift_active)
+                current_->on_enc_press_shift(Enc::B, false);
+            else
+                current_->on_enc_press(Enc::B, false);
+            break;
+        case GestureType::CenterTap:
+            if(gesture_result.shift_active)
+            {
+                current_->on_btn_shift(Btn::Center, true);
+                current_->on_btn_shift(Btn::Center, false);
+            }
+            else
+            {
+                current_->on_btn(Btn::Center, true);
+                current_->on_btn(Btn::Center, false);
+            }
+            break;
+        case GestureType::ShiftEnter:
+        case GestureType::ShiftExit:
+            // Shift 状态由手势控制器维护，App 无需单独消费该事件。
+            break;
+        }
+    }
+
+    if(gesture_result.count > 0)
+        ui_dirty = true;
 }
 
 bool AppShell::load_app(size_t index)
@@ -193,12 +270,10 @@ void AppShell::TickSwitchStateMachine(size_t num_samples)
 {
     (void)num_samples;
 
-    // TODO(M3): 按 kSwitchFadeMs / kAudioSampleRate（board/audio_config.h）推进 fade_gain_
-    //   FadingOut  → fade_gain_ → 0 → Switching → CommitAppSwitch()
-    //   FadingIn   → fade_gain_ → 1 → Idle
-    //
-    // if(switch_phase_ == AppSwitchPhase::Idle && pending_index_ != kInvalidAppIndex)
-    //     switch_phase_ = AppSwitchPhase::FadingOut;
+    if(switch_phase_ == AppSwitchPhase::Idle && pending_index_ != kInvalidAppIndex)
+        CommitAppSwitch();
+
+    // TODO(M3): 按 kSwitchFadeMs / kAudioSampleRate 推进 fade_gain_
 }
 
 void AppShell::CommitAppSwitch()
