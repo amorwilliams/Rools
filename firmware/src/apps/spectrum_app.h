@@ -33,13 +33,24 @@ public:
     const ParamMap* param_map() const override;
     const char*     current_a_hint() const override;
     const char*     current_b_hint() const override;
-    const char*     current_button_hint() const override { return "Hold"; }
+    const char*     current_button_hint() const override { return freeze_latched_ ? "Unfreeze" : "Freeze"; }
     const char*     current_button_shift_hint() const override { return "Full"; }
     const char*     current_shift_hint() const override { return "Full"; }
 
     FftAnalyzer& analyzer() { return analyzer_; }
 
 private:
+    enum class FocusParam : uint8_t {
+        PeakTrack,
+        Cursor,
+        Freeze,
+        Gain,
+        Decay,
+        FftSize,
+        PeakHold,
+        Count
+    };
+
     static constexpr size_t kRingSize = 2048;
 
     Gfx*                  gfx_ = nullptr;
@@ -47,14 +58,20 @@ private:
     SampleRing<kRingSize> ring_;
     SpectrumView          view_;
 
-    float gain_db_    = 0.f;
-    float decay_      = 0.65f;
-    bool  peak_hold_  = false;
-    bool  fullscreen_ = false;
-    bool  fine_mode_  = false;
-    int   param_idx_  = 0;
-    float in_peak_    = 0.f;
-    float in_rms_     = 0.f;
+    float gain_db_          = 0.f;
+    float peak_hold_decay_  = 0.65f;
+    bool  peak_hold_        = false;
+    bool  fullscreen_       = false;
+    bool  fine_mode_        = false;
+    bool  peak_track_enabled_ = true;
+    bool  cursor_enabled_   = true;
+    bool  freeze_enabled_   = false;
+    bool  freeze_latched_   = false;
+    size_t cursor_bin_      = 0;
+    FocusParam focus_param_ = FocusParam::PeakTrack;
+    float in_peak_          = 0.f;
+    float in_rms_           = 0.f;
+    mutable char b_hint_[32]{};
 };
 
 } // namespace rools

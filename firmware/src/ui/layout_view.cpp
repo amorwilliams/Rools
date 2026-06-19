@@ -52,7 +52,17 @@ bool LayoutView::DrawTopIfDirty(const App* app)
     if(!app)
         return false;
 
-    const char* top_src = app->current_top_hint();
+    const auto& t = theme::kDefault;
+    const char* top_src = nullptr;
+    const bool  use_text = app->current_top_hint(gfx_, top_src);
+    if(!use_text)
+    {
+        // App 已通过 current_top_hint(gfx, ...) 自绘顶栏。
+        last_top_[0]  = '\0';
+        last_top_app_ = app;
+        return true;
+    }
+
     if(!top_src || top_src[0] == '\0')
         top_src = app->name();
 
@@ -60,7 +70,6 @@ bool LayoutView::DrawTopIfDirty(const App* app)
     if(!dirty)
         return false;
 
-    const auto& t = theme::kDefault;
     gfx_.FillRect(0, 0, Gfx::kWidth, kTopBarHeight, t.bg);
     gfx_.DrawString(2, 2, top_src, t.accent, t.bg);
     std::snprintf(last_top_, sizeof(last_top_), "%.31s", top_src);

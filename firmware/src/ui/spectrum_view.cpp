@@ -18,7 +18,12 @@ void SpectrumView::Draw(Gfx&           gfx,
                         bool             peak_hold,
                         bool             fullscreen,
                         int              main_top,
-                        int              main_bottom)
+                        int              main_bottom,
+                        bool             freeze_latched,
+                        bool             peak_track_enabled,
+                        size_t           peak_bin,
+                        bool             cursor_enabled,
+                        size_t           cursor_bin)
 {
     const int top    = fullscreen ? main_top : main_top;
     const int bottom = main_bottom - 1;
@@ -56,17 +61,35 @@ void SpectrumView::Draw(Gfx&           gfx,
         const int    y     = bottom - h;
         const Color565 c   = BarColor(level);
 
-        gfx.FillRect(x, y, bar_w - gap, h, c);
+        const int fill_w = (bar_w - gap > 0) ? (bar_w - gap) : 1;
+        gfx.FillRect(x, y, fill_w, h, c);
 
         if(peak_hold && fft.peaks()[i] > fft.bins()[i])
         {
             const int py = bottom - static_cast<int>(fft.peaks()[i] * height);
-            gfx.DrawHLine(x, py, bar_w - gap, t.peak);
+            gfx.DrawHLine(x, py, fill_w, t.peak);
         }
+    }
+
+    if(peak_track_enabled && peak_bin < bins)
+    {
+        const int fill_w = (bar_w - gap > 0) ? (bar_w - gap) : 1;
+        const int x      = 2 + static_cast<int>(peak_bin) * bar_w + fill_w / 2;
+        gfx.DrawVLine(x, top, height, t.peak);
+    }
+
+    if(cursor_enabled && cursor_bin < bins)
+    {
+        const int fill_w = (bar_w - gap > 0) ? (bar_w - gap) : 1;
+        const int x      = 2 + static_cast<int>(cursor_bin) * bar_w + fill_w / 2;
+        gfx.DrawVLine(x, top, height, t.accent);
     }
 
     if(max_level < 0.01f)
         gfx.DrawString(2, top + 2, "NO SIGNAL", t.muted, t.bg);
+
+    if(freeze_latched)
+        gfx.DrawString(Gfx::kWidth - 42, top + 2, "FREEZE", t.peak, t.bg);
 
     gfx.DrawRect(0, top, Gfx::kWidth, main_bottom - top, t.border);
 }

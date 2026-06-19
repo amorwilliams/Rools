@@ -99,7 +99,12 @@ public:
     virtual const char*     current_button_hint() const { return nullptr; }
     virtual const char*     current_button_shift_hint() const { return nullptr; }
     virtual const char*     current_shift_hint() const { return nullptr; }
-    virtual const char*     current_top_hint() const { return nullptr; }
+    virtual bool            current_top_hint(Gfx& gfx, const char*& out_text) const
+    {
+        (void)gfx;
+        out_text = nullptr;
+        return true;
+    }
     virtual uint32_t        ui_refresh_interval_ms() const { return 33; }
 
     /** 默认耦合偏好 */

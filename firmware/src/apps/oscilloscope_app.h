@@ -11,9 +11,14 @@ namespace rools {
 
 class OscilloscopeApp : public App {
 public:
+    enum class InputSource : uint8_t { Audio1, Audio2, Cv1, Cv2, Cv3, Cv4, None };
+    enum class PriorityMode : uint8_t { AudioFirst, CvFirst };
+    static constexpr size_t kInputSourceCount = 6;
+    static constexpr size_t kMaxDisplayTraces = 4;
+
     void Bind(Gfx* gfx);
 
-    const char* name() const override { return "Oscilloscope"; }
+    const char* name() const override { return "Scope"; }
 
     void on_enter() override;
     void on_exit() override;
@@ -27,6 +32,7 @@ public:
     void ui_draw(const LayoutMetrics& layout) override;
     void on_enc(Enc enc, int delta) override;
     void on_enc_press(Enc enc, bool pressed) override;
+    void on_enc_press_shift(Enc enc, bool pressed) override;
     void on_enc_shift(Enc enc, int delta) override;
     void on_btn(Btn btn, bool pressed) override;
 
@@ -36,70 +42,71 @@ public:
     const char*     current_button_hint() const override { return hold_ ? "Unhold" : "Hold"; }
     const char*     current_button_shift_hint() const override { return hold_ ? "Unhold" : "Hold"; }
     const char*     current_shift_hint() const override { return "Hold"; }
-    const char*     current_top_hint() const override;
+    bool            current_top_hint(Gfx& gfx, const char*& out_text) const override;
     uint32_t        ui_refresh_interval_ms() const override
     {
         if(hold_)
             return 100;
-        if(interp_mode_ == InterpMode::Cubic && aa_enabled_)
-            return 40;
         return 33;
     }
 
 private:
     enum class FocusParam : uint8_t {
-        InputSrc,
         TimeScale,
         VoltScale,
-        RenderMode,
-        LineAA,
-        InterpMode,
+        TriggerSource,
         TriggerMode,
         TriggerLevel,
-        TriggerEdge,
+        Priority,
         Count
     };
-    enum class InputSrc : uint8_t { Ch1, Ch2 };
-    enum class TriggerMode : uint8_t { Auto, Norm };
-    enum class TriggerEdge : uint8_t { Rise, Fall };
-    enum class RenderMode : uint8_t { Sample, PeakDetect };
-    enum class InterpMode : uint8_t { Linear, Cubic };
+    enum class TriggerMode : uint8_t { Auto, Rise, Fall };
+    struct TraceConfig {
+        int volt_idx;
+    };
 
-    static constexpr size_t kDecimate      = 2;
     static constexpr size_t kScopeBufSize  = 4096;
     static constexpr size_t kScreenCols    = 160;
+    static constexpr size_t kTimeScaleCount = 14;
+    static constexpr size_t kVoltScaleCount = 10;
 
-    static const float kTimeScalesMsPerDiv[8];
-    static const float kVoltScalesPerDiv[6];
+    static const float  kTimeScalesMsPerDiv[kTimeScaleCount];
+    static const size_t kTimeDecimates[kTimeScaleCount];
+    static const float kVoltScalesPerDiv[kVoltScaleCount];
 
     Gfx*             gfx_ = nullptr;
     OscilloscopeView view_;
 
-    float ch1_buffer_[kScopeBufSize];
-    float ch2_buffer_[kScopeBufSize];
+    float input_buffers_[kInputSourceCount][kScopeBufSize];
     size_t write_idx_      = 0;
     size_t sample_count_   = 0;
     size_t decimate_phase_ = 0;
 
-    FocusParam   focus_param_   = FocusParam::InputSrc;
-    InputSrc     input_src_     = InputSrc::Ch1;
+    FocusParam   focus_param_   = FocusParam::TimeScale;
+    PriorityMode priority_mode_ = PriorityMode::AudioFirst;
     TriggerMode  trigger_mode_  = TriggerMode::Auto;
-    TriggerEdge  trigger_edge_  = TriggerEdge::Rise;
-    RenderMode   render_mode_   = RenderMode::Sample;
-    InterpMode   interp_mode_   = InterpMode::Cubic;
-    InterpMode   effective_interp_mode_ = InterpMode::Cubic;
     bool         aa_enabled_    = true;
     bool         hold_          = false;
     bool         fine_mode_     = false;
     int          time_idx_      = 3;
-    int          volt_idx_      = 1;
     float        trigger_level_ = 0.0f; // volts
     bool         trigger_hit_   = false;
     float        trigger_subsample_ = 0.f;
+    bool         use_peak_detect_ = false;
+    int          trigger_stability_score_ = 0;
+    bool         smart_audio_mode_ = true;
+    InputSource  display_traces_[kMaxDisplayTraces];
+    bool         display_trace_has_signal_[kMaxDisplayTraces];
+    TraceConfig  trace_cfg_[kMaxDisplayTraces];
+    bool         trace_active_[kInputSourceCount];
+    uint32_t     trace_hold_until_ms_[kInputSourceCount];
+    size_t       selected_trace_idx_ = 0;
+    size_t       trigger_source_slot_ = 0;
 
-    float draw_mean_[kScreenCols];
-    float draw_min_[kScreenCols];
-    float draw_max_[kScreenCols];
+    float  draw_mean_[kMaxDisplayTraces][kScreenCols];
+    float  draw_min_[kMaxDisplayTraces][kScreenCols];
+    float  draw_max_[kMaxDisplayTraces][kScreenCols];
+    float  trace_dc_mean_[kMaxDisplayTraces];
     size_t draw_cols_ = 0;
     char   focus_value_[24];
     char   b_hint_[32];
@@ -107,10 +114,18 @@ private:
 
     void AdvanceFocus(int delta);
     void AdjustFocusedParam(int delta);
+    void SelectTrace(int dir);
     void CaptureWindow();
+    void UpdateDisplayRouting();
+    bool IsCablePresentGPIO(InputSource src, bool& known) const;
+    bool IsSignalActiveADC(InputSource src) const;
+    bool IsActive(InputSource src, uint32_t now_ms);
     void BuildFocusValueText();
+    bool ShouldAutoPeakMode() const;
     bool FindTriggerStart(const float* src, size_t total, size_t window, size_t& start, float& subsample) const;
-    const float* ActiveBuffer() const;
+    const float* SourceBuffer(InputSource src) const;
+    bool IsDisplaySlotVisible(size_t slot) const;
+    bool DetectAudioLike(const float* src, size_t total, size_t window);
     float SampleLinearIndex(const float* src, size_t total, size_t linear_idx) const;
     float InterpolateLinear(const float* src, size_t total, float linear_pos) const;
     float InterpolateCubic(const float* src, size_t total, float linear_pos) const;

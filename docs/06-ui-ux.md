@@ -66,18 +66,54 @@ App 状态下统一走：
 - 菜单打开时由菜单视图独占渲染。
 - 进菜单/出菜单后执行 `LayoutView::ResetCache()`，确保回到 App 时 Top/Bottom 不残留脏缓存。
 
-## Oscilloscope 交互（MVP/P1）
+## Scope 交互（固定顺序4槽）
 
-- 焦点参数：`InputSrc`、`TimeScale`、`VoltScale`、`RenderMode`、`RunStop`、`Hold`、`TriggerMode`、`TriggerLevel`、`TriggerEdge`。
-- `Enc A`：切换焦点参数。
-- `Enc B`：修改焦点参数值。
-- `Enc B` 按压：切换 `Coarse/Fine` 步进。
-- `Btn` 短按：`Run/Stop`。
-- `Shift + Enc B`：`Hold`（冻结/恢复）。
-- `RenderMode`：`Sample` / `PeakDetect`。
-- 底栏显示参数值（例如 `B:<参数值>`），单位保留（如 `ms/div`、`V/div`、`V`）。
-- 视图要求：常驻网格/中心线/零线；无输入显示 `NO SIGNAL`。
-- 触发要求：支持 `AUTO/NORM`；`NORM` 时显示触发电平线（`TriggerLevel` + `Rise/Fall`）。
+### 固定顺序路由策略
+
+- 后台常驻采样 6 路输入：`Audio1`、`Audio2`、`CV1`、`CV2`、`CV3`、`CV4`。
+- 前台固定 4 个显示槽位，不做补位重排。
+- 路由优先级支持 `AudioFirst` / `CvFirst` 两种模式，且顺序固定：
+  - `AudioFirst`：`T1=AIN1`、`T2=AIN2`、`T3=CV1`、`T4=CV2`
+  - `CvFirst`：`T1=CV1`、`T2=CV2`、`T3=CV3`、`T4=CV4`
+- 激活判定采用“GPIO优先 + ADC兜底”：
+  - 有插座检测 GPIO 时，GPIO 作为真值来源；
+  - 无 GPIO 时，使用短窗 `RMS/Peak` 阈值判定输入是否活跃。
+- 路由切换带短保持（hysteresis + hold），降低插拔和噪声导致的跳轨。
+- 任一槽位无信号时，槽位标签仍显示绑定接口名，仅通过颜色表达无信号状态。
+
+### 单触发源规则
+
+- 触发搜索只对 1 路执行（默认第一个可见槽位）。
+- 其余已显示轨道共享同一个 `start_linear/subsample` 起点绘制。
+- `AUTO`：无触发时自由运行；`NORM`：无触发时不绘制波形。
+
+### 轨道选择与调参
+
+- `Enc A` 旋转：切换焦点参数。
+- `Enc B` 旋转：调整焦点参数值（作用于当前选中轨道）。
+- `Enc A` 按下：选中上一条可见轨道。
+- `Enc B` 按下：选中下一条可见轨道。
+- `Shift + Enc B` 按下：切换 `Coarse/Fine` 步进。
+- `Btn` 短按：`Hold/Unhold`。
+- `Shift + Enc B` 旋转：`Hold/Unhold` 快捷切换。
+
+### 渲染要求
+
+- 4 轨同屏时自动走 Fast 路径（关闭 AA）以稳定帧率。
+- 选中轨道高亮，非选中轨道降亮度。
+- 底栏显示参数值（`B:<参数值>`，保留单位）。
+- 无可见输入时主区域不显示文本提示（仅保留网格与状态栏信息）。
+
+## Spectrum 高级交互
+
+- 新增分析参数：`PeakTrack`、`Cursor`、`Freeze`（并保留 `Gain`/`Decay`/`FFT`/`PeakHold`）。
+- `Enc A`：切换当前参数焦点；`Enc B`：调整当前焦点值。
+- `Btn` 短按：`Freeze/Unfreeze`（冻结仅冻结分析画面，不中断音频直通）。
+- `Shift + Enc B`：全屏切换。
+- 视图覆盖层：
+  - PeakTrack 开启时显示峰值频点标记线。
+  - Cursor 开启时显示游标竖线；状态行显示 Peak/Cursor 的 `Hz + 归一化幅值`。
+  - Freeze 开启时显示 `FREEZE` 标记。
 
 ## App 切换流程
 

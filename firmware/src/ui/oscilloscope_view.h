@@ -23,13 +23,24 @@ struct OscilloscopeViewState {
     int         main_bottom;
 };
 
+struct OscilloscopeTraceView {
+    const char* label;
+    const float* mean_samples;
+    const float* min_samples;
+    const float* max_samples;
+    float       volt_per_div;
+    Color565    color;
+    bool        has_signal;
+    bool        visible;
+    bool        selected;
+};
+
 class OscilloscopeView {
 public:
     void Draw(Gfx&                         gfx,
               const OscilloscopeViewState& state,
-              const float*                 mean_samples,
-              const float*                 min_samples,
-              const float*                 max_samples,
+              const OscilloscopeTraceView* traces,
+              size_t                       trace_count,
               size_t                       sample_count,
               bool                         trigger_active);
 

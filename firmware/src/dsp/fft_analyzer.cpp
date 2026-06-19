@@ -158,6 +158,9 @@ void FftAnalyzer::RunFft()
 void FftAnalyzer::MapToDisplayBins()
 {
     const size_t half = fft_size_ / 2;
+    static constexpr float kMinDb = -90.f;
+    static constexpr float kMaxDb = 0.f;
+    static constexpr float kDbSpan = kMaxDb - kMinDb;
 
     for(size_t b = 0; b < num_bins_; ++b)
     {
@@ -171,12 +174,12 @@ void FftAnalyzer::MapToDisplayBins()
         }
 
         float db = ToDb(peak) + gain_db_;
-        if(db < 0.f)
-            db = 0.f;
-        if(db > 60.f)
-            db = 60.f;
+        if(db < kMinDb)
+            db = kMinDb;
+        if(db > kMaxDb)
+            db = kMaxDb;
 
-        bins_[b] = db / 60.f;
+        bins_[b] = (db - kMinDb) / kDbSpan;
 
         peaks_[b] = peaks_[b] * decay_;
         if(bins_[b] > peaks_[b])
