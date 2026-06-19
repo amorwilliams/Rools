@@ -16,19 +16,27 @@ Color565 SpectrumView::BarColor(float level) const
 void SpectrumView::Draw(Gfx&           gfx,
                         const FftAnalyzer& fft,
                         bool             peak_hold,
-                        bool             fullscreen)
+                        bool             fullscreen,
+                        int              main_top,
+                        int              main_bottom)
 {
-    const int top    = fullscreen ? 0 : 12;
-    const int bottom = Gfx::kHeight - 2;
+    const int top    = fullscreen ? main_top : main_top;
+    const int bottom = main_bottom - 1;
     const int height = bottom - top;
 
     const auto& t = theme::kDefault;
-    gfx.FillRect(0, 0, Gfx::kWidth, Gfx::kHeight, t.bg);
+    gfx.FillRect(0, main_top, Gfx::kWidth, main_bottom - main_top, t.bg);
 
     if(!fullscreen)
     {
-        gfx.DrawString(2, 2, "Spectrum", t.accent, t.bg);
+        gfx.DrawString(2, top + 2, "Spectrum", t.accent, t.bg);
     }
+
+    // Always draw a baseline/grid so zero input is visually obvious.
+    const int baseline_y = bottom;
+    const int mid_y      = top + height / 2;
+    gfx.DrawHLine(0, baseline_y, Gfx::kWidth, t.border);
+    gfx.DrawHLine(0, mid_y, Gfx::kWidth, t.muted);
 
     const size_t bins = fft.num_bins();
     if(bins == 0)
@@ -37,9 +45,12 @@ void SpectrumView::Draw(Gfx&           gfx,
     const int bar_w = (Gfx::kWidth - 4) / static_cast<int>(bins);
     const int gap   = 1;
 
+    float max_level = 0.f;
     for(size_t i = 0; i < bins; ++i)
     {
         const float  level = peak_hold ? fft.peaks()[i] : fft.bins()[i];
+        if(level > max_level)
+            max_level = level;
         const int    h     = static_cast<int>(level * static_cast<float>(height));
         const int    x     = 2 + static_cast<int>(i) * bar_w;
         const int    y     = bottom - h;
@@ -54,7 +65,10 @@ void SpectrumView::Draw(Gfx&           gfx,
         }
     }
 
-    gfx.DrawRect(0, top, Gfx::kWidth, Gfx::kHeight - top, t.border);
+    if(max_level < 0.01f)
+        gfx.DrawString(2, top + 2, "NO SIGNAL", t.muted, t.bg);
+
+    gfx.DrawRect(0, top, Gfx::kWidth, main_bottom - top, t.border);
 }
 
 } // namespace rools

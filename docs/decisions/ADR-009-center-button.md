@@ -18,6 +18,10 @@ Btn 默认：Shift / 全屏 / 确认。
 
 ### 交互约定（补充）
 
+- **Enc A 旋转**：选择参数（导航焦点）。
+- **Enc B 旋转**：修改当前参数值。
+- **Enc B 按压**：切换 `Coarse/Fine` 步进模式。
+- **Oscilloscope 约定**：`Btn` 短按切 `Run/Stop`，`Shift + Enc B` 切 `Hold`。
 - **Btn 短按**：App 级二级动作（如 Fullscreen / Hold / Toggle）。
 - **Btn 长按（>220 ms）**：进入全局 `Shift` 按住态；松开即退出。
 - **Shift + Enc A/B**：触发二级参数层或快捷功能（由 App 定义）。

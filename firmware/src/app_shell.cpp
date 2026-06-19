@@ -9,8 +9,7 @@
 #include "hid/encoder.h"
 #include "hid/switch.h"
 #include "ui/app_menu_view.h"
-#include "ui/app_hint_bar_view.h"
-#include "ui/menu_controller.h"
+#include "ui/layout_view.h"
 
 namespace rools {
 
@@ -21,6 +20,7 @@ static DaisySeed   hw;
 static AppShell*   shell_instance = nullptr; // ISR → process_audio 桥接
 static St7735      display;
 static Gfx         gfx(display);
+static LayoutView  layout_view(gfx);
 static Encoder     enc_a;
 static Encoder     enc_b;
 static Switch      btn_center;
@@ -82,6 +82,8 @@ void AppShell::init()
 void AppShell::run_forever()
 {
     uint32_t last_ui_ms = System::GetNow();
+    bool     last_menu_open = false;
+    layout_view.ResetCache();
 
     while(true)
     {
@@ -118,8 +120,14 @@ void AppShell::run_forever()
                                          current_index_,
                                          gesture_result.events,
                                          gesture_result.count};
-        const MenuResult menu_result = menu_controller_.Update(menu_input);
+        const MenuResult menu_result = app_menu_view_.Update(menu_input);
         ui_dirty |= menu_result.ui_dirty;
+        if(last_menu_open != menu_result.menu_open)
+        {
+            layout_view.ResetCache();
+            ui_dirty       = true;
+            last_menu_open = menu_result.menu_open;
+        }
         if(menu_result.request_switch)
             request_app_switch(menu_result.switch_index);
 
@@ -135,20 +143,24 @@ void AppShell::run_forever()
                          enc_b.Pressed(),
                          btn_center.Pressed());
 
-        if(ui_dirty || now - last_ui_ms >= 33)
+        const uint32_t refresh_interval = current_ ? current_->ui_refresh_interval_ms() : 33;
+        if(ui_dirty || now - last_ui_ms >= refresh_interval)
         {
-            last_ui_ms = now;
+            if(gfx.IsBusy())
+            {
+                System::Delay(1);
+                continue;
+            }
+
             if(menu_result.menu_open)
-                DrawAppMenuView(gfx, menu_result.selected, AppRegistry::Count(), AppRegistry::Name);
+            {
+                app_menu_view_.Draw(gfx, AppRegistry::Count(), AppRegistry::Name);
+                last_ui_ms = now;
+            }
             else if(current_ && pending_index_ == kInvalidAppIndex)
             {
-                current_->ui_draw();
-                DrawAppHintBarView(gfx,
-                                   current_->current_a_hint(),
-                                   current_->current_b_hint(),
-                                   gesture_result.shift_active,
-                                   current_->current_shift_hint());
-                gfx.Flush();
+                layout_view.RenderAppFrame(current_, gesture_result.shift_active);
+                last_ui_ms = now;
             }
         }
         System::Delay(1);

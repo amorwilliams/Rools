@@ -10,11 +10,13 @@ src/dsp/fft_analyzer.cpp \
 src/dsp/dsp_memory_pool.cpp \
 src/input/input_gesture_controller.cpp \
 src/ui/spectrum_view.cpp \
+src/ui/oscilloscope_view.cpp \
+src/ui/bottom_bar_view.cpp \
 src/ui/app_menu_view.cpp \
-src/ui/app_hint_bar_view.cpp \
-src/ui/menu_controller.cpp \
+src/ui/layout_view.cpp \
 src/apps/app_registry.cpp \
 src/apps/display_test_app.cpp \
+src/apps/oscilloscope_app.cpp \
 src/apps/spectrum_app.cpp
 
 LIBDAISY_DIR ?= ../lib/libDaisy

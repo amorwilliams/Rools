@@ -5,7 +5,7 @@
 
 #include "dsp/dsp_memory_pool.h"
 #include "input/input_gesture_controller.h"
-#include "ui/menu_controller.h"
+#include "ui/app_menu_view.h"
 
 namespace daisy {
 class Encoder;
@@ -14,6 +14,7 @@ class Encoder;
 namespace rools {
 
 class Gfx;
+struct LayoutMetrics;
 
 enum class Enc : uint8_t { A, B };
 enum class Btn : uint8_t { Center };
@@ -83,7 +84,7 @@ public:
     audio_callback(const float* inL, const float* inR, float* outL, float* outR, size_t n)
         = 0;
 
-    virtual void ui_draw() = 0;
+    virtual void ui_draw(const LayoutMetrics& layout) = 0;
 
     virtual void on_enc(Enc enc, int delta) {}
     virtual void on_enc_shift(Enc enc, int delta) {}
@@ -95,7 +96,11 @@ public:
     virtual const ParamMap* param_map() const = 0;
     virtual const char*     current_a_hint() const { return nullptr; }
     virtual const char*     current_b_hint() const { return nullptr; }
+    virtual const char*     current_button_hint() const { return nullptr; }
+    virtual const char*     current_button_shift_hint() const { return nullptr; }
     virtual const char*     current_shift_hint() const { return nullptr; }
+    virtual const char*     current_top_hint() const { return nullptr; }
+    virtual uint32_t        ui_refresh_interval_ms() const { return 33; }
 
     /** 默认耦合偏好 */
     virtual CouplingMode in_coupling() const { return CouplingMode::DC; }
@@ -167,7 +172,7 @@ private:
     float            fade_gain_     = 1.f;
     DspMemoryPool    dsp_pool_;
     InputGestureController gesture_controller_;
-    MenuController   menu_controller_;
+    AppMenuView      app_menu_view_;
 
     void audio_cb_internal(const float* inL, const float* inR, float* outL, float* outR, size_t n);
     void apply_mono_out(float* outL, float* outR, size_t n);

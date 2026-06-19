@@ -2,6 +2,7 @@
 
 #include "board/enc_debug.h"
 #include "display/theme.h"
+#include "ui/layout_view.h"
 
 #include <cstdio>
 
@@ -9,12 +10,12 @@ namespace rools {
 
 namespace {
 
-void DrawDebugBar(Gfx* gfx, int y, const InputDebugSnapshot& d, int pattern)
+void DrawDebugBar(Gfx* gfx, int y, int bottom, const InputDebugSnapshot& d, int pattern)
 {
     const auto& t = theme::kDefault;
     char        buf[40];
 
-    gfx->FillRect(0, y, Gfx::kWidth, Gfx::kHeight - y, t.bg);
+    gfx->FillRect(0, y, Gfx::kWidth, bottom - y, t.bg);
     gfx->DrawHLine(0, y, Gfx::kWidth, t.border);
 
     snprintf(buf,
@@ -69,70 +70,71 @@ void DisplayTestApp::audio_callback(const float* inL,
     }
 }
 
-void DisplayTestApp::DrawPattern(int id)
+void DisplayTestApp::DrawPattern(int id, const LayoutMetrics& layout)
 {
     const int w = Gfx::kWidth;
-    const int h = Gfx::kHeight;
+    const int top = layout.main_top;
+    const int h = layout.main_bottom - layout.main_top;
 
     const auto& t = theme::kDefault;
-    gfx_->Clear(t.bg);
+    gfx_->FillRect(0, top, w, h, t.bg);
 
     switch(id % 3)
     {
     case 0:
     {
-        gfx_->DrawString(2, 2, "Midnight", t.accent, t.bg);
-        gfx_->DrawString(2, 12, "theme", t.fg, t.bg);
-        gfx_->FillRect(4, 28, w - 8, 4, t.accent);
-        gfx_->FillRect(4, 36, w - 8, 4, t.border);
-        gfx_->FillRect(4, 44, w - 8, 4, t.muted);
-        gfx_->FillRect(4, 52, w - 8, 4, t.fg);
+        gfx_->DrawString(2, top + 2, "Midnight", t.accent, t.bg);
+        gfx_->DrawString(2, top + 12, "theme", t.fg, t.bg);
+        gfx_->FillRect(4, top + 28, w - 8, 4, t.accent);
+        gfx_->FillRect(4, top + 36, w - 8, 4, t.border);
+        gfx_->FillRect(4, top + 44, w - 8, 4, t.muted);
+        gfx_->FillRect(4, top + 52, w - 8, 4, t.fg);
         const int bar_w = (w - 8) / 3;
-        gfx_->FillRect(4, 64, bar_w, 40, t.bar_low);
-        gfx_->FillRect(4 + bar_w, 64, bar_w, 40, t.bar_mid);
-        gfx_->FillRect(4 + bar_w * 2, 64, bar_w, 40, t.bar_high);
+        gfx_->FillRect(4, top + 64, bar_w, 40, t.bar_low);
+        gfx_->FillRect(4 + bar_w, top + 64, bar_w, 40, t.bar_mid);
+        gfx_->FillRect(4 + bar_w * 2, top + 64, bar_w, 40, t.bar_high);
         break;
     }
     case 1:
     {
         const int sz = 8;
-        for(int y = 0; y < h; y += sz)
+        for(int y = top; y < top + h; y += sz)
         {
             for(int x = 0; x < w; x += sz)
             {
-                const bool on = ((x / sz) + (y / sz)) & 1;
+                const bool on = ((x / sz) + ((y - top) / sz)) & 1;
                 gfx_->FillRect(x, y, sz, sz, on ? t.border : t.bg);
             }
         }
-        gfx_->DrawString(2, 2, "Grid 1", t.accent, t.bg);
+        gfx_->DrawString(2, top + 2, "Grid 1", t.accent, t.bg);
         break;
     }
     default:
-        gfx_->DrawRect(0, 0, w, h, t.border);
-        gfx_->DrawHLine(0, h / 2, w, t.accent);
-        gfx_->DrawVLine(w / 2, 0, h, t.accent);
-        gfx_->DrawString(2, 2, "Cross 2", t.fg, t.bg);
+        gfx_->DrawRect(0, top, w, h, t.border);
+        gfx_->DrawHLine(0, top + h / 2, w, t.accent);
+        gfx_->DrawVLine(w / 2, top, h, t.accent);
+        gfx_->DrawString(2, top + 2, "Cross 2", t.fg, t.bg);
         break;
     }
 
 }
 
-void DisplayTestApp::DrawInputDebug()
+void DisplayTestApp::DrawInputDebug(const LayoutMetrics& layout)
 {
     if(!gfx_)
         return;
 
-    DrawDebugBar(gfx_, Gfx::kHeight - 32, InputDebug(), pattern_);
+    DrawDebugBar(gfx_, layout.main_bottom - 32, layout.main_bottom, InputDebug(), pattern_);
 }
 
-void DisplayTestApp::ui_draw()
+void DisplayTestApp::ui_draw(const LayoutMetrics& layout)
 {
     if(!gfx_)
         return;
 
-    DrawPattern(pattern_);
+    DrawPattern(pattern_, layout);
     if(debug_on_)
-        DrawInputDebug();
+        DrawInputDebug(layout);
 }
 
 void DisplayTestApp::on_btn(Btn btn, bool pressed)

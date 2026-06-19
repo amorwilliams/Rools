@@ -23,16 +23,19 @@ public:
                         float*       outR,
                         size_t       n) override;
 
-    void ui_draw() override;
+    void ui_draw(const LayoutMetrics& layout) override;
 
     void on_enc(Enc enc, int delta) override;
+    void on_enc_press(Enc enc, bool pressed) override;
     void on_enc_shift(Enc enc, int delta) override;
     void on_btn(Btn btn, bool pressed) override;
 
     const ParamMap* param_map() const override;
     const char*     current_a_hint() const override;
-    const char*     current_b_hint() const override { return "B: Param"; }
-    const char*     current_shift_hint() const override { return "A: Fine  B: Full"; }
+    const char*     current_b_hint() const override;
+    const char*     current_button_hint() const override { return "Hold"; }
+    const char*     current_button_shift_hint() const override { return "Full"; }
+    const char*     current_shift_hint() const override { return "Full"; }
 
     FftAnalyzer& analyzer() { return analyzer_; }
 
@@ -48,7 +51,10 @@ private:
     float decay_      = 0.65f;
     bool  peak_hold_  = false;
     bool  fullscreen_ = false;
+    bool  fine_mode_  = false;
     int   param_idx_  = 0;
+    float in_peak_    = 0.f;
+    float in_rms_     = 0.f;
 };
 
 } // namespace rools

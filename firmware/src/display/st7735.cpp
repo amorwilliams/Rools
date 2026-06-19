@@ -1,5 +1,6 @@
 #include "display/st7735.h"
 
+#include "board/pins.h"
 #include "sys/system.h"
 
 #include <cstring>
@@ -7,6 +8,20 @@
 namespace rools {
 
 namespace {
+constexpr size_t kDCacheLineSize = 32;
+
+void CleanDCacheRange(void* addr, size_t len)
+{
+    if(len == 0)
+        return;
+
+    uintptr_t start = reinterpret_cast<uintptr_t>(addr);
+    uintptr_t end   = start + len;
+    start &= ~(static_cast<uintptr_t>(kDCacheLineSize - 1));
+    end = (end + (kDCacheLineSize - 1)) & ~(static_cast<uintptr_t>(kDCacheLineSize - 1));
+
+    SCB_CleanDCache_by_Addr(reinterpret_cast<uint32_t*>(start), static_cast<int32_t>(end - start));
+}
 
 // ST7735 指令字，完整列表见数据手册 "Command List"
 enum Cmd : uint8_t {
@@ -254,13 +269,15 @@ void St7735::SetAddrWindow(int x, int y, int w, int h)
 void St7735::WritePixels(const uint16_t* data, size_t count)
 {
     // RGB565 高字节在前（MSB first），与 COLMOD 0x05 一致
-    // 分块发送：避免单次 SPI buffer 过大，每块最多 256 像素
-    static uint8_t bytes[512];
+    // 分块发送：避免单次 SPI buffer 过大，每块最多 512 像素
+    static uint8_t bytes[1024];
     size_t         offset = 0;
+    cs_.Write(false);
+    dc_.Write(true);
 
     while(offset < count)
     {
-        const size_t chunk = (count - offset > 256) ? 256 : (count - offset);
+        const size_t chunk = (count - offset > 512) ? 512 : (count - offset);
         for(size_t i = 0; i < chunk; ++i)
         {
             const uint16_t c = data[offset + i];
@@ -268,13 +285,107 @@ void St7735::WritePixels(const uint16_t* data, size_t count)
             bytes[i * 2 + 1] = static_cast<uint8_t>(c & 0xFF);
         }
 
-        cs_.Write(false);
-        dc_.Write(true);
         spi_.BlockingTransmit(bytes, chunk * 2, 100);
-        cs_.Write(true);
-
         offset += chunk;
     }
+    cs_.Write(true);
+}
+
+bool St7735::StartWriteFramebufferRect(int x, int y, int w, int h)
+{
+    if(w <= 0 || h <= 0 || IsBusy())
+        return false;
+
+    int x0 = x;
+    int y0 = y;
+    int x1 = x + w;
+    int y1 = y + h;
+    if(x0 < 0)
+        x0 = 0;
+    if(y0 < 0)
+        y0 = 0;
+    if(x1 > kWidth)
+        x1 = kWidth;
+    if(y1 > kHeight)
+        y1 = kHeight;
+    if(x1 <= x0 || y1 <= y0)
+        return false;
+
+    const int rect_w = x1 - x0;
+    const int rect_h = y1 - y0;
+    tx_size_         = static_cast<size_t>(rect_w * rect_h * 2);
+    if(tx_size_ == 0 || tx_size_ > kMaxTxBytes)
+        return false;
+
+    size_t out = 0;
+    for(int row = y0; row < y1; ++row)
+    {
+        const uint16_t* src = &framebuffer_[row * kWidth + x0];
+        for(int col = 0; col < rect_w; ++col)
+        {
+            const uint16_t c    = src[col];
+            tx_buffer_[out++]   = static_cast<uint8_t>(c >> 8);
+            tx_buffer_[out++]   = static_cast<uint8_t>(c & 0xFF);
+        }
+    }
+
+    SetAddrWindow(x0, y0, rect_w, rect_h);
+    tx_offset_ = 0;
+    dma_busy_  = true;
+    cs_.Write(false);
+    dc_.Write(true);
+    if(!StartNextDmaChunk())
+    {
+        FinishDmaTransfer();
+        return false;
+    }
+    return true;
+}
+
+bool St7735::StartNextDmaChunk()
+{
+    if(tx_offset_ >= tx_size_)
+    {
+        FinishDmaTransfer();
+        return true;
+    }
+
+    const size_t remaining = tx_size_ - tx_offset_;
+    const size_t chunk     = (remaining > kDmaChunkLen) ? kDmaChunkLen : remaining;
+    CleanDCacheRange(tx_buffer_ + tx_offset_, chunk);
+    auto result = spi_.DmaTransmit(tx_buffer_ + tx_offset_, chunk, OnDmaStart, OnDmaDone, this);
+    if(result != daisy::SpiHandle::Result::OK)
+        return false;
+
+    tx_offset_ += chunk;
+    return true;
+}
+
+void St7735::FinishDmaTransfer()
+{
+    cs_.Write(true);
+    dma_busy_ = false;
+}
+
+void St7735::OnDmaStart(void* context)
+{
+    (void)context;
+}
+
+void St7735::OnDmaDone(void* context, daisy::SpiHandle::Result result)
+{
+    St7735* self = static_cast<St7735*>(context);
+    if(!self)
+        return;
+
+    if(result != daisy::SpiHandle::Result::OK)
+    {
+        self->FinishDmaTransfer();
+        return;
+    }
+
+    if(!self->StartNextDmaChunk())
+        self->FinishDmaTransfer();
 }
 
 void St7735::FillScreen(uint16_t color)

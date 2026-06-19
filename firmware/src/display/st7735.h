@@ -1,6 +1,5 @@
 #pragma once
 
-#include "board/pins.h"
 #include "per/gpio.h"
 #include "per/spi.h"
 
@@ -32,17 +31,24 @@ public:
     // 设定写入区域并发出 RAMWR，后续 SPI 字节按 RGB565 顺序写入显存
     void SetAddrWindow(int x, int y, int w, int h);
     void WritePixels(const uint16_t* data, size_t count);
+    bool StartWriteFramebufferRect(int x, int y, int w, int h);
+    bool IsBusy() const { return dma_busy_; }
     void FillScreen(uint16_t color);
 
     uint16_t* framebuffer() { return framebuffer_; }
 
 private:
+    static void OnDmaStart(void* context);
+    static void OnDmaDone(void* context, daisy::SpiHandle::Result result);
+
     void Reset();
     void WriteCommand(uint8_t cmd);
     void WriteData(uint8_t data);
     void WriteData(const uint8_t* data, size_t len);
     void InitSequence();
     void ApplyRotation();
+    bool StartNextDmaChunk();
+    void FinishDmaTransfer();
 
     daisy::SpiHandle spi_;
     daisy::GPIO      cs_;
@@ -52,6 +58,12 @@ private:
 
     // CPU 侧帧缓冲，RGB565（每像素 2 字节）
     uint16_t framebuffer_[kWidth * kHeight];
+    static constexpr size_t kMaxTxBytes  = kWidth * kHeight * 2;
+    static constexpr size_t kDmaChunkLen = kMaxTxBytes;
+    uint8_t                 tx_buffer_[kMaxTxBytes];
+    size_t                  tx_size_      = 0;
+    size_t                  tx_offset_    = 0;
+    volatile bool           dma_busy_     = false;
 
     // 玻璃物理 128×160，横屏使用时逻辑 160×128
     // 部分模块玻璃比可见区大，需 offset 修正偏移；本屏为 0
