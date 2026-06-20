@@ -47,7 +47,7 @@ public:
     {
         if(hold_)
             return 100;
-        return 33;
+        return 16;
     }
 
 private:
@@ -98,8 +98,6 @@ private:
     InputSource  display_traces_[kMaxDisplayTraces];
     bool         display_trace_has_signal_[kMaxDisplayTraces];
     TraceConfig  trace_cfg_[kMaxDisplayTraces];
-    bool         trace_active_[kInputSourceCount];
-    uint32_t     trace_hold_until_ms_[kInputSourceCount];
     size_t       selected_trace_idx_ = 0;
     size_t       trigger_source_slot_ = 0;
 
@@ -117,12 +115,14 @@ private:
     void SelectTrace(int dir);
     void CaptureWindow();
     void UpdateDisplayRouting();
-    bool IsCablePresentGPIO(InputSource src, bool& known) const;
-    bool IsSignalActiveADC(InputSource src) const;
-    bool IsActive(InputSource src, uint32_t now_ms);
     void BuildFocusValueText();
     bool ShouldAutoPeakMode() const;
-    bool FindTriggerStart(const float* src, size_t total, size_t window, size_t& start, float& subsample) const;
+    bool FindTriggerStart(const float* src,
+                          size_t       total,
+                          size_t       window,
+                          size_t&      start,
+                          float&       subsample,
+                          float        full_scale_volts) const;
     const float* SourceBuffer(InputSource src) const;
     bool IsDisplaySlotVisible(size_t slot) const;
     bool DetectAudioLike(const float* src, size_t total, size_t window);

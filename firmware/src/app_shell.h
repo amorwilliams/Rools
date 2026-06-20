@@ -44,8 +44,8 @@ enum class AppSwitchPhase : uint8_t {
 /** 一列控制：Knob K + CV In */
 struct ControlColumn {
     float knob;  // 0..1 normalized
-    float cv;    // -1..1 or 0..1 per App
-    float sum;   // hardware-summed equivalent
+    float cv;    // -1..1 normalized by board/cv_reference (center/gain/invert applied)
+    float sum;   // hardware-summed equivalent; currently same as cv
 };
 
 /** CV 输出通道 */
@@ -192,5 +192,8 @@ private:
     /** 音频 ISR：对当前 buffer 应用 fade_gain_ */
     void ApplyOutputFade(float* outL, float* outR, size_t n);
 };
+
+/** 只读访问当前 shell 的四列控制输入（音频 ISR 实时更新）。 */
+const ControlColumn* GetControlColumns();
 
 } // namespace rools

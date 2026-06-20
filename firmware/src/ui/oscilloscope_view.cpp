@@ -39,11 +39,15 @@ void OscilloscopeView::DrawGrid(Gfx& gfx, int top, int bottom) const
     }
 }
 
-int OscilloscopeView::SampleToY(float sample_norm, float volt_per_div, int grid_top, int grid_bottom) const
+int OscilloscopeView::SampleToY(float sample_norm,
+                                float volt_per_div,
+                                float full_scale_volts,
+                                int   grid_top,
+                                int   grid_bottom) const
 {
     const int grid_h      = grid_bottom - grid_top;
     const int mid_y       = grid_top + grid_h / 2;
-    const float v         = sample_norm * 5.0f; // Seed codec full-scale as +/-5V reference.
+    const float v         = sample_norm * full_scale_volts;
     const float divs      = v / volt_per_div;
     const float px_per_div = static_cast<float>(grid_h) / 8.0f;
     int         y         = static_cast<int>(std::lround(static_cast<float>(mid_y) - divs * px_per_div));
@@ -87,7 +91,11 @@ void OscilloscopeView::Draw(Gfx&                         gfx,
 
     if(state.trig_mode_label[0] != 'A')
     {
-        const int trig_y = SampleToY(state.trigger_level_v / 5.0f, state.volt_per_div, grid_top, grid_bottom);
+        const int trig_y = SampleToY(state.trigger_level_v / state.trigger_full_scale_volts,
+                                     state.volt_per_div,
+                                     state.trigger_full_scale_volts,
+                                     grid_top,
+                                     grid_bottom);
         gfx.DrawHLine(0, trig_y, Gfx::kWidth, trigger_active ? t.peak : t.border);
     }
 
@@ -102,11 +110,23 @@ void OscilloscopeView::Draw(Gfx&                         gfx,
             const Color565 wave_color = trace.selected ? trace.color : ScaleColor(trace.color, 1, 2);
             for(int x = 0; x < width; ++x)
             {
-                const int y_mean = SampleToY(trace.mean_samples[x], trace.volt_per_div, grid_top, grid_bottom);
+                const int y_mean = SampleToY(trace.mean_samples[x],
+                                             trace.volt_per_div,
+                                             trace.full_scale_volts,
+                                             grid_top,
+                                             grid_bottom);
                 if(state.peak_detect)
                 {
-                    const int y0    = SampleToY(trace.min_samples[x], trace.volt_per_div, grid_top, grid_bottom);
-                    const int y1    = SampleToY(trace.max_samples[x], trace.volt_per_div, grid_top, grid_bottom);
+                    const int y0 = SampleToY(trace.min_samples[x],
+                                            trace.volt_per_div,
+                                            trace.full_scale_volts,
+                                            grid_top,
+                                            grid_bottom);
+                    const int y1 = SampleToY(trace.max_samples[x],
+                                            trace.volt_per_div,
+                                            trace.full_scale_volts,
+                                            grid_top,
+                                            grid_bottom);
                     const int y_min = (y0 < y1) ? y0 : y1;
                     const int y_max = (y0 > y1) ? y0 : y1;
                     DrawThickV(x, y_min, y_max, wave_color);
@@ -115,7 +135,11 @@ void OscilloscopeView::Draw(Gfx&                         gfx,
                 else
                 {
                     const int nx  = (x + 1 < width) ? (x + 1) : x;
-                    const int y1n = SampleToY(trace.mean_samples[nx], trace.volt_per_div, grid_top, grid_bottom);
+                    const int y1n = SampleToY(trace.mean_samples[nx],
+                                              trace.volt_per_div,
+                                              trace.full_scale_volts,
+                                              grid_top,
+                                              grid_bottom);
                     DrawThickLine(x, y_mean, nx, y1n, wave_color);
                 }
             }

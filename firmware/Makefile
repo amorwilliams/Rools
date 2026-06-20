@@ -3,6 +3,7 @@ TARGET = rools
 CPP_SOURCES = \
 src/main.cpp \
 src/app_shell.cpp \
+src/board/cv_reference.cpp \
 src/board/enc_debug.cpp \
 src/display/st7735.cpp \
 src/display/gfx.cpp \

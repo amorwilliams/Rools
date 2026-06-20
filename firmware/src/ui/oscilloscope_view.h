@@ -18,6 +18,7 @@ struct OscilloscopeViewState {
     const char* render_mode_label;
     float       volt_per_div;
     float       trigger_level_v;
+    float       trigger_full_scale_volts;
     bool        peak_detect;
     int         main_top;
     int         main_bottom;
@@ -29,6 +30,7 @@ struct OscilloscopeTraceView {
     const float* min_samples;
     const float* max_samples;
     float       volt_per_div;
+    float       full_scale_volts;
     Color565    color;
     bool        has_signal;
     bool        visible;
@@ -45,7 +47,11 @@ public:
               bool                         trigger_active);
 
 private:
-    int  SampleToY(float sample_norm, float volt_per_div, int grid_top, int grid_bottom) const;
+    int  SampleToY(float sample_norm,
+                   float volt_per_div,
+                   float full_scale_volts,
+                   int   grid_top,
+                   int   grid_bottom) const;
     void DrawGrid(Gfx& gfx, int top, int bottom) const;
 };
 

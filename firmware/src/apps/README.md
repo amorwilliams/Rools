@@ -37,7 +37,7 @@ public:
 
 - `audio_callback` 必须实时安全：无 malloc、无 blocking IO
 - UI 在 `ui_draw` 或主循环低优先级刷新，目标 30 fps
-- 读 `AppShell::columns[i].sum` 获取 Knob+CV
+- 读 `AppShell::columns[i].cv/sum` 获取统一参考后的 CV（-1..1，见 `board/cv_reference.*`）
 - 写 `AppShell::cv_out` 设置 CV A–D（由 shell 送 DAC）
 
 ## App 切换（MFX 式）

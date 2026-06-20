@@ -1,11 +1,11 @@
 #include "apps/oscilloscope_app.h"
 
-#include <algorithm>
 #include <cmath>
 #include <cstdio>
+#include <cstring>
 
 #include "display/theme.h"
-#include "sys/system.h"
+#include "board/cv_reference.h"
 #include "ui/layout_view.h"
 
 namespace rools {
@@ -104,6 +104,18 @@ static Color565 TraceColor(size_t slot)
     return kTraceColors[slot % OscilloscopeApp::kMaxDisplayTraces];
 }
 
+static float SourceFullScaleVolts(OscilloscopeApp::InputSource src)
+{
+    switch(src)
+    {
+    case OscilloscopeApp::InputSource::Cv1:
+    case OscilloscopeApp::InputSource::Cv2:
+    case OscilloscopeApp::InputSource::Cv3:
+    case OscilloscopeApp::InputSource::Cv4: return kCvFullScaleVolts;
+    default: return kAudioFullScaleVolts;
+    }
+}
+
 static OscilloscopeApp::InputSource BoundSourceForSlot(OscilloscopeApp::PriorityMode mode, size_t slot)
 {
     if(slot >= OscilloscopeApp::kMaxDisplayTraces)
@@ -133,8 +145,6 @@ void OscilloscopeApp::on_enter()
     std::snprintf(top_hint_, sizeof(top_hint_), "Oscilloscope");
     for(size_t s = 0; s < kInputSourceCount; ++s)
     {
-        trace_active_[s]        = false;
-        trace_hold_until_ms_[s] = 0;
         for(size_t i = 0; i < kScopeBufSize; ++i)
             input_buffers_[s][i] = 0.f;
     }
@@ -183,12 +193,17 @@ void OscilloscopeApp::audio_callback(const float* inL,
             continue;
 
         decimate_phase_ = 0;
+        const ControlColumn* cols = GetControlColumns();
+        const float cv1 = cols ? cols[0].cv : 0.f;
+        const float cv2 = cols ? cols[1].cv : 0.f;
+        const float cv3 = cols ? cols[2].cv : 0.f;
+        const float cv4 = cols ? cols[3].cv : 0.f;
         input_buffers_[static_cast<size_t>(InputSource::Audio1)][write_idx_] = l;
         input_buffers_[static_cast<size_t>(InputSource::Audio2)][write_idx_] = r;
-        input_buffers_[static_cast<size_t>(InputSource::Cv1)][write_idx_]    = 0.f;
-        input_buffers_[static_cast<size_t>(InputSource::Cv2)][write_idx_]    = 0.f;
-        input_buffers_[static_cast<size_t>(InputSource::Cv3)][write_idx_]    = 0.f;
-        input_buffers_[static_cast<size_t>(InputSource::Cv4)][write_idx_]    = 0.f;
+        input_buffers_[static_cast<size_t>(InputSource::Cv1)][write_idx_]    = cv1;
+        input_buffers_[static_cast<size_t>(InputSource::Cv2)][write_idx_]    = cv2;
+        input_buffers_[static_cast<size_t>(InputSource::Cv3)][write_idx_]    = cv3;
+        input_buffers_[static_cast<size_t>(InputSource::Cv4)][write_idx_]    = cv4;
         write_idx_ = (write_idx_ + 1) % kScopeBufSize;
         if(sample_count_ < kScopeBufSize)
             ++sample_count_;
@@ -202,102 +217,13 @@ const float* OscilloscopeApp::SourceBuffer(InputSource src) const
     return input_buffers_[static_cast<size_t>(src)];
 }
 
-bool OscilloscopeApp::IsCablePresentGPIO(InputSource, bool& known) const
-{
-    known = false;
-    return false;
-}
-
-bool OscilloscopeApp::IsSignalActiveADC(InputSource src) const
-{
-    if(src == InputSource::None || sample_count_ < 16)
-        return false;
-
-    const float* src_buf = SourceBuffer(src);
-    if(!src_buf)
-        return false;
-
-    const size_t window = std::min<size_t>(sample_count_, 128);
-    float        peak   = 0.f;
-    float        sum_sq = 0.f;
-    for(size_t i = 0; i < window; ++i)
-    {
-        const size_t idx = (write_idx_ + kScopeBufSize - 1 - i) % kScopeBufSize;
-        const float  v   = src_buf[idx];
-        const float  a   = std::fabs(v);
-        if(a > peak)
-            peak = a;
-        sum_sq += v * v;
-    }
-    const float rms = std::sqrt(sum_sq / static_cast<float>(window));
-    return peak > 0.02f || rms > 0.01f;
-}
-
-bool OscilloscopeApp::IsActive(InputSource src, uint32_t now_ms)
-{
-    if(src == InputSource::None)
-        return false;
-
-    bool gpio_known = false;
-    bool active     = false;
-    if(IsCablePresentGPIO(src, gpio_known))
-    {
-        active = true;
-    }
-    else if(gpio_known)
-    {
-        active = false;
-    }
-    else
-    {
-        active = IsSignalActiveADC(src);
-    }
-
-    const size_t idx      = static_cast<size_t>(src);
-    const float  hold_ms  = 120.0f;
-    if(active)
-    {
-        trace_active_[idx]        = true;
-        trace_hold_until_ms_[idx] = now_ms + static_cast<uint32_t>(hold_ms);
-    }
-    else if(trace_active_[idx] && now_ms < trace_hold_until_ms_[idx])
-    {
-        active = true;
-    }
-    else
-    {
-        trace_active_[idx] = false;
-    }
-    return active;
-}
-
 void OscilloscopeApp::UpdateDisplayRouting()
 {
-    const uint32_t now = daisy::System::GetNow();
-    InputSource    next_src[kMaxDisplayTraces]
-        = {InputSource::None, InputSource::None, InputSource::None, InputSource::None};
-    bool next_has_signal[kMaxDisplayTraces] = {false, false, false, false};
     const InputSource* fixed_slots = (priority_mode_ == PriorityMode::AudioFirst) ? kAudioFixedSlots : kCvFixedSlots;
-
     for(size_t slot = 0; slot < kMaxDisplayTraces; ++slot)
     {
-        const InputSource src = fixed_slots[slot];
-        if(IsActive(src, now))
-        {
-            next_src[slot]        = src;
-            next_has_signal[slot] = true;
-        }
-        else
-        {
-            next_src[slot]        = InputSource::None;
-            next_has_signal[slot] = false;
-        }
-    }
-
-    for(size_t i = 0; i < kMaxDisplayTraces; ++i)
-    {
-        display_traces_[i]           = next_src[i];
-        display_trace_has_signal_[i] = next_has_signal[i];
+        display_traces_[slot]           = fixed_slots[slot];
+        display_trace_has_signal_[slot] = true;
     }
 
     if(selected_trace_idx_ >= kMaxDisplayTraces)
@@ -446,13 +372,14 @@ bool OscilloscopeApp::FindTriggerStart(const float* src,
                                        size_t       total,
                                        size_t       window,
                                        size_t&      start,
-                                       float&       subsample) const
+                                       float&       subsample,
+                                       float        full_scale_volts) const
 {
     subsample = 0.f;
     if(total < window + 2 || window < 2)
         return false;
 
-    const float  level = trigger_level_ / 5.0f;
+    const float  level = trigger_level_ / full_scale_volts;
     const float  hys   = 0.02f; // ~100mV hysteresis around level.
     const float  low   = level - hys;
     const float  high  = level + hys;
@@ -554,7 +481,8 @@ void OscilloscopeApp::CaptureWindow()
 
     const InputSource trigger_src = IsDisplaySlotVisible(trigger_source_slot_) ? display_traces_[trigger_source_slot_]
                                                                                : InputSource::None;
-    const float* trig_buf = SourceBuffer(trigger_src);
+    const float*      trig_buf    = SourceBuffer(trigger_src);
+    const float       trig_scale  = SourceFullScaleVolts(trigger_src);
 
     const bool norm_like_mode = (trigger_mode_ != TriggerMode::Auto);
     bool       use_roll_mode  = false;
@@ -567,7 +495,8 @@ void OscilloscopeApp::CaptureWindow()
     trigger_hit_       = false;
     if(!use_roll_mode)
     {
-        trigger_hit_ = trig_buf && FindTriggerStart(trig_buf, end_linear, window, start_linear, trigger_subsample_);
+        trigger_hit_ = trig_buf
+                       && FindTriggerStart(trig_buf, end_linear, window, start_linear, trigger_subsample_, trig_scale);
         if(!trigger_hit_)
         {
             if(norm_like_mode)
@@ -584,7 +513,7 @@ void OscilloscopeApp::CaptureWindow()
     {
         size_t probe_start = start_linear;
         float  probe_sub   = 0.f;
-        trigger_hit_       = FindTriggerStart(trig_buf, end_linear, window, probe_start, probe_sub);
+        trigger_hit_ = FindTriggerStart(trig_buf, end_linear, window, probe_start, probe_sub, trig_scale);
     }
 
     if(mid_ms_per_div > 20.0f && mid_ms_per_div < 100.0f)
@@ -614,7 +543,16 @@ void OscilloscopeApp::CaptureWindow()
         {
             const float* src = SourceBuffer(display_traces_[slot]);
             if(!src)
+            {
+                trace_dc_mean_[slot] = 0.f;
+                for(size_t x = 0; x < draw_cols_; ++x)
+                {
+                    draw_mean_[slot][x] = 0.f;
+                    draw_min_[slot][x]  = 0.f;
+                    draw_max_[slot][x]  = 0.f;
+                }
                 continue;
+            }
             for(size_t x = 0; x < draw_cols_; ++x)
             {
                 const float center = start_pos + (static_cast<float>(x) + 0.5f) * step;
@@ -624,46 +562,56 @@ void OscilloscopeApp::CaptureWindow()
                 draw_max_[slot][x]  = v;
             }
         }
-        return;
     }
-
-    for(size_t slot = 0; slot < kMaxDisplayTraces; ++slot)
+    else
     {
-        const float* src = SourceBuffer(display_traces_[slot]);
-        if(!src)
-            continue;
-        for(size_t x = 0; x < draw_cols_; ++x)
+        for(size_t slot = 0; slot < kMaxDisplayTraces; ++slot)
         {
-            size_t l0 = static_cast<size_t>(start_pos + static_cast<float>(x) * step);
-            size_t l1 = static_cast<size_t>(start_pos + static_cast<float>(x + 1) * step);
-            if(l1 <= l0)
-                l1 = l0 + 1;
-            if(l1 > end_linear)
-                l1 = end_linear;
+            const float* src = SourceBuffer(display_traces_[slot]);
+            if(!src)
+            {
+                trace_dc_mean_[slot] = 0.f;
+                for(size_t x = 0; x < draw_cols_; ++x)
+                {
+                    draw_mean_[slot][x] = 0.f;
+                    draw_min_[slot][x]  = 0.f;
+                    draw_max_[slot][x]  = 0.f;
+                }
+                continue;
+            }
+            for(size_t x = 0; x < draw_cols_; ++x)
+            {
+                size_t l0 = static_cast<size_t>(start_pos + static_cast<float>(x) * step);
+                size_t l1 = static_cast<size_t>(start_pos + static_cast<float>(x + 1) * step);
+                if(l1 <= l0)
+                    l1 = l0 + 1;
+                if(l1 > end_linear)
+                    l1 = end_linear;
 
-            float  min_v = 1e9f;
-            float  max_v = -1e9f;
-            float  sum   = 0.f;
-            size_t cnt   = 0;
-            for(size_t l = l0; l < l1; ++l)
-            {
-                const size_t idx = (s_render_write_idx + kScopeBufSize + l - total) % kScopeBufSize;
-                const float  v   = src[idx];
-                if(v < min_v)
-                    min_v = v;
-                if(v > max_v)
-                    max_v = v;
-                sum += v;
-                ++cnt;
+                float  min_v = 1e9f;
+                float  max_v = -1e9f;
+                float  sum   = 0.f;
+                size_t cnt   = 0;
+                for(size_t l = l0; l < l1; ++l)
+                {
+                    const size_t idx = (s_render_write_idx + kScopeBufSize + l - total) % kScopeBufSize;
+                    const float  v   = src[idx];
+                    if(v < min_v)
+                        min_v = v;
+                    if(v > max_v)
+                        max_v = v;
+                    sum += v;
+                    ++cnt;
+                }
+                if(cnt == 0)
+                {
+                    min_v = 0.f;
+                    max_v = 0.f;
+                }
+                draw_min_[slot][x]  = min_v;
+                draw_max_[slot][x]  = max_v;
+                draw_mean_[slot][x] = (cnt == 0) ? 0.f : (sum / static_cast<float>(cnt));
             }
-            if(cnt == 0)
-            {
-                min_v = 0.f;
-                max_v = 0.f;
-            }
-            draw_min_[slot][x]  = min_v;
-            draw_max_[slot][x]  = max_v;
-            draw_mean_[slot][x] = (cnt == 0) ? 0.f : (sum / static_cast<float>(cnt));
         }
     }
 
@@ -675,7 +623,8 @@ void OscilloscopeApp::CaptureWindow()
             float sum = 0.f;
             for(size_t x = 0; x < draw_cols_; ++x)
                 sum += draw_mean_[slot][x];
-            trace_dc_mean_[slot] = sum * inv_cols * 5.0f; // normalized sample -> volts
+            trace_dc_mean_[slot]
+                = (sum * inv_cols) * SourceFullScaleVolts(display_traces_[slot]);
         }
     }
 }
@@ -770,6 +719,9 @@ void OscilloscopeApp::ui_draw(const LayoutMetrics& layout)
     std::snprintf(volt_label, sizeof(volt_label), "%.11s", volt_full);
     BuildFocusValueText();
 
+    const InputSource trigger_src = IsDisplaySlotVisible(trigger_source_slot_)
+                                        ? display_traces_[trigger_source_slot_]
+                                        : InputSource::None;
     const OscilloscopeViewState state{
         !hold_,
         hold_,
@@ -784,6 +736,7 @@ void OscilloscopeApp::ui_draw(const LayoutMetrics& layout)
         use_peak_detect_ ? "PEAK" : "SAMPLE",
         kVoltScalesPerDiv[trace_cfg_[trigger_source_slot_].volt_idx],
         trigger_level_,
+        SourceFullScaleVolts(trigger_src),
         use_peak_detect_,
         layout.main_top,
         layout.main_bottom,
@@ -798,8 +751,9 @@ void OscilloscopeApp::ui_draw(const LayoutMetrics& layout)
         traces[slot].mean_samples = draw_mean_[slot];
         traces[slot].min_samples  = draw_min_[slot];
         traces[slot].max_samples  = draw_max_[slot];
-        traces[slot].volt_per_div = kVoltScalesPerDiv[trace_cfg_[slot].volt_idx];
-        traces[slot].color        = TraceColor(slot);
+        traces[slot].volt_per_div      = kVoltScalesPerDiv[trace_cfg_[slot].volt_idx];
+        traces[slot].full_scale_volts  = SourceFullScaleVolts(display_traces_[slot]);
+        traces[slot].color             = TraceColor(slot);
         traces[slot].has_signal   = display_trace_has_signal_[slot];
         traces[slot].visible      = IsDisplaySlotVisible(slot);
         traces[slot].selected     = (slot == selected_trace_idx_);
@@ -963,39 +917,41 @@ bool OscilloscopeApp::current_top_hint(Gfx& gfx, const char*& out_text) const
     const size_t slot = selected_trace_idx_ % kMaxDisplayTraces;
     const bool   has_signal = display_trace_has_signal_[slot];
     const Color565 trace_color = TraceColor(slot);
-    char status_text[16];
-    char mean_text[8];
+    char mean_text[16];
+    char mode_text[8];
     const char* trig_short = trigger_mode_ == TriggerMode::Auto   ? "A"
                              : trigger_mode_ == TriggerMode::Rise ? "R"
                                                                    : "F";
     const InputSource bound_src = BoundSourceForSlot(priority_mode_, slot);
     std::snprintf(top_hint_, sizeof(top_hint_), "%s", SourceName(bound_src));
     {
-        const int scaled = static_cast<int>(std::lround(trace_dc_mean_[slot] * 10.0f));
+        const int scaled = static_cast<int>(std::lround(trace_dc_mean_[slot] * 100.0f));
         const char sign  = (scaled >= 0) ? '+' : '-';
         const int  abs_v = std::abs(scaled);
-        const int  iv    = abs_v / 10;
-        const int  fv    = abs_v % 10;
-        std::snprintf(mean_text, sizeof(mean_text), "%c%d.%d", sign, iv, fv);
+        const int  iv    = abs_v / 100;
+        const int  fv    = abs_v % 100;
+        std::snprintf(mean_text, sizeof(mean_text), "M %c%d.%02d", sign, iv, fv);
     }
-    std::snprintf(status_text,
-                  sizeof(status_text),
-                  "%s %s %s M%s",
+    std::snprintf(mode_text,
+                  sizeof(mode_text),
+                  "%s %c",
                   hold_ ? "HLD" : "LIV",
-                  use_peak_detect_ ? "PEK" : "SMP",
-                  trig_short,
-                  mean_text);
+                  trig_short[0]);
 
     if(has_signal)
     {
         gfx.DrawString(2, 2, top_hint_, trace_color, t.bg);
-        gfx.DrawString(82, 2, status_text, t.fg, t.bg);
+        gfx.DrawString(44, 2, mode_text, t.fg, t.bg);
+        const int mean_x = Gfx::kWidth - static_cast<int>(std::strlen(mean_text)) * 6 - 2;
+        gfx.DrawString(mean_x, 2, mean_text, trace_color, t.bg);
     }
     else
     {
         gfx.FillRect(0, 0, Gfx::kWidth, LayoutView::kTopBarHeight, trace_color);
         gfx.DrawString(2, 2, top_hint_, t.bg, trace_color);
-        gfx.DrawString(82, 2, status_text, t.bg, trace_color);
+        gfx.DrawString(44, 2, mode_text, t.bg, trace_color);
+        const int mean_x = Gfx::kWidth - static_cast<int>(std::strlen(mean_text)) * 6 - 2;
+        gfx.DrawString(mean_x, 2, mean_text, t.bg, trace_color);
     }
 
     out_text = nullptr;

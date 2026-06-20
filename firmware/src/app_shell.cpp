@@ -1,6 +1,7 @@
 #include "app_shell.h"
 
 #include "apps/app_registry.h"
+#include "board/cv_reference.h"
 #include "board/pins.h"
 #include "daisy_seed.h"
 #include "display/gfx.h"
@@ -31,6 +32,8 @@ static volatile uint8_t enc_b_press_events = 0; // bit0 rise, bit1 fall
 static volatile uint8_t btn_events         = 0; // bit0 rise, bit1 fall
 static constexpr uint8_t kEventRise        = 0x01;
 static constexpr uint8_t kEventFall        = 0x02;
+static AdcChannelConfig cv_adc_cfg[4];
+static constexpr size_t kCvChannelCount = 4;
 
 static void AudioCallback(AudioHandle::InputBuffer  in,
                           AudioHandle::OutputBuffer out,
@@ -57,6 +60,17 @@ static void AudioCallback(AudioHandle::InputBuffer  in,
         btn_events |= kEventFall;
 
     if(shell_instance)
+    {
+        for(size_t i = 0; i < kCvChannelCount; ++i)
+        {
+            const float uni = hw.adc.GetFloat(static_cast<int>(i)); // 0..1 from ADC range
+            const float cv  = CvAdcToNormalized(uni);
+            shell_instance->columns[i].cv  = cv;
+            shell_instance->columns[i].sum = cv;
+        }
+    }
+
+    if(shell_instance)
         shell_instance->process_audio(in[0], in[1], out[0], out[1], size);
 }
 
@@ -65,6 +79,13 @@ void AppShell::init()
     shell_instance = this;
 
     hw.Init();
+
+    cv_adc_cfg[0].InitSingle(pins::kCv1Adc);
+    cv_adc_cfg[1].InitSingle(pins::kCv2Adc);
+    cv_adc_cfg[2].InitSingle(pins::kCv3Adc);
+    cv_adc_cfg[3].InitSingle(pins::kCv4Adc);
+    hw.adc.Init(cv_adc_cfg, 4);
+    hw.adc.Start();
 
     display.Init();
 
@@ -364,6 +385,13 @@ void AppShell::apply_mono_out(float* outL, float* outR, size_t n)
 
     for(size_t i = 0; i < n; i++)
         outR[i] = outL[i];
+}
+
+const ControlColumn* GetControlColumns()
+{
+    if(!shell_instance)
+        return nullptr;
+    return shell_instance->columns;
 }
 
 } // namespace rools
