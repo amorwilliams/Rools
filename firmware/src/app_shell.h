@@ -48,7 +48,7 @@ struct ControlColumn {
     float sum;   // hardware-summed equivalent; currently same as cv
 };
 
-/** CV 输出通道 */
+/** CV 输出通道(A–D); norm -1..1, 0=0V Eurorack(经 MCP4728+运放) */
 struct CvOutputs {
     float a, b, c, d;
 };

@@ -166,172 +166,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:D_Schottky"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "D_Schottky"
-				(at 0 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Schottky diode"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "diode Schottky"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "D_Schottky_0_1"
-				(polyline
-					(pts
-						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "D_Schottky_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:FerriteBead"
 			(pin_numbers
 				(hide yes)
@@ -798,6 +632,172 @@
 					(at 0 -3.81 90)
 					(length 1.27)
 					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Diode:1N5819"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "1N5819"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+				(at 0 -4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "40V 1A Schottky Barrier Rectifier Diode, DO-41"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode Schottky"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "D*DO?41*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "1N5819_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "1N5819_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1552,145 +1552,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+3.3V"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "+3.3V"
-				(at 0 3.556 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "+3.3V_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+3.3V_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+5V"
 			(power global)
 			(pin_numbers
@@ -2234,6 +2095,12 @@
 		(uuid "0e67eb80-cbfe-4d76-b766-459a069c68f2")
 	)
 	(junction
+		(at 132.08 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "118990fd-3a07-43e6-9818-e2dc5724db6f")
+	)
+	(junction
 		(at 137.16 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2256,6 +2123,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "29a97b13-6c00-420d-bec2-2650e6e369d0")
+	)
+	(junction
+		(at 189.23 135.89)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3160fb75-ece3-4ec2-81a9-698b377af285")
 	)
 	(junction
 		(at 128.27 106.68)
@@ -2306,10 +2179,10 @@
 		(uuid "665d024e-a9d8-49cc-8181-6dc373ac17d7")
 	)
 	(junction
-		(at 132.08 57.15)
+		(at 219.71 121.92)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "72400084-7c6a-4709-90e3-1878911466dc")
+		(uuid "683d1424-62cd-4f1c-b0c5-497275a963da")
 	)
 	(junction
 		(at 93.98 106.68)
@@ -2322,12 +2195,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "77043ebb-f1f4-40ca-ae67-fee62e3d320b")
-	)
-	(junction
-		(at 219.71 121.92)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7880ad41-5b12-41b5-9c14-a72e1d43ebce")
 	)
 	(junction
 		(at 128.27 121.92)
@@ -2366,12 +2233,6 @@
 		(uuid "e99c478b-38ff-4ed2-99bc-7c439dbb3a8a")
 	)
 	(junction
-		(at 189.23 135.89)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ee90af01-3027-4075-b7ed-73f33b4d64b9")
-	)
-	(junction
 		(at 106.68 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2382,6 +2243,16 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fc6e515d-8720-49b2-b438-f84e7eaddaac")
+	)
+	(wire
+		(pts
+			(xy 219.71 135.89) (xy 219.71 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0307bcc9-c464-4fd3-96d9-859c15c618bc")
 	)
 	(wire
 		(pts
@@ -2645,7 +2516,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 52.07) (xy 132.08 57.15)
+			(xy 132.08 49.53) (xy 132.08 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2695,7 +2566,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 113.03) (xy 204.47 114.3)
+			(xy 204.47 110.49) (xy 204.47 114.3)
 		)
 		(stroke
 			(width 0)
@@ -3115,7 +2986,7 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 115.57) (xy 219.71 121.92)
+			(xy 219.71 110.49) (xy 219.71 121.92)
 		)
 		(stroke
 			(width 0)
@@ -3133,6 +3004,30 @@
 		)
 		(uuid "fec3dcfb-a524-45bb-82e2-c9cb637918c2")
 	)
+	(global_label "+3V3_DAC"
+		(shape input)
+		(at 132.08 49.53 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bd4fdaa0-e7cc-46ba-8d63-0d6d9f7286ac")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.8365 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 166.37 137.16 180)
@@ -3145,7 +3040,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0b03e794-fc5a-4b69-b8bc-119435c09af6")
-		(property "Reference" "#FLG04"
+		(property "Reference" "#FLG05"
 			(at 166.37 139.065 0)
 			(hide yes)
 			(show_name no)
@@ -3205,7 +3100,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "#FLG04")
+					(reference "#FLG05")
 					(unit 1)
 				)
 			)
@@ -3222,7 +3117,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "150d5be6-8ed1-488a-8a04-f21b82e9fb1d")
-		(property "Reference" "R3"
+		(property "Reference" "R1"
 			(at 150.368 121.92 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3286,7 +3181,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "R3")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -3304,7 +3199,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1511e02c-708a-4318-bb67-f82b7e395b3c")
-		(property "Reference" "C9"
+		(property "Reference" "C6"
 			(at 135.89 59.6899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3368,7 +3263,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "C9")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -3385,7 +3280,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "27533c6e-8b85-476c-b6a2-b2dec7a753ae")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR08"
 			(at 153.67 149.098 0)
 			(hide yes)
 			(show_name no)
@@ -3444,7 +3339,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "#PWR02")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -3462,7 +3357,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "28ad2ced-5a14-4fc3-aca7-d7578dc53ee7")
-		(property "Reference" "#FLG06"
+		(property "Reference" "#FLG02"
 			(at 93.98 139.065 0)
 			(hide yes)
 			(show_name no)
@@ -3522,7 +3417,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "#FLG06")
+					(reference "#FLG02")
 					(unit 1)
 				)
 			)
@@ -3539,7 +3434,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2a13e00f-ec08-41e8-b545-0581cabf3b47")
-		(property "Reference" "R1"
+		(property "Reference" "R4"
 			(at 198.12 128.524 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3601,7 +3496,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "R1")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -3609,7 +3504,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 219.71 135.89 0)
+		(at 219.71 138.43 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3619,8 +3514,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2bbe47d2-93e6-4a61-a7ca-ec63ef28cd2c")
-		(property "Reference" "#PWR03"
-			(at 219.71 142.24 0)
+		(property "Reference" "#PWR011"
+			(at 219.71 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3631,7 +3526,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 219.71 140.97 0)
+			(at 219.71 143.51 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3641,7 +3536,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 219.71 135.89 0)
+			(at 219.71 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3652,7 +3547,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 219.71 135.89 0)
+			(at 219.71 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3663,7 +3558,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 219.71 135.89 0)
+			(at 219.71 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3679,7 +3574,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "#PWR03")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -3696,7 +3591,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "30a64c29-a4ef-49e3-828c-61d8a755f3ed")
-		(property "Reference" "R4"
+		(property "Reference" "R2"
 			(at 155.448 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3760,14 +3655,14 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "R4")
+					(reference "R2")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky")
+		(lib_id "Diode:1N5819")
 		(at 119.38 137.16 0)
 		(unit 1)
 		(body_style 1)
@@ -3787,7 +3682,7 @@
 				)
 			)
 		)
-		(property "Value" "NSR1020MW2T3G"
+		(property "Value" "1N5819"
 			(at 118.364 133.35 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3797,7 +3692,18 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+			(at 119.38 141.605 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
 			(at 119.38 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -3808,19 +3714,9 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Description" "40V 1A Schottky Barrier Rectifier Diode, DO-41"
 			(at 119.38 137.16 0)
 			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 119.38 137.16 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3846,7 +3742,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 204.47 113.03 180)
+		(at 204.47 110.49 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3854,9 +3750,11 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "322d1025-c9ef-45e4-be98-933cfa398e47")
-		(property "Reference" "#PWR05"
-			(at 204.47 106.172 0)
+		(fields_autoplaced yes)
+		(uuid "33981475-de25-4d3c-a55d-1cce5576beea")
+		(property "Reference" "#PWR09"
+			(at 204.47 104.14 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3866,7 +3764,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 204.47 108.458 0)
+			(at 204.47 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3876,7 +3774,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 204.47 113.03 0)
+			(at 204.47 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3887,7 +3785,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 204.47 113.03 0)
+			(at 204.47 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3897,8 +3795,9 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 204.47 113.03 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 204.47 110.49 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3908,12 +3807,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "eaff0058-6b29-4b52-bc64-f9b687dfd0cd")
+			(uuid "730257e9-5cc0-44f9-a3f1-84620b791a27")
 		)
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "#PWR05")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -3930,7 +3829,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "37d25027-8e91-4666-9608-3c59c0a90652")
-		(property "Reference" "C3"
+		(property "Reference" "C9"
 			(at 180.086 105.41 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3991,7 +3890,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "C3")
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -4008,7 +3907,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3fbc40b3-d75d-4608-a828-13348951f6d6")
-		(property "Reference" "U1"
+		(property "Reference" "U2"
 			(at 166.37 113.284 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4081,7 +3980,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "U1")
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -4176,7 +4075,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4963c42f-b5d5-469b-8f2b-4a1e98e36926")
-		(property "Reference" "C4"
+		(property "Reference" "C5"
 			(at 131.064 127.254 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4237,7 +4136,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "C4")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -4255,7 +4154,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4c8137ca-911a-4681-acc8-51a6ab2c28e0")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR05"
 			(at 135.89 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -4315,7 +4214,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "#PWR07")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -4411,7 +4310,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7e8ff3a8-2921-4c24-926a-b8b6a3890679")
-		(property "Reference" "C7"
+		(property "Reference" "C1"
 			(at 82.55 60.9599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4475,7 +4374,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "C7")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -4493,7 +4392,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "816a120b-6b1e-42aa-a06f-0189bbc14742")
-		(property "Reference" "C10"
+		(property "Reference" "C3"
 			(at 120.65 59.6899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4557,7 +4456,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "C10")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -4575,7 +4474,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "864c6684-d5a3-4940-bd4e-c62284443fdb")
-		(property "Reference" "C8"
+		(property "Reference" "C2"
 			(at 93.98 60.9599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4639,7 +4538,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "C8")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -4656,7 +4555,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "86bcdc08-d3d5-46cb-93bd-7b9724730f31")
-		(property "Reference" "C6"
+		(property "Reference" "C8"
 			(at 139.954 127.254 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4717,7 +4616,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "C6")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -4734,7 +4633,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "86c6e207-93a3-4069-a801-a39e392b7a9b")
-		(property "Reference" "C2"
+		(property "Reference" "C10"
 			(at 209.042 117.094 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4795,7 +4694,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "C2")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -4812,7 +4711,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9374f5fb-66ce-42f5-9ca9-bf11233f6e6a")
-		(property "Reference" "R2"
+		(property "Reference" "R3"
 			(at 191.008 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4876,7 +4775,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "R2")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -4893,7 +4792,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "94c364ca-e774-4eb0-bea6-8a4473245ca9")
-		(property "Reference" "C1"
+		(property "Reference" "C4"
 			(at 131.064 112.014 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4954,7 +4853,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "C1")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -4972,7 +4871,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "95fa0863-e988-4dff-b261-e64d508d97ab")
-		(property "Reference" "U2"
+		(property "Reference" "U1"
 			(at 106.68 50.8 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5043,7 +4942,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "U2")
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -5060,7 +4959,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9a266285-6601-468c-8fff-2230b65f4069")
-		(property "Reference" "C5"
+		(property "Reference" "C7"
 			(at 139.954 112.014 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5121,7 +5020,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "C5")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -5129,7 +5028,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 219.71 115.57 0)
+		(at 219.71 110.49 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5139,8 +5038,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a88f89c4-f6e4-4bcc-849a-8d3e8c7b3c2b")
-		(property "Reference" "#PWR01"
-			(at 219.71 119.38 0)
+		(property "Reference" "#PWR010"
+			(at 219.71 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5151,7 +5050,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 219.71 110.49 0)
+			(at 219.71 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5161,7 +5060,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 219.71 115.57 0)
+			(at 219.71 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5172,7 +5071,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 219.71 115.57 0)
+			(at 219.71 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5183,7 +5082,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 219.71 115.57 0)
+			(at 219.71 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5199,14 +5098,14 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "#PWR01")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky")
+		(lib_id "Diode:1N5819")
 		(at 119.38 106.68 0)
 		(mirror y)
 		(unit 1)
@@ -5227,7 +5126,7 @@
 				)
 			)
 		)
-		(property "Value" "NSR1020MW2T3G"
+		(property "Value" "1N5819"
 			(at 120.396 102.87 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5237,7 +5136,18 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+			(at 119.38 111.125 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
 			(at 119.38 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -5248,19 +5158,9 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Description" "40V 1A Schottky Barrier Rectifier Diode, DO-41"
 			(at 119.38 106.68 0)
 			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 119.38 106.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5296,7 +5196,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b2f17a41-207b-4f42-ae36-6deefc1bd804")
-		(property "Reference" "#FLG03"
+		(property "Reference" "#FLG04"
 			(at 159.385 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -5357,85 +5257,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "#FLG03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 132.08 52.07 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b7f60d00-8767-48eb-9d50-7fab25d38bc7")
-		(property "Reference" "#PWR09"
-			(at 132.08 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 132.08 46.99 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 132.08 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 132.08 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 132.08 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0f886c69-c2af-47ba-b868-01b88b387076")
-		)
-		(instances
-			(project "rools-core"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "#PWR09")
+					(reference "#FLG04")
 					(unit 1)
 				)
 			)
@@ -5453,7 +5275,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bc0b2f7f-3125-4115-b595-73e9345c7f7e")
-		(property "Reference" "#FLG02"
+		(property "Reference" "#FLG06"
 			(at 221.615 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -5514,7 +5336,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "#FLG02")
+					(reference "#FLG06")
 					(unit 1)
 				)
 			)
@@ -5532,7 +5354,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "be636199-3a48-45e0-870f-59cf82f731d2")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR07"
 			(at 137.16 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -5592,7 +5414,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "#PWR06")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -5610,7 +5432,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bf33fdd6-503a-45e4-a668-8a0387dc209a")
-		(property "Reference" "#FLG01"
+		(property "Reference" "#FLG03"
 			(at 139.065 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -5671,7 +5493,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "#FLG01")
+					(reference "#FLG03")
 					(unit 1)
 				)
 			)
@@ -5688,7 +5510,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c1b30a64-0bb2-4a2d-9f9a-6c437744d7b2")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR06"
 			(at 137.16 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -5748,7 +5570,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "#PWR04")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -5928,7 +5750,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d6bd2961-5c36-452b-9ff7-69dd5da03a63")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR04"
 			(at 78.74 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -5988,7 +5810,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "#PWR08")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -6006,7 +5828,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "eb130014-e80a-4548-9c5a-cf639e8d85d5")
-		(property "Reference" "#FLG05"
+		(property "Reference" "#FLG01"
 			(at 93.98 104.775 0)
 			(hide yes)
 			(show_name no)
@@ -6066,7 +5888,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/93f4332e-1360-4c3a-9be4-5a5bc27a1424"
-					(reference "#FLG05")
+					(reference "#FLG01")
 					(unit 1)
 				)
 			)

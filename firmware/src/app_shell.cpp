@@ -1,6 +1,8 @@
 #include "app_shell.h"
 
 #include "apps/app_registry.h"
+#include "board/cv_calibration.h"
+#include "board/cv_out.h"
 #include "board/cv_reference.h"
 #include "board/pins.h"
 #include "daisy_seed.h"
@@ -9,6 +11,7 @@
 #include "board/enc_debug.h"
 #include "hid/encoder.h"
 #include "hid/switch.h"
+#include "settings/settings_store.h"
 #include "ui/app_menu_view.h"
 #include "ui/layout_view.h"
 
@@ -33,7 +36,25 @@ static volatile uint8_t btn_events         = 0; // bit0 rise, bit1 fall
 static constexpr uint8_t kEventRise        = 0x01;
 static constexpr uint8_t kEventFall        = 0x02;
 static AdcChannelConfig cv_adc_cfg[4];
-static constexpr size_t kCvChannelCount = 4;
+static CvReferenceConfig g_cv_cfg[kCvChannelCount];
+static CvOutDriver       cv_out_drv;
+
+static void LoadCvConfigFromSettings()
+{
+    GlobalSettings& s = SettingsStore::Instance().Get();
+    for(size_t i = 0; i < kCvChannelCount; ++i)
+        g_cv_cfg[i] = CvCalToConfig(s.cv[i]);
+}
+
+static void PersistLastApp(size_t index)
+{
+    GlobalSettings& s = SettingsStore::Instance().Get();
+    if(s.last_app_index != static_cast<uint32_t>(index))
+    {
+        s.last_app_index = static_cast<uint32_t>(index);
+        SettingsStore::Instance().MarkDirty();
+    }
+}
 
 static void AudioCallback(AudioHandle::InputBuffer  in,
                           AudioHandle::OutputBuffer out,
@@ -64,7 +85,7 @@ static void AudioCallback(AudioHandle::InputBuffer  in,
         for(size_t i = 0; i < kCvChannelCount; ++i)
         {
             const float uni = hw.adc.GetFloat(static_cast<int>(i)); // 0..1 from ADC range
-            const float cv  = CvAdcToNormalized(uni);
+            const float cv  = CvAdcToNormalized(uni, g_cv_cfg[i]);
             shell_instance->columns[i].cv  = cv;
             shell_instance->columns[i].sum = cv;
         }
@@ -87,15 +108,25 @@ void AppShell::init()
     hw.adc.Init(cv_adc_cfg, 4);
     hw.adc.Start();
 
+    SettingsStore::Instance().Init(hw.qspi);
+    SettingsStore::InitPowerFailDetection();
+    LoadCvConfigFromSettings();
+
     display.Init();
 
     enc_a.Init(pins::kEncA_A, pins::kEncA_B, pins::kEncA_Sw);
     enc_b.Init(pins::kEncB_A, pins::kEncB_B, pins::kEncB_Sw);
     btn_center.Init(pins::kBtnCenter);
 
+    cv_out_drv.Init();
+    cv_out       = CvOutputs{0.f, 0.f, 0.f, 0.f};
+
     AppRegistry::BindUi(&gfx);
 
-    load_app(0); // M1：boot 立即加载；运行时切换用 request_app_switch()
+    size_t boot_index = SettingsStore::Instance().Get().last_app_index;
+    if(boot_index >= AppRegistry::Count())
+        boot_index = 0;
+    load_app(boot_index); // boot 进入上次 app；运行时切换用 request_app_switch()
 
     hw.StartAudio(AudioCallback);
 }
@@ -128,6 +159,7 @@ void AppShell::run_forever()
         __enable_irq();
 
         const uint32_t now = System::GetNow();
+        SettingsStore::Instance().Tick(now);
         bool           ui_dirty = false;
 
         const GestureFrameInput gesture_input{
@@ -185,6 +217,7 @@ void AppShell::run_forever()
             }
         }
         System::Delay(1);
+        cv_out_drv.Apply(cv_out);
     }
 }
 
@@ -268,6 +301,7 @@ bool AppShell::load_app(size_t index)
     switch_phase_  = AppSwitchPhase::Idle;
     fade_gain_     = 1.f;
     current_->on_enter();
+    PersistLastApp(index);
     return true;
 }
 
@@ -335,6 +369,7 @@ void AppShell::CommitAppSwitch()
     current_index_ = pending_index_;
     pending_index_ = kInvalidAppIndex;
     current_->on_enter();
+    PersistLastApp(current_index_);
 
     // TODO(M3): switch_phase_ = AppSwitchPhase::FadingIn;
     switch_phase_ = AppSwitchPhase::Idle;
@@ -392,6 +427,29 @@ const ControlColumn* GetControlColumns()
     if(!shell_instance)
         return nullptr;
     return shell_instance->columns;
+}
+
+float GetCvAdcRaw(size_t ch)
+{
+    if(ch >= kCvChannelCount)
+        return 0.f;
+    return hw.adc.GetFloat(static_cast<int>(ch));
+}
+
+void SetCvChannelCal(size_t ch, const CvCalibration& cal)
+{
+    if(ch >= kCvChannelCount)
+        return;
+    GlobalSettings& s = SettingsStore::Instance().Get();
+    s.cv[ch]          = cal;
+    g_cv_cfg[ch]      = CvCalToConfig(cal);
+    SettingsStore::Instance().MarkDirty();
+}
+
+const CvCalibration& GetCvChannelCal(size_t ch)
+{
+    GlobalSettings& s = SettingsStore::Instance().Get();
+    return s.cv[ch >= kCvChannelCount ? 0 : ch];
 }
 
 } // namespace rools

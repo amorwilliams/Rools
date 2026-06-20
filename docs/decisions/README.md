@@ -17,6 +17,7 @@ Architecture Decision Records — 记录已确认的设计决策。
 | [ADR-012](ADR-012-display-spi-dma.md) | 显示 SPI DMA 与局部刷新 | 已接受 |
 | [ADR-013](ADR-013-mechanical-depth.md) | 模块深度与机械布局 | 已接受 |
 | [ADR-014](ADR-014-pcb-4-layer.md) | 4 层 PCB 叠层与分区 | 已接受 |
+| [ADR-015](ADR-015-settings-persistence.md) | 设置持久化与 Flash 磨损策略 | 已接受 |
 
 ## 如何新增 ADR
 

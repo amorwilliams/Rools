@@ -683,7 +683,7 @@
         "uuid": "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
       }
     ],
-    "used_designators": "#G27549e1-2,#J2,#PWR13-17",
+    "used_designators": "P1,L1,#GSW1,#FLG1-7,U_Daisy1,#Gfb482e1,RV1-4,J_CV_1-8,J_CV_OUT_1-5,J1-5,#G27549e1-3,#PWR1-57,D1-6,SW1-3,FB1-2,U1-8,C1-32,R1-63",
     "variants": []
   },
   "sheets": [
@@ -692,8 +692,16 @@
       "rools-core"
     ],
     [
+      "5303161d-9629-4121-9b8d-eb317bf3612e",
+      "Seed"
+    ],
+    [
       "93f4332e-1360-4c3a-9be4-5a5bc27a1424",
       "Power"
+    ],
+    [
+      "ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31",
+      "CV"
     ],
     [
       "de2894c0-6401-42e6-937c-98dc0f3f6845",
@@ -702,14 +710,6 @@
     [
       "f04b212c-120a-4768-a529-443de5f485ec",
       "UI"
-    ],
-    [
-      "5303161d-9629-4121-9b8d-eb317bf3612e",
-      "Seed"
-    ],
-    [
-      "ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31",
-      "CV"
     ]
   ],
   "text_variables": {

@@ -28,6 +28,13 @@ Boot → AppShell → AppMenu → [当前 App]
 | CVRouter | CV A–D 输出分配 |
 | ClockSync | CV3/CV4 边沿检测（App 可选） |
 | UsbStorage | FAT32、样本/预设/OTA（HAS_EXP） |
+| SettingsStore | `GlobalSettings` QSPI 环缓持久化；见 [ADR-015](decisions/ADR-015-settings-persistence.md) |
+
+## 设置持久化
+
+- `SettingsStore`：`Init` 读环缓 / 迁移旧格式 → RAM；`MarkDirty` + `Tick` 节流落盘；`Flush` 强制写
+- CV 校准、切 App 等关键路径显式 `Flush`
+- 掉电保存：M2 PCB 预留 `OnPowerFail()`；面包板见 ADR-015
 
 ## 输入采集约束（必须遵守）
 

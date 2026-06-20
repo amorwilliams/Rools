@@ -1114,28 +1114,12 @@
 		(uuid "02b94949-fb45-4c18-856d-ef4c45a0e5d6")
 	)
 	(no_connect
-		(at 172.72 106.68)
-		(uuid "1328009d-e2cc-4a28-aec6-6a0bc7afd15b")
-	)
-	(no_connect
-		(at 91.44 106.68)
-		(uuid "14a902e1-7074-4c92-bccd-ab67246bbf7d")
-	)
-	(no_connect
-		(at 91.44 81.28)
-		(uuid "8ecd2fb4-eebd-424d-a887-81ea98546d87")
+		(at 91.44 73.66)
+		(uuid "5f579009-1e1b-4245-8820-54c4a614ebad")
 	)
 	(no_connect
 		(at 172.72 81.28)
 		(uuid "8fa1f752-ba17-488c-8598-206d023a87f3")
-	)
-	(no_connect
-		(at 91.44 109.22)
-		(uuid "c4daee3f-1444-464d-81ff-d1ba1fddee9e")
-	)
-	(no_connect
-		(at 172.72 109.22)
-		(uuid "edc3e09f-50a1-4d9b-91a1-66ccb9436397")
 	)
 	(wire
 		(pts
@@ -1602,7 +1586,7 @@
 		)
 	)
 	(global_label "AUDIO_OUT_R"
-		(shape passive)
+		(shape output)
 		(at 91.44 119.38 180)
 		(effects
 			(font
@@ -1733,6 +1717,30 @@
 			)
 		)
 	)
+	(global_label "KNOB3_ADC"
+		(shape input)
+		(at 172.72 104.14 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "42524d9b-a89f-435c-900d-633e50d42f76")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 186.807 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "SAI2_FS"
 		(shape output)
 		(at 172.72 88.9 0)
@@ -1757,7 +1765,7 @@
 	)
 	(global_label "ENC_A_A"
 		(shape input)
-		(at 91.44 73.66 180)
+		(at 91.44 76.2 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1766,7 +1774,7 @@
 		)
 		(uuid "5fe4716a-aee2-47e3-be5a-2e3d26fd775e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 91.44 73.66 0)
+			(at 91.44 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1779,7 +1787,7 @@
 	)
 	(global_label "ENC_A_SW"
 		(shape input)
-		(at 91.44 78.74 180)
+		(at 91.44 81.28 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1788,7 +1796,7 @@
 		)
 		(uuid "72de3b51-4a91-443e-9002-aba12919d2eb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 91.44 78.74 0)
+			(at 91.44 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1822,7 +1830,7 @@
 		)
 	)
 	(global_label "AUDIO_IN_R"
-		(shape passive)
+		(shape input)
 		(at 91.44 114.3 180)
 		(effects
 			(font
@@ -1840,6 +1848,30 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+	)
+	(global_label "KNOB4_ADC"
+		(shape input)
+		(at 172.72 101.6 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9da2817e-a7ca-4519-85b5-989e11dcb26b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 186.807 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -1889,16 +1921,16 @@
 	)
 	(global_label "ENC_B_B"
 		(shape input)
-		(at 172.72 101.6 0)
+		(at 91.44 109.22 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "ab807fa7-2cd5-400f-ae8c-0f3aa981afb5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 172.72 101.6 0)
+			(at 91.44 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1955,16 +1987,16 @@
 	)
 	(global_label "ENC_B_A"
 		(shape input)
-		(at 172.72 104.14 0)
+		(at 91.44 106.68 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "bd72493a-c001-452f-8639-43e63598b6b6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 172.72 104.14 0)
+			(at 91.44 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1997,8 +2029,80 @@
 			)
 		)
 	)
+	(global_label "KNOB2_ADC"
+		(shape input)
+		(at 172.72 106.68 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c7a551c9-974b-42b6-8892-dc99f96a6316")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 186.807 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "+3V3_D"
+		(shape output)
+		(at 172.72 78.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ceed1576-d152-439a-8998-7f75239dacae")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 183.1179 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "KNOB1_ADC"
+		(shape input)
+		(at 172.72 109.22 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d320c180-20cf-47d4-8ba2-29d926e1ea25")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 186.807 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "AUDIO_OUT_L"
-		(shape passive)
+		(shape output)
 		(at 91.44 116.84 180)
 		(effects
 			(font
@@ -2043,7 +2147,7 @@
 	)
 	(global_label "ENC_A_B"
 		(shape input)
-		(at 91.44 76.2 180)
+		(at 91.44 78.74 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2052,7 +2156,7 @@
 		)
 		(uuid "dd9c6451-2c44-481d-ab9a-4473f262f9da")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 91.44 76.2 0)
+			(at 91.44 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2086,7 +2190,7 @@
 		)
 	)
 	(global_label "AUDIO_IN_L"
-		(shape passive)
+		(shape input)
 		(at 91.44 111.76 180)
 		(effects
 			(font
@@ -2126,6 +2230,30 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+	)
+	(global_label "+3V3_A"
+		(shape output)
+		(at 172.72 121.92 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f7491360-7264-4bca-8b33-4866a8aac847")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 182.9365 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -2184,7 +2312,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6950f2ed-9279-4774-a554-47f10d12f8fa")
-		(property "Reference" "U_Daisy"
+		(property "Reference" "U_Daisy1"
 			(at 132.08 68.58 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2361,7 +2489,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/5303161d-9629-4121-9b8d-eb317bf3612e"
-					(reference "U_Daisy")
+					(reference "U_Daisy1")
 					(unit 1)
 				)
 			)
@@ -2379,7 +2507,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "774aa44e-4fc8-471d-8e38-9aa7484c053d")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR03"
 			(at 186.69 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -2439,7 +2567,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/5303161d-9629-4121-9b8d-eb317bf3612e"
-					(reference "#PWR010")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -2457,7 +2585,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b1fa3d03-3ed4-4301-854d-8575b49b99eb")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR01"
 			(at 91.44 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -2517,7 +2645,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/5303161d-9629-4121-9b8d-eb317bf3612e"
-					(reference "#PWR012")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -2535,7 +2663,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c2b6317a-4afe-4c5b-a952-903f9ca3706e")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR02"
 			(at 168.91 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -2596,7 +2724,7 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/5303161d-9629-4121-9b8d-eb317bf3612e"
-					(reference "#PWR011")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)

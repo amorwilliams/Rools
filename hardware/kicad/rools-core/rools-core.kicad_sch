@@ -30,7 +30,6 @@
 		(uuid "5303161d-9629-4121-9b8d-eb317bf3612e")
 		(property "Sheetname" "Seed"
 			(at 189.23 72.9486 0)
-			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -51,6 +50,13 @@
 				(justify left top)
 			)
 		)
+		(instances
+			(project "rools-core"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(page "1")
+				)
+			)
+		)
 	)
 	(sheet
 		(at 127 73.66)
@@ -59,7 +65,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -88,6 +93,13 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(instances
+			(project "rools-core"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(page "2")
+				)
 			)
 		)
 	)
@@ -129,6 +141,13 @@
 				(justify left top)
 			)
 		)
+		(instances
+			(project "rools-core"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(page "3")
+				)
+			)
+		)
 	)
 	(sheet
 		(at 127 107.95)
@@ -168,6 +187,13 @@
 				(justify left top)
 			)
 		)
+		(instances
+			(project "rools-core"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(page "4")
+				)
+			)
+		)
 	)
 	(sheet
 		(at 127 140.97)
@@ -205,6 +231,13 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(instances
+			(project "rools-core"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(page "5")
+				)
 			)
 		)
 	)

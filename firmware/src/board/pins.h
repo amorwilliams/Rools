@@ -25,6 +25,8 @@ constexpr Pin kLcdDc     = daisy::seed::D9; // SPI_MISO
 constexpr Pin kLcdMosi   = daisy::seed::D10; // SPI_MOSI
 
 // I2C (codec + MCP4728) — D11–D12, Seed pins 12–13 — wired on Audio sheet
+constexpr Pin kI2cScl = daisy::seed::D11;
+constexpr Pin kI2cSda = daisy::seed::D12;
 
 // CV in (K+jack sum) — D15–D18, Seed pins 22–25
 constexpr Pin kCv1Adc = daisy::seed::D15;
@@ -38,6 +40,8 @@ constexpr Pin kEncB_B  = daisy::seed::D22;
 constexpr Pin kEncB_Sw = daisy::seed::D23;
 
 // SAI2 (PCM3060) — D24–D28, Seed pins 31–35 — wired on Audio sheet
+
+// TODO(M2 PCB): kPwrFail = daisy::seed::D13; // EXTI, comparator on +5V hold-up
 
 } // namespace pins
 } // namespace rools

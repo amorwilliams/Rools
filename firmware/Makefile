@@ -4,7 +4,10 @@ CPP_SOURCES = \
 src/main.cpp \
 src/app_shell.cpp \
 src/board/cv_reference.cpp \
+src/board/cv_calibration.cpp \
+src/board/cv_out.cpp \
 src/board/enc_debug.cpp \
+src/settings/settings_store.cpp \
 src/display/st7735.cpp \
 src/display/gfx.cpp \
 src/dsp/fft_analyzer.cpp \
@@ -16,6 +19,7 @@ src/ui/bottom_bar_view.cpp \
 src/ui/app_menu_view.cpp \
 src/ui/layout_view.cpp \
 src/apps/app_registry.cpp \
+src/apps/calibration_app.cpp \
 src/apps/display_test_app.cpp \
 src/apps/oscilloscope_app.cpp \
 src/apps/spectrum_app.cpp
