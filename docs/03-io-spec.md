@@ -12,7 +12,7 @@
 | 方向 | 输入 |
 | 耦合 | DC 固定 |
 | 电压 | Eurorack ±10V（调理至 ADC 量程） |
-| Knob | K1–K4 硬件求和（Patch 方案） |
+| Knob | K1–K4 **分路 ADC**（D19–D22）；`sum` 固件合成（[ADR-017](decisions/ADR-017-split-adc-knob-cv-sum.md)） |
 | 默认语义 | K1/K2 主参数；K3 Clock；K4 Trig（App 可重映射） |
 
 ## CV 输出（A–D）
@@ -32,7 +32,7 @@
 | 耦合 | 硬件 DC；软件 AC/DC 可选 |
 | 电压 | Eurorack ±10V |
 | **Mono** | **IN_R normalled 到 IN_L**（R 孔空 = R 通道 = L） |
-| Codec | 外置（PCM3060 类） |
+| Codec | **Seed 板载**（pin 16–19）+ TL074 ±10V |
 
 ## 音频输出（OUT_L / OUT_R）
 

@@ -48,4 +48,10 @@ float CvNormalizedToVolts(float normalized, float full_scale_volts)
     return normalized * full_scale_volts;
 }
 
+float ColumnSumNormalized(float cv_norm, float knob_uni)
+{
+    const float knob_bip = (knob_uni - 0.5f) * 2.f;
+    return ClampBipolar(cv_norm + knob_bip);
+}
+
 } // namespace rools

@@ -32,7 +32,7 @@
 
 | 类型 | 数量 |
 |------|------|
-| CV In | 4（CV1–CV4，DC，Knob 求和） |
+| CV In | 4（CV1–CV4，DC）+ 4 Knob（K1–K4）分路 ADC，固件合成 |
 | CV Out | 4（A–D，外置 MCP4728） |
 | Audio In | 2（IN_L / IN_R，AC/DC 可选） |
 | Audio Out | 2（OUT_L / OUT_R，AC/DC 可选） |
@@ -44,7 +44,7 @@
 | 项目 | 预估值 |
 |------|--------|
 | +12V | 150–200 mA（Core）；+50–100 mA（Exp USB Host） |
-| -12V | 视 Codec 负轨需求 |
+| -12V | Seed 板载音频负轨（TL074 ±10V 调理） |
 | +5V | **模块内部 Buck 自 +12V 产生**（不用机箱 +5V；禁线性 7805 主路径） |
 
 电流预算与 USB 限流见 [ADR-011](decisions/ADR-011-power-supply.md)。
@@ -57,7 +57,7 @@
 | MCU | STM32H750，480 MHz |
 | RAM | 64 MB SDRAM |
 | Flash | 8 MB |
-| 音频 | 48 kHz / 24-bit（经外置 Codec，libDaisy 默认） |
+| 音频 | 48 kHz / 24-bit（Seed 板载 Codec + TL074，[ADR-016](decisions/ADR-016-onboard-audio-no-pcm3060.md)） |
 
 ## 功能路线图
 

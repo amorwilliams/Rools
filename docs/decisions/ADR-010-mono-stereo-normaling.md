@@ -30,22 +30,22 @@
 
 ## 硬件接法（Thonkiconn / PJ398SM）
 
-使用 **3.5 mm 立体声插座带 normalize 簧片**（如 Thonkiconn PJ398SM、PJ301M-12 等，以 KiCad 库为准）：
+KiCad 网 **`IN_L_NORM`**：
 
 ```
-IN_L Tip  ──► Codec Left In
-IN_R Tip  ──► Codec Right In
-IN_L Tip  ──► IN_R Switch（normalize）
+J_CV_5 (IN_L) Tip ──► TL074 / Seed Left In
+J_CV_6 (IN_R) Tip ──► TL074 / Seed Right In
+J_CV_5 (IN_L) Tip ──► J_CV_6 (IN_R) Switch  （net: IN_L_NORM）
 ```
 
-- **IN_R 未插线**：Switch 闭合，IN_R Tip = IN_L 信号 → Codec 右声道 = 左声道
+- **IN_R 未插线**：Switch 闭合，IN_R 收到 IN_L 信号 → 右声道 = 左声道
 - **IN_R 插入**：Switch 断开，IN_R 仅接收自己的 Tip
 - **无需软件检测**；`MonoMode::Auto` 信任此硬件行为
 
-Sleeve / Ring：按 Eurorack mono 惯例接地；具体以 Codec 前端单端/差分方案为准。
+Sleeve：按 Eurorack mono 惯例接地。
 
 ## 待验证
 
-- [ ] KiCad 网表：IN_R Switch 脚连 IN_L Tip
+- [x] KiCad 网表：`IN_L_NORM`（J_CV_5 Tip ↔ J_CV_6 Switch）
 - [ ] 示波器：空插 R 时 R 通道波形 = L
 - [ ] 插入 R 后 R 独立

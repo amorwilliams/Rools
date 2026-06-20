@@ -4,7 +4,7 @@
 
 - [libDaisy](https://daisy.audio/software/) + DaisySP
 - C++17
-- 48 kHz stereo audio callback（float，Codec 24-bit）
+- 48 kHz stereo audio callback（float，Seed 板载 24-bit）
 
 ## 单 App 模式
 
@@ -24,7 +24,7 @@ Boot → AppShell → AppMenu → [当前 App]
 |------|------|
 | AudioEngine | I/O、Mono 复制、AC/DC 高通、callback 分发 |
 | UIRenderer | ST7735 菜单/波形/频谱；**SPI DMA + 局部刷新**（[ADR-012](decisions/ADR-012-display-spi-dma.md)） |
-| IOMapper | K1–K4 + CV1–CV4 列映射 |
+| IOMapper | 8 路 ADC（4 CV + 4 Knob）→ 4 列 `ControlColumn`（`knob`/`cv`/`sum` 软件合成） |
 | CVRouter | CV A–D 输出分配 |
 | ClockSync | CV3/CV4 边沿检测（App 可选） |
 | UsbStorage | FAT32、样本/预设/OTA（HAS_EXP） |
@@ -61,9 +61,9 @@ class App {
 ## 音频流
 
 ```
-Codec In (L,R) → [耦合/Mono] → App::audio_callback → [耦合/Mono out] → Codec Out
+Seed onboard In (L,R) → [耦合/Mono] → App::audio_callback → [耦合/Mono out] → Seed onboard Out
                                       ↑
-                              K1–K4, CV1–CV4 (控制率)
+                              columns[0..3] knob/cv/sum（控制率，AudioCallback 更新）
 ```
 
 ## USB 目录（Exp）

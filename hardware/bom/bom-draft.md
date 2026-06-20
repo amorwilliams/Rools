@@ -7,9 +7,8 @@
 |  Ref | 件 | 数量 | 备注 |
 |------|-----|------|------|
 | U1 | Daisy Seed | 1 | 64MB SDRAM 版 |
-| U2 | PCM3060 或 CS4272 等 | 1 | Eurorack 音频 Codec |
-| U3 | MCP4728 | 1 | 4ch I2C DAC |
-| U4 | ST7735 1.77" IPS | 1 | 160×128，SPI |
+| U2 | MCP4728 | 1 | 4ch I2C DAC（CV Out） |
+| U3 | ST7735 1.77" IPS | 1 | 160×128，SPI |
 | — | STM32 USB Host PHY / 5V switch | 1 | 视 Seed OTG 设计 |
 
 ## 模拟 / 电源
@@ -20,7 +19,7 @@
 | — | **+12V → +5V Buck** | 1 | ≥1 A；**禁 7805/1117 主路径**（[ADR-011](../../docs/decisions/ADR-011-power-supply.md)） |
 | — | +5V → +3.3V LDO | 1 | 压差小可 LDO |
 | — | USB VBUS 限流开关 | 1 | ~500 mA；Exp Host（[ADR-011](../../docs/decisions/ADR-011-power-supply.md)） |
-| — | 运放（CV in/out 调理） | 若干 | OPA1612 等 |
+| — | 运放 | 若干 | **TL074**（音频 ±10V）；**MCP6004**（CV/Knob 前端） |
 | — | 保护/TVS | 若干 | CV/Audio 输入 |
 
 ## 控件
@@ -54,7 +53,7 @@
 | 类别 | USD（估） |
 |------|----------|
 | Daisy Seed | ~30 |
-| 屏 + Codec + DAC | ~25–40 |
+| 屏 + MCP4728 + 运放 | ~15–25 |
 | 被动/运放/电源 | ~15–25 |
 | 控件+孔 | ~20–30 |
 | PCB+面板 | ~30–50 |

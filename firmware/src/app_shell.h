@@ -41,11 +41,11 @@ enum class AppSwitchPhase : uint8_t {
     FadingIn,
 };
 
-/** 一列控制：Knob K + CV In */
+/** 物理列 i = CVi jack + KNOBi pot；语义不由 AppShell 绑定，由各 App 决定 */
 struct ControlColumn {
-    float knob;  // 0..1 normalized
-    float cv;    // -1..1 normalized by board/cv_reference (center/gain/invert applied)
-    float sum;   // hardware-summed equivalent; currently same as cv
+    float knob; // 0..1，独立 Knob ADC
+    float cv;   // -1..1，独立 CV jack（board/cv_reference 标定）
+    float sum;  // cv + knob bipolar 合成（ADR-017）；App 可选用或忽略
 };
 
 /** CV 输出通道(A–D); norm -1..1, 0=0V Eurorack(经 MCP4728+运放) */

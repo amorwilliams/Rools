@@ -18,6 +18,8 @@ Architecture Decision Records — 记录已确认的设计决策。
 | [ADR-013](ADR-013-mechanical-depth.md) | 模块深度与机械布局 | 已接受 |
 | [ADR-014](ADR-014-pcb-4-layer.md) | 4 层 PCB 叠层与分区 | 已接受 |
 | [ADR-015](ADR-015-settings-persistence.md) | 设置持久化与 Flash 磨损策略 | 已接受 |
+| [ADR-016](ADR-016-onboard-audio-no-pcm3060.md) | 板载音频（无 PCM3060） | 已接受 |
+| [ADR-017](ADR-017-split-adc-knob-cv-sum.md) | CV/Knob 分路 ADC + 软件合成 | 已接受 |
 
 ## 如何新增 ADR
 

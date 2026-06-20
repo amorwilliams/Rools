@@ -35,7 +35,8 @@ static volatile uint8_t enc_b_press_events = 0; // bit0 rise, bit1 fall
 static volatile uint8_t btn_events         = 0; // bit0 rise, bit1 fall
 static constexpr uint8_t kEventRise        = 0x01;
 static constexpr uint8_t kEventFall        = 0x02;
-static AdcChannelConfig cv_adc_cfg[4];
+static constexpr size_t kAdcChannelCount = 8;
+static AdcChannelConfig adc_cfg[kAdcChannelCount];
 static CvReferenceConfig g_cv_cfg[kCvChannelCount];
 static CvOutDriver       cv_out_drv;
 
@@ -82,12 +83,16 @@ static void AudioCallback(AudioHandle::InputBuffer  in,
 
     if(shell_instance)
     {
+        // CV 与 Knob 为独立 ADC 通道；AppShell 只采集/标定，列用途由各 App 决定（见 ParamMap）。
         for(size_t i = 0; i < kCvChannelCount; ++i)
         {
-            const float uni = hw.adc.GetFloat(static_cast<int>(i)); // 0..1 from ADC range
-            const float cv  = CvAdcToNormalized(uni, g_cv_cfg[i]);
-            shell_instance->columns[i].cv  = cv;
-            shell_instance->columns[i].sum = cv;
+            // columns[i] 仅按硬件索引 i 对齐 CVi + KNOBi，无固定参数语义
+            const float cv_uni   = hw.adc.GetFloat(static_cast<int>(i));
+            const float knob_uni = hw.adc.GetFloat(static_cast<int>(kCvChannelCount + i));
+            const float cv       = CvAdcToNormalized(cv_uni, g_cv_cfg[i]);
+            shell_instance->columns[i].knob = knob_uni; // 0..1，App 自选是否使用
+            shell_instance->columns[i].cv   = cv;       // -1..1，App 自选是否使用
+            shell_instance->columns[i].sum  = ColumnSumNormalized(cv, knob_uni); // 便捷合成；App 可改用 knob/cv 分别读
         }
     }
 
@@ -101,11 +106,15 @@ void AppShell::init()
 
     hw.Init();
 
-    cv_adc_cfg[0].InitSingle(pins::kCv1Adc);
-    cv_adc_cfg[1].InitSingle(pins::kCv2Adc);
-    cv_adc_cfg[2].InitSingle(pins::kCv3Adc);
-    cv_adc_cfg[3].InitSingle(pins::kCv4Adc);
-    hw.adc.Init(cv_adc_cfg, 4);
+    adc_cfg[0].InitSingle(pins::kCv1Adc);
+    adc_cfg[1].InitSingle(pins::kCv2Adc);
+    adc_cfg[2].InitSingle(pins::kCv3Adc);
+    adc_cfg[3].InitSingle(pins::kCv4Adc);
+    adc_cfg[4].InitSingle(pins::kKnob1Adc);
+    adc_cfg[5].InitSingle(pins::kKnob2Adc);
+    adc_cfg[6].InitSingle(pins::kKnob3Adc);
+    adc_cfg[7].InitSingle(pins::kKnob4Adc);
+    hw.adc.Init(adc_cfg, kAdcChannelCount);
     hw.adc.Start();
 
     SettingsStore::Instance().Init(hw.qspi);
