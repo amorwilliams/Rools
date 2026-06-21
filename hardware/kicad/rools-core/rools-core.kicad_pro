@@ -725,7 +725,7 @@
         "uuid": "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
       }
     ],
-    "used_designators": "SW4,#PWR11",
+    "used_designators": "J_CV_IN_2-4,J_CV_OUT_2-7,JJ_AI_L2,J_AO_L1,J1,R66,SW2,SW4,J_AO_R1,J_AI_R1,#Gfb482e2-4,J_AI_L1,#PWR11",
     "variants": [
       {
         "name": "LCSC"

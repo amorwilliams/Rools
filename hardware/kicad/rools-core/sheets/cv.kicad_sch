@@ -1213,6 +1213,217 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector_Audio:AudioJack2_SwitchT"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "AudioJack2_SwitchT"
+				(at 0 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "audio jack receptacle mono headphones phone TS connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Jack*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "AudioJack2_SwitchT_0_1"
+				(rectangle
+					(start -2.54 0)
+					(end -3.81 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0.635 -0.635) (xy 1.27 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.778 -0.254) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 2.54 3.81)
+					(end -2.54 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy -0.635 2.54) (xy -0.635 0) (xy -1.27 -0.635) (xy -1.905 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 1.778 -2.54) (xy 1.778 -0.254) (xy 1.524 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "AudioJack2_SwitchT_1_1"
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "T"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "TN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -1898,308 +2109,6 @@
 						(effects
 							(font
 								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "patch-eagle:EURO_JACK_PJ301M-12"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at -2.54 4.064 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.778 1.5113)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" ""
-				(at -2.54 -6.096 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.778 1.5113)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "ES_Daisy_Patch_Rev8:PJ301M-12SLOT"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "EURO_JACK_PJ301M-12_1_0"
-				(polyline
-					(pts
-						(xy -2.54 2.54) (xy 0 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 0) (xy -0.762 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 -2.54) (xy 4.572 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 1.524) (xy -0.508 1.524)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.762 2.286) (xy -1.016 1.524)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.762 0) (xy -0.762 2.286)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.508 1.524) (xy -0.762 2.286)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 1.524 1.016)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.524 1.016) (xy 2.286 1.778)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 5.588 -2.794)
-					(end 4.572 2.794)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "GND"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "GND2"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "NORM"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "SW"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "NORM"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "SW2"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 2.54 0)
-					(length 2.54)
-					(name "TIP"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "TIP"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 2.54 0)
-					(length 2.54)
-					(name "TIP"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "TIP2"
-						(effects
-							(font
-								(size 0 0)
 							)
 						)
 					)
@@ -5920,8 +5829,8 @@
 		)
 	)
 	(symbol
-		(lib_id "patch-eagle:EURO_JACK_PJ301M-12")
-		(at 90.17 181.61 0)
+		(lib_id "Connector_Audio:AudioJack2_SwitchT")
+		(at 184.15 85.09 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5929,32 +5838,32 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0291ddac-8e8d-461a-a3a3-4f5c5ebbafa5")
-		(property "Reference" "J_CV_OUT_4"
-			(at 96.52 181.61 0)
+		(uuid "02b34389-9478-472d-b9d2-9753dff71319")
+		(property "Reference" "J_CV_IN_2"
+			(at 179.07 85.7249 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.778 1.5113)
+					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Value" ""
-			(at 87.63 187.706 0)
+		(property "Value" "AudioJack2_SwitchT"
+			(at 179.07 86.9949 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.778 1.5113)
+					(size 1.27 1.27)
 				)
-				(justify left bottom)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
-			(at 90.17 181.61 0)
+			(at 184.15 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5965,7 +5874,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 90.17 181.61 0)
+			(at 184.15 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5975,8 +5884,8 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 90.17 181.61 0)
+		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
+			(at 184.15 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5986,43 +5895,20 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 90.17 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
+		(pin "TN"
+			(uuid "d9caf789-8ffa-4564-82a7-cb7072758825")
 		)
-		(pin "TIP"
-			(uuid "cffd7043-cbeb-4690-9857-bd8c19fefe7b")
+		(pin "S"
+			(uuid "8e9fe07c-dab9-49a6-a8b9-58c5fe77afb6")
 		)
-		(pin "SW"
-			(uuid "820c4acc-7f58-4f39-bf95-8d93ad64df13")
-		)
-		(pin "SW2"
-			(uuid "8cf5a4f9-495a-4b77-abed-14b0c550c7d9")
-		)
-		(pin "GND"
-			(uuid "5c806ba9-296f-4526-ba98-849964f3bc6e")
-		)
-		(pin "TIP2"
-			(uuid "7fffb944-246e-4614-8dce-11858e8814f5")
-		)
-		(pin "GND2"
-			(uuid "ec8d7ec7-592f-44c0-a6d0-973b68e24f1a")
+		(pin "T"
+			(uuid "ffafec51-28d1-4b5c-ae10-b05b07afaf94")
 		)
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
-					(reference "J_CV_OUT_4")
+					(reference "J_CV_IN_2")
 					(unit 1)
-					(variant
-						(name "LCSC")
-					)
 				)
 			)
 		)
@@ -7489,8 +7375,8 @@
 		)
 	)
 	(symbol
-		(lib_id "patch-eagle:EURO_JACK_PJ301M-12")
-		(at 185.42 151.13 0)
+		(lib_id "Connector_Audio:AudioJack2_SwitchT")
+		(at 90.17 156.21 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -7500,30 +7386,32 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "3753fe3c-3b33-4b94-af32-5c1d28ce2b61")
-		(property "Reference" "J_CV_IN_4"
-			(at 183.9341 146.05 0)
+		(uuid "326cae79-e798-4ffc-8e1f-28097600d0f5")
+		(property "Reference" "J_CV_OUT_3"
+			(at 95.25 156.8449 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.778 1.5113)
+					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Value" ""
-			(at 187.96 157.226 0)
+		(property "Value" "AudioJack2_SwitchT"
+			(at 95.25 158.1149 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.778 1.5113)
+					(size 1.27 1.27)
 				)
-				(justify left bottom)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
-			(at 185.42 151.13 0)
+			(at 90.17 156.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7534,7 +7422,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 185.42 151.13 0)
+			(at 90.17 156.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7544,8 +7432,8 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 185.42 151.13 0)
+		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
+			(at 90.17 156.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7555,43 +7443,20 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 185.42 151.13 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
+		(pin "TN"
+			(uuid "68f57b5a-b491-4cd5-a6c9-f5e30bf45767")
 		)
-		(pin "TIP"
-			(uuid "e8593657-1b3e-4cad-8557-71282aa82acd")
+		(pin "S"
+			(uuid "36db0d43-18d6-4b6d-9b98-40cdbb1c53d7")
 		)
-		(pin "SW"
-			(uuid "f22b2239-5e7d-4f63-9442-c9ef4f436510")
-		)
-		(pin "SW2"
-			(uuid "9f8a51c3-3e28-4ead-915d-758dc9798dd6")
-		)
-		(pin "GND"
-			(uuid "813f813e-6ca6-49a9-b926-89d6c91a5844")
-		)
-		(pin "TIP2"
-			(uuid "a8c75dd3-15f0-4e4e-b557-461660a567a1")
-		)
-		(pin "GND2"
-			(uuid "e07614a2-92ec-4c4a-af31-679b530e3b9d")
+		(pin "T"
+			(uuid "b3b410d1-7ab0-4dcc-afeb-e121b1601275")
 		)
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
-					(reference "J_CV_IN_4")
+					(reference "J_CV_OUT_3")
 					(unit 1)
-					(variant
-						(name "LCSC")
-					)
 				)
 			)
 		)
@@ -7606,9 +7471,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "38c27c72-6f82-4ad3-b8c8-ac80174204e9")
 		(property "Reference" "RV3"
-			(at 134.366 31.496 90)
+			(at 137.16 31.7499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7618,8 +7484,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "R_Potentiometer"
-			(at 136.652 25.654 90)
+		(property "Value" "Knob"
+			(at 137.16 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7629,7 +7495,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK09L_Single_Vertical"
+		(property "Footprint" "Potentiometer_THT:RK09L_3pin_noMP"
 			(at 139.7 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -7994,114 +7860,6 @@
 		)
 	)
 	(symbol
-		(lib_id "patch-eagle:EURO_JACK_PJ301M-12")
-		(at 90.17 130.81 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "46a522f9-b14b-4250-b8d7-60b2daccdad8")
-		(property "Reference" "J_CV_OUT_2"
-			(at 96.52 130.81 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.778 1.5113)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" ""
-			(at 87.63 136.906 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.778 1.5113)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
-			(at 90.17 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 90.17 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 90.17 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 90.17 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "TIP"
-			(uuid "846f2327-4c38-4efd-a99a-660eda9d528e")
-		)
-		(pin "SW"
-			(uuid "24c3ce61-08a9-42ce-8043-ad952e9c42ad")
-		)
-		(pin "SW2"
-			(uuid "99f37d8d-66de-4e04-aecc-dcb684b745f2")
-		)
-		(pin "GND"
-			(uuid "b2bb7510-69b9-43de-ab67-e75a3c666e79")
-		)
-		(pin "TIP2"
-			(uuid "a703ea3d-d295-44e6-8284-deb74e7f3259")
-		)
-		(pin "GND2"
-			(uuid "b396eb2d-5a89-48a9-b84b-4812c176a516")
-		)
-		(instances
-			(project "rools-core"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
-					(reference "J_CV_OUT_2")
-					(unit 1)
-					(variant
-						(name "LCSC")
-					)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Amplifier_Operational:MCP6004")
 		(at 219.71 138.43 0)
 		(unit 4)
@@ -8310,6 +8068,91 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Audio:AudioJack2_SwitchT")
+		(at 185.42 151.13 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "47f7448b-f49f-4267-8b2d-a8468fe7a25b")
+		(property "Reference" "J_CV_IN_4"
+			(at 180.34 151.7649 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "AudioJack2_SwitchT"
+			(at 180.34 153.0349 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
+			(at 185.42 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
+			(at 185.42 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "TN"
+			(uuid "47280729-262f-4ce2-aa5f-7b97c894c281")
+		)
+		(pin "S"
+			(uuid "973b5a9e-7fd5-4647-959e-3d881af5880b")
+		)
+		(pin "T"
+			(uuid "96cbe931-521f-442a-a5e3-bd65f027c21e")
+		)
+		(instances
+			(project "rools-core"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
+					(reference "J_CV_IN_4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 198.12 82.55 90)
 		(unit 1)
@@ -8394,114 +8237,6 @@
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R26")
-					(unit 1)
-					(variant
-						(name "LCSC")
-					)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "patch-eagle:EURO_JACK_PJ301M-12")
-		(at 185.42 118.11 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "49b3d4e7-d656-4bd5-b5e1-8e7f222ed25f")
-		(property "Reference" "J_CV_IN_3"
-			(at 183.9341 113.03 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.778 1.5113)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 187.96 124.206 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.778 1.5113)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
-			(at 185.42 118.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 185.42 118.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 185.42 118.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 185.42 118.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "TIP"
-			(uuid "7bc93679-caf9-4f88-89cb-44c92edbe6c4")
-		)
-		(pin "SW"
-			(uuid "d4c83324-34d2-464f-8b02-d23dc39cb067")
-		)
-		(pin "SW2"
-			(uuid "ca8a56c6-8822-4651-9d1c-0f9e8d942f8c")
-		)
-		(pin "GND"
-			(uuid "c1397ffd-ffb4-4b1a-bc43-e478081a00ce")
-		)
-		(pin "TIP2"
-			(uuid "78fc82a7-1424-429f-b2ee-e5d37e15bdad")
-		)
-		(pin "GND2"
-			(uuid "9326df4e-59e0-411a-85ea-73a2125f1fce")
-		)
-		(instances
-			(project "rools-core"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
-					(reference "J_CV_IN_3")
 					(unit 1)
 					(variant
 						(name "LCSC")
@@ -8777,117 +8512,8 @@
 		)
 	)
 	(symbol
-		(lib_id "patch-eagle:EURO_JACK_PJ301M-12")
-		(at 184.15 85.09 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "559d6c75-feb6-43fd-858d-b93b710e4552")
-		(property "Reference" "J_CV_IN_2"
-			(at 182.6641 80.01 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.778 1.5113)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 186.69 91.186 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.778 1.5113)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
-			(at 184.15 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 184.15 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 184.15 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 184.15 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "TIP"
-			(uuid "7d1ec107-8be5-4d43-8f20-d9a3a40ae0be")
-		)
-		(pin "SW"
-			(uuid "6533577d-7a96-4d9f-80ff-65ced6aa9857")
-		)
-		(pin "SW2"
-			(uuid "63af24d5-e647-4e63-a5ee-fdd503d719de")
-		)
-		(pin "GND"
-			(uuid "a5671409-ad37-4bfa-8457-e31cdc5eaaa0")
-		)
-		(pin "TIP2"
-			(uuid "3346c1e0-ae30-4431-8348-ad223dafe78c")
-		)
-		(pin "GND2"
-			(uuid "a5a330b8-f121-4612-a156-a0989ed92486")
-		)
-		(instances
-			(project "rools-core"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
-					(reference "J_CV_IN_2")
-					(unit 1)
-					(variant
-						(name "LCSC")
-					)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "patch-eagle:EURO_JACK_PJ301M-12")
+		(lib_id "Connector_Audio:AudioJack2_SwitchT")
 		(at 184.15 52.07 0)
-		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8895,27 +8521,28 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5a131365-4ef1-4386-a3f2-683ca98bcdc6")
+		(uuid "54041ccd-ec99-4775-83c3-a0d702a6dcdc")
 		(property "Reference" "J_CV_IN_1"
-			(at 182.6641 46.99 0)
+			(at 179.07 52.7049 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.778 1.5113)
+					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Value" ""
-			(at 186.69 58.166 0)
+		(property "Value" "AudioJack2_SwitchT"
+			(at 179.07 53.9749 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.778 1.5113)
+					(size 1.27 1.27)
 				)
-				(justify left bottom)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
@@ -8940,7 +8567,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
 			(at 184.15 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -8951,43 +8578,20 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 184.15 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
+		(pin "TN"
+			(uuid "91573494-4f3d-45c8-9110-51a110a5ba34")
 		)
-		(pin "TIP"
-			(uuid "f1047658-08a6-4b28-b431-687794a3e7db")
+		(pin "S"
+			(uuid "ce44acc0-0ec4-49a0-adc8-90c51b312657")
 		)
-		(pin "SW"
-			(uuid "b4c471bc-7502-403a-aa5f-78a6a423ffff")
-		)
-		(pin "SW2"
-			(uuid "12ff4b63-874d-4d1e-9187-826529220df7")
-		)
-		(pin "GND"
-			(uuid "5ce610de-e4db-4494-8ea1-4c907d2005a4")
-		)
-		(pin "TIP2"
-			(uuid "e1386e1d-44cb-4354-acec-1a3006205fba")
-		)
-		(pin "GND2"
-			(uuid "f2a52d63-9481-4b0d-b153-5d039cbcd851")
+		(pin "T"
+			(uuid "ae0d8642-6728-45a4-a1c0-52c0660dfb10")
 		)
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "J_CV_IN_1")
 					(unit 1)
-					(variant
-						(name "LCSC")
-					)
 				)
 			)
 		)
@@ -9528,9 +9132,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "6a3a83ff-31d0-4e96-ba73-fd10454d504c")
 		(property "Reference" "RV4"
-			(at 159.766 31.496 90)
+			(at 162.56 31.7499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9540,8 +9145,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "R_Potentiometer"
-			(at 162.052 25.654 90)
+		(property "Value" "Knob"
+			(at 162.56 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9551,7 +9156,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK09L_Single_Vertical"
+		(property "Footprint" "Potentiometer_THT:RK09L_3pin_noMP"
 			(at 165.1 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -9659,9 +9264,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "6a7283e9-7d84-49a0-b652-60a7ef1d89b9")
 		(property "Reference" "RV2"
-			(at 108.966 31.496 90)
+			(at 111.76 31.7499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9671,8 +9277,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "R_Potentiometer"
-			(at 111.252 25.654 90)
+		(property "Value" "Knob"
+			(at 111.76 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9682,7 +9288,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK09L_Single_Vertical"
+		(property "Footprint" "Potentiometer_THT:RK09L_3pin_noMP"
 			(at 114.3 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -10471,6 +10077,91 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Audio:AudioJack2_SwitchT")
+		(at 185.42 118.11 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8007c506-ef6c-4a81-94f0-6e856c43c50b")
+		(property "Reference" "J_CV_IN_3"
+			(at 180.34 118.7449 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "AudioJack2_SwitchT"
+			(at 180.34 120.0149 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
+			(at 185.42 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
+			(at 185.42 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "TN"
+			(uuid "c97718c3-041e-418c-a85d-2df4a6eead5a")
+		)
+		(pin "S"
+			(uuid "99dfc65b-d798-47a1-8ad6-5d18f03d2c9c")
+		)
+		(pin "T"
+			(uuid "1ed6de05-9f78-46ec-af6a-4e20bd0e9403")
+		)
+		(instances
+			(project "rools-core"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
+					(reference "J_CV_IN_3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 41.91 138.43 90)
 		(unit 1)
@@ -10884,9 +10575,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "888fb801-7876-4411-9d19-d8172ddcb0a9")
 		(property "Reference" "RV1"
-			(at 82.296 31.496 90)
+			(at 85.09 31.7499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10896,8 +10588,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "R_Potentiometer"
-			(at 84.582 25.654 90)
+		(property "Value" "Knob"
+			(at 85.09 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10907,7 +10599,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK09L_Single_Vertical"
+		(property "Footprint" "Potentiometer_THT:RK09L_3pin_noMP"
 			(at 87.63 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -11450,114 +11142,6 @@
 		)
 	)
 	(symbol
-		(lib_id "patch-eagle:EURO_JACK_PJ301M-12")
-		(at 90.17 156.21 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9bd90e42-66d4-487e-bc35-4ad1c9357b67")
-		(property "Reference" "J_CV_OUT_3"
-			(at 96.52 156.21 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.778 1.5113)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" ""
-			(at 87.63 162.306 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.778 1.5113)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
-			(at 90.17 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 90.17 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 90.17 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 90.17 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "TIP"
-			(uuid "4555459f-730e-4aa0-b13a-39988aefa562")
-		)
-		(pin "SW"
-			(uuid "00e4f7fb-6d63-411a-8aaa-5b1098f0959e")
-		)
-		(pin "SW2"
-			(uuid "afe5be0d-449d-4ca3-8f62-f40e2894647c")
-		)
-		(pin "GND"
-			(uuid "ab771b62-a37c-4990-a30a-ff893208300c")
-		)
-		(pin "TIP2"
-			(uuid "b688d845-9ec7-4b6c-a633-ab4b53eda9ce")
-		)
-		(pin "GND2"
-			(uuid "439fe58d-1076-4e9f-b8ce-6e5e1cca9807")
-		)
-		(instances
-			(project "rools-core"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
-					(reference "J_CV_OUT_3")
-					(unit 1)
-					(variant
-						(name "LCSC")
-					)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 24.13 86.36 0)
 		(unit 1)
@@ -11630,6 +11214,93 @@
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "#PWR054")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Audio:AudioJack2_SwitchT")
+		(at 90.17 130.81 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9df2281c-f8ca-4c47-9205-d6d8de1b7238")
+		(property "Reference" "J_CV_OUT_2"
+			(at 95.25 131.4449 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "AudioJack2_SwitchT"
+			(at 95.25 132.7149 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
+			(at 90.17 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
+			(at 90.17 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "TN"
+			(uuid "6f6be305-79f6-4810-b8e2-b9e3c70a568e")
+		)
+		(pin "S"
+			(uuid "f24c9a5b-e9b4-417e-8e1c-d6cd5fb8a937")
+		)
+		(pin "T"
+			(uuid "c8a79d77-40b3-4a06-aedb-80ec38942737")
+		)
+		(instances
+			(project "rools-core"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
+					(reference "J_CV_OUT_2")
 					(unit 1)
 				)
 			)
@@ -12485,6 +12156,93 @@
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "#PWR056")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Audio:AudioJack2_SwitchT")
+		(at 90.17 181.61 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b56f2cb7-f496-4528-a518-d10cfa7d2b3f")
+		(property "Reference" "J_CV_OUT_4"
+			(at 95.25 182.2449 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "AudioJack2_SwitchT"
+			(at 95.25 183.5149 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
+			(at 90.17 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
+			(at 90.17 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "TN"
+			(uuid "9712e961-01fd-44b4-9f64-65efdc85006d")
+		)
+		(pin "S"
+			(uuid "ade1db08-13f0-4697-9b90-e3a567449973")
+		)
+		(pin "T"
+			(uuid "ba709a4c-b969-4168-9c55-ab05c6450861")
+		)
+		(instances
+			(project "rools-core"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
+					(reference "J_CV_OUT_4")
 					(unit 1)
 				)
 			)
@@ -14082,114 +13840,6 @@
 		)
 	)
 	(symbol
-		(lib_id "patch-eagle:EURO_JACK_PJ301M-12")
-		(at 90.17 105.41 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "dfe859ae-4736-4c94-abb9-06ab9ae34e5a")
-		(property "Reference" "J_CV_OUT_1"
-			(at 96.52 105.41 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.778 1.5113)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" ""
-			(at 87.63 111.506 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.778 1.5113)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
-			(at 90.17 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 90.17 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 90.17 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 90.17 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "TIP"
-			(uuid "c0ec580c-d074-4eed-8afe-bed85e5eca8c")
-		)
-		(pin "SW"
-			(uuid "6f6dee05-ad3f-4c15-a51a-e5e9c3d1023f")
-		)
-		(pin "SW2"
-			(uuid "4ec53d58-d464-4ccf-a509-451f14bba3e6")
-		)
-		(pin "GND"
-			(uuid "42107c22-4366-48ef-a198-1ef266230131")
-		)
-		(pin "TIP2"
-			(uuid "07492ca8-2cc6-4a41-b76f-3c8198e7fb01")
-		)
-		(pin "GND2"
-			(uuid "a4eff899-971f-41dd-a928-45b780ded159")
-		)
-		(instances
-			(project "rools-core"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
-					(reference "J_CV_OUT_1")
-					(unit 1)
-					(variant
-						(name "LCSC")
-					)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 41.91 181.61 90)
 		(unit 1)
@@ -14775,6 +14425,93 @@
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "#PWR018")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Audio:AudioJack2_SwitchT")
+		(at 90.17 105.41 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eff17a1a-285c-4208-96a5-8e3f0f3bdd05")
+		(property "Reference" "J_CV_OUT_1"
+			(at 95.25 106.0449 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "AudioJack2_SwitchT"
+			(at 95.25 107.3149 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
+			(at 90.17 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
+			(at 90.17 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "TN"
+			(uuid "eba883d5-1e8f-4cb2-834a-dfdf546bc45a")
+		)
+		(pin "S"
+			(uuid "dc7a02ec-d8cd-45db-b7a7-2f2708dee7c2")
+		)
+		(pin "T"
+			(uuid "17037953-803f-45ba-8a51-03a50bfb4af3")
+		)
+		(instances
+			(project "rools-core"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
+					(reference "J_CV_OUT_1")
 					(unit 1)
 				)
 			)
