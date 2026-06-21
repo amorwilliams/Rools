@@ -15,7 +15,7 @@
 | 电源 | Eurorack → 稳压 | Buck +5V（ADR-011） |
 | 显示 | 无 | ST7735 1.77" SPI |
 | CV In | Patch 自有 | 4 CV + 4 Knob **分路 ADC**（ADR-017） |
-| CV Out | Patch 自有 | MCP4728 ×4 + TL074 |
+| CV Out | Patch 自有 | **DAC8565 + OPA4171** |
 | UI | 旋钮/开关 | Enc×2 + Btn + K1–K4 |
 | USB/MIDI | Patch 板载 | **Exp 2HP**（本工程不含） |
 

@@ -7,7 +7,7 @@
 |  Ref | 件 | 数量 | 备注 |
 |------|-----|------|------|
 | U1 | Daisy Seed | 1 | 64MB SDRAM 版 |
-| U2 | MCP4728 | 1 | 4ch I2C DAC（CV Out） |
+| U9 | DAC8565 | 1 | 4ch SPI DAC；内部 2.5V 基准；AVDD=`+3V3_DAC`，IOVDD=`+3V3_D` |
 | U3 | ST7735 1.77" IPS | 1 | 160×128，SPI |
 | — | STM32 USB Host PHY / 5V switch | 1 | 视 Seed OTG 设计 |
 
@@ -16,10 +16,13 @@
 |  Ref | 件 | 数量 | 备注 |
 |------|-----|------|------|
 | — | Eurorack 电源入口 | 1 | 16-pin 2×5 shrouded |
-| — | **+12V → +5V Buck** | 1 | ≥1 A；**禁 7805/1117 主路径**（[ADR-011](../../docs/decisions/ADR-011-power-supply.md)） |
-| — | +5V → +3.3V LDO | 1 | 压差小可 LDO |
+| — | **+12V → +5V Buck** | 1 | **TPS54302**（U2）；≥1 A；禁 7805/1117 主路径（[ADR-011](../../docs/decisions/ADR-011-power-supply.md)） |
+| — | +5V → +3.3V LDO | 1 | **AP2112K-3.3** → `+3V3_D` |
+| U10 | **LM393** 双比较器 | 1 | U10A 掉电检测 → `EXTI_PWR` / D28 |
+| — | 掉电 hold-up | 2 | **1000 µF/25V**（C36/C37）+ **SS34**（D3）→ `+12V_SAFE` |
 | — | USB VBUS 限流开关 | 1 | ~500 mA；Exp Host（[ADR-011](../../docs/decisions/ADR-011-power-supply.md)） |
-| — | 运放 | 若干 | **TL074**（音频 ±10V）；**MCP6004**（CV/Knob 前端） |
+| — | 运放 | 若干 | **TL074**（音频 ±10V）；**MCP6004**（CV In）；**OPA4171**（CV Out） |
+| — | 精密电阻 0.1% | 12 | CV Out：**12.5k ×4**（R7/R9/R11/R13）+ **100k ×8**（R8/R10/R12/R14/R15–R18） |
 | — | 保护/TVS | 若干 | CV/Audio 输入 |
 
 ## 控件
@@ -53,7 +56,7 @@
 | 类别 | USD（估） |
 |------|----------|
 | Daisy Seed | ~30 |
-| 屏 + MCP4728 + 运放 | ~15–25 |
+| 屏 + DAC8565 + OPA4171 | ~15–25 |
 | 被动/运放/电源 | ~15–25 |
 | 控件+孔 | ~20–30 |
 | PCB+面板 | ~30–50 |

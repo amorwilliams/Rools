@@ -33,7 +33,7 @@
 | 类型 | 数量 |
 |------|------|
 | CV In | 4（CV1–CV4，DC）+ 4 Knob（K1–K4）分路 ADC，固件合成 |
-| CV Out | 4（A–D，外置 MCP4728） |
+| CV Out | 4（A–D，DAC8565 + OPA4171） |
 | Audio In | 2（IN_L / IN_R，AC/DC 可选） |
 | Audio Out | 2（OUT_L / OUT_R，AC/DC 可选） |
 | MIDI | IN + OUT（Exp） |

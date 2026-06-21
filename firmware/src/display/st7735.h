@@ -50,8 +50,7 @@ private:
     bool StartNextDmaChunk();
     void FinishDmaTransfer();
 
-    daisy::SpiHandle spi_;
-    daisy::GPIO      cs_;
+    daisy::GPIO cs_;
     daisy::GPIO      dc_;
     daisy::GPIO      rst_;
     daisy::GPIO      blk_;
@@ -75,5 +74,8 @@ private:
     // 花屏/镜像不对时可试 0xA0、0x68、0xC8 等组合
     static constexpr uint8_t kMadctlLandscape = 0x60;
 };
+
+/** 掉电路径：仅 GPIO 关背光，禁止 SPI。Init 前调用无效。 */
+void EmergencyBacklightOff();
 
 } // namespace rools

@@ -25,7 +25,7 @@ Boot → AppShell → AppMenu → [当前 App]
 | AudioEngine | I/O、Mono 复制、AC/DC 高通、callback 分发 |
 | UIRenderer | ST7735 菜单/波形/频谱；**SPI DMA + 局部刷新**（[ADR-012](decisions/ADR-012-display-spi-dma.md)） |
 | IOMapper | 8 路 ADC（4 CV + 4 Knob）→ 4 列 `ControlColumn`（`knob`/`cv`/`sum` 软件合成） |
-| CVRouter | CV A–D 输出分配 |
+| CVRouter | CV A–D 输出分配 → `CvOutDriver`（DAC8565 SPI1 + LDAC） |
 | ClockSync | CV3/CV4 边沿检测（App 可选） |
 | UsbStorage | FAT32、样本/预设/OTA（HAS_EXP） |
 | SettingsStore | `GlobalSettings` QSPI 环缓持久化；见 [ADR-015](decisions/ADR-015-settings-persistence.md) |
@@ -34,7 +34,7 @@ Boot → AppShell → AppMenu → [当前 App]
 
 - `SettingsStore`：`Init` 读环缓 / 迁移旧格式 → RAM；`MarkDirty` + `Tick` 节流落盘；`Flush` 强制写
 - CV 校准、切 App 等关键路径显式 `Flush`
-- 掉电保存：M2 PCB 预留 `OnPowerFail()`；面包板见 ADR-015
+- 掉电保存：D28 1 kHz debounce → 关背光 → `OnPowerFail()` / `Flush()`（[ADR-015](decisions/ADR-015-settings-persistence.md)）
 
 ## 输入采集约束（必须遵守）
 

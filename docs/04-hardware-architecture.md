@@ -8,11 +8,11 @@ Front Panel (10HP)
 ├── Enc A/B + Btn ────────────► GPIO
 ├── K1–K4 ──► MCP6004 ──► ADC4–7 (Knob)
 ├── CV1–4 Jacks ──► MCP6004 ──► ADC0–3 (CV)
-├── CV A–D Jacks ◄── MCP4728 ◄── I2C
+├── CV A–D Jacks ◄── OPA4171 ◄── DAC8565 ◄── SPI1
 └── IN/OUT Audio ──► TL074 ±10V ──► Seed pin 16–19 (板载 Codec)
 
 Exp Panel (+2HP)
-├── MIDI IN/OUT ── UART (D13–14) ──► Seed
+├── MIDI IN/OUT — UART（**非 D13–14**，与 DAC8565 冲突；M2 再定脚）
 └── USB-A Host ── OTG (D29–30) ──► Seed (+ 5V 供电)
 
 Power: Eurorack ±12V → **Buck +5V** → Seed / Display / USB VBUS（限流）
@@ -38,9 +38,9 @@ IN_R jack **normalize 到 IN_L**，KiCad 网 **`IN_L_NORM`**（`J_CV_5` Tip ↔ 
 | （NC 预留） | D0 | 1 |
 | Enc A A/B/Sw | D1–D3 | 2–4 |
 | Btn | D4 | 5 |
-| 显示屏 SPI | D5–D10 | 6–11 |
-| I2C（MCP4728） | D11–D12 | 12–13 |
-| USART1（Exp MIDI） | D13–D14 | 14–15 |
+| 显示屏 SPI | D5–D10 | 6–11 | D8/D10 与 DAC8565 共用 |
+| （NC） | D11–D12 | 12–13 | 原 I2C |
+| DAC8565 | D13–D14 | 14–15 | `DAC_CS` / `DAC_LDAC` |
 | Audio L/R In/Out | — | 16–19 |
 
 **右侧 pin 22–32**
@@ -50,8 +50,8 @@ IN_R jack **normalize 到 IN_L**，KiCad 网 **`IN_L_NORM`**（`J_CV_5` Tip ↔ 
 | CV1–4 | D15–D18 | 22–25 | 0–3 |
 | KNOB1–4 | D19–D22 | 26–29 | 4–7 |
 | Enc B A/B/Sw | D23–D25 | 30–32 | — |
-| SAI2 / PCM3060 | D26–D27 | 33–34 | NC |
-| 掉电 EXTI | D28 | 35 | net `EXTI_PWR`（Seed 页已接；比较器/保持电容页 **待画**，ADR-015） |
+| SAI2 | D26–D27 | 33–34 | NC |
+| 掉电检测 | D28 | 35 | net `EXTI_PWR` ← LM393（ADR-015） |
 
 ## ADC 分配
 
@@ -59,7 +59,7 @@ IN_R jack **normalize 到 IN_L**，KiCad 网 **`IN_L_NORM`**（`J_CV_5` Tip ↔ 
 |------|------|
 | ADC 0–3 | CV1–CV4（jack） |
 | ADC 4–7 | KNOB1–K4 |
-| ADC 8+ | — | D28 作 GPIO EXTI，非 ADC 用途 |
+| ADC 8+ | — | D28 作掉电检测 GPIO，非 ADC 用途 |
 
 固件在 AudioCallback 合成 `ControlColumn.sum`（[ADR-017](decisions/ADR-017-split-adc-knob-cv-sum.md)）。
 
@@ -67,8 +67,12 @@ IN_R jack **normalize 到 IN_L**，KiCad 网 **`IN_L_NORM`**（`J_CV_5` Tip ↔ 
 
 | 来源 | 用途 |
 |------|------|
-| MCP4728 ×4 | CV Out A–D |
+| DAC8565 ×4 | CV Out A–D（内部 2.5V 基准 → OPA4171 0–2.5V → ±10V；R 12.5k/100k 0.1%） |
 | Seed 内置 DAC ×2 | v1 闲置 |
+
+## 掉电检测
+
+`+12V` → R43/R64 分压 → **LM393 U10A**（基准 `+3V3_D`）→ net **`EXTI_PWR`** → Seed **D28**。`+12V_SAFE`（D3 + C36/C37 ~2000 µF）维持 hold-up。阈值 ~10.6 V；固件 1 kHz 采样 debounce（连续 LOW ≥5 ms）→ 关背光 → Flash `Flush()`。详见 [ADR-015](decisions/ADR-015-settings-persistence.md)。
 
 ## 深度与机械
 
@@ -86,7 +90,7 @@ IN_R jack **normalize 到 IN_L**，KiCad 网 **`IN_L_NORM`**（`J_CV_5` Tip ↔ 
 
 - Daisy Seed
 - ST7735 1.77" IPS
-- TL074 + MCP6004（音频/CV 调理）
-- MCP4728
+- TL074 + MCP6004（音频/CV In 调理）
+- DAC8565 + OPA4171（CV Out）
 - USB-A 母座 + 5V Host 供电/限流（Exp）
 - Thonkiconn 或 PJ398 插孔 ×12

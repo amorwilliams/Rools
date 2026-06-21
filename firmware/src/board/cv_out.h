@@ -3,31 +3,28 @@
 #include <cstddef>
 #include <cstdint>
 
-#include "per/i2c.h"
-
 namespace rools {
 
 struct CvOutputs;
 
-constexpr uint8_t  kMcp4728I2cAddr   = 0x60; // 7-bit
-constexpr uint16_t kCvOutDacMaxCode  = 4095;
-constexpr float    kCvOutVrefVolts   = 3.3f; // VREF=VDD (ADR-006 情况 A)
+constexpr uint16_t kCvOutDacMaxCode = 65535;
+constexpr float    kCvOutVrefVolts  = 2.5f; // DAC8565 内部基准; 满量程 0–2.5V
 
-/** MCP4728 四路 CV 输出;I2C 阻塞写,仅主循环调用。 */
+/** DAC8565 四路 CV 输出; SPI 阻塞写 + LDAC,仅主循环调用。 */
 class CvOutDriver {
 public:
     void Init();
     void Apply(const CvOutputs& out);
 
 private:
-    bool WriteChannel(size_t ch, uint16_t code12);
+    bool WriteBuffer(size_t ch, uint16_t code16);
+    void PulseLdac();
 
-    daisy::I2CHandle i2c_;
-    uint16_t         last_[4]{0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF};
-    bool             inited_ = false;
+    uint32_t last_[4]{0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF};
+    bool     inited_ = false;
 };
 
-/** norm -1..1 → 12-bit DAC(VDD ref, 0..3.3V 单极性,前端再调理至 ±10V) */
+/** norm -1..1 → 16-bit DAC(0–2.5V 内部基准; OPA4171 调理至 ±10V) */
 uint16_t CvOutNormToDacCode(float norm);
 
 } // namespace rools

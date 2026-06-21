@@ -21,13 +21,15 @@ constexpr Pin kBtnCenter = daisy::seed::D4;
 constexpr Pin kLcdBlk    = daisy::seed::D5;
 constexpr Pin kLcdRst    = daisy::seed::D6;
 constexpr Pin kLcdCs     = daisy::seed::D7;
-constexpr Pin kLcdSck    = daisy::seed::D8;
+constexpr Pin kLcdSck    = daisy::seed::D8;  // SPI1_SCK — 亦接 DAC8565
 constexpr Pin kLcdDc     = daisy::seed::D9;
-constexpr Pin kLcdMosi   = daisy::seed::D10;
+constexpr Pin kLcdMosi   = daisy::seed::D10; // SPI1_MOSI — 亦接 DAC8565
 
-// I2C (MCP4728 CV Out) — D11–D12, Seed pins 12–13
-constexpr Pin kI2cScl = daisy::seed::D11;
-constexpr Pin kI2cSda = daisy::seed::D12;
+// D11–D12 / pin 12–13 — NC（原 I2C）
+
+// DAC8565 CV Out — D13–D14, Seed pins 14–15
+constexpr Pin kDacCs   = daisy::seed::D13; // DAC_CS / SYNC
+constexpr Pin kDacLdac = daisy::seed::D14; // DAC_LDAC
 
 // CV in — D15–D18, Seed pins 22–25, ADC0–3
 constexpr Pin kCv1Adc = daisy::seed::D15;
@@ -46,8 +48,8 @@ constexpr Pin kEncB_A  = daisy::seed::D23;
 constexpr Pin kEncB_B  = daisy::seed::D24;
 constexpr Pin kEncB_Sw = daisy::seed::D25;
 
-// D28 / pin 35 — net EXTI_PWR（M2 掉电 EXTI；比较器+保持电容页待画）
-// TODO(M2 PCB): constexpr Pin kPwrFail = daisy::seed::D28;
+// D28 / pin 35 — net EXTI_PWR（LM393 掉电检测，见 ADR-015）
+constexpr Pin kPwrFail = daisy::seed::D28;
 
 } // namespace pins
 } // namespace rools

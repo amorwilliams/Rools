@@ -5,6 +5,7 @@
 #include "board/cv_out.h"
 #include "board/cv_reference.h"
 #include "board/pins.h"
+#include "board/spi1_bus.h"
 #include "daisy_seed.h"
 #include "display/gfx.h"
 #include "display/st7735.h"
@@ -118,10 +119,11 @@ void AppShell::init()
     hw.adc.Start();
 
     SettingsStore::Instance().Init(hw.qspi);
-    SettingsStore::InitPowerFailDetection();
     LoadCvConfigFromSettings();
 
+    Spi1Bus::InitDefault();
     display.Init();
+    SettingsStore::InitPowerFailDetection();
 
     enc_a.Init(pins::kEncA_A, pins::kEncA_B, pins::kEncA_Sw);
     enc_b.Init(pins::kEncB_A, pins::kEncB_B, pins::kEncB_Sw);

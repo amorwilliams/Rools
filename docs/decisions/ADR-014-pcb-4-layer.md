@@ -8,7 +8,7 @@
 
 Rools Core（+ 可选 Exp）单块或叠板 PCB 同时包含：
 
-- **数字**：Daisy Seed（STM32H7）、ST7735 SPI、I2S Codec、I2C（MCP4728）、USB OTG Host、MIDI UART
+- **数字**：Daisy Seed（STM32H7）、ST7735 SPI、DAC8565 SPI、USB OTG Host、MIDI UART
 - **模拟**：Eurorack ±10V 音频 In/Out、4× CV In/Out + 运放调理
 - **电源**：[ADR-011](ADR-011-power-supply.md) Buck 开关降压（开关噪声、大电流回流）
 

@@ -61,10 +61,10 @@ public:
     void Tick(uint32_t now);
     void Flush();
 
-    // TODO(M2 PCB): 掉电 EXTI;需 hold-up cap + comparator → GPIO
+    // 掉电检测：D28 1 kHz debounce → EmergencyBacklightOff → OnPowerFail
     static bool HasPowerFailHardware();
     static void InitPowerFailDetection();
-    static void OnPowerFail(); // ISR 入口: dirty 则 Flush
+    static void OnPowerFail(); // debounce 确认后 Flush；禁止 SPI
 
 private:
     SettingsStore() = default;

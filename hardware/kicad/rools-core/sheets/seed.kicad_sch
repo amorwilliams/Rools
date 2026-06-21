@@ -1110,32 +1110,16 @@
 		)
 	)
 	(no_connect
-		(at 172.72 83.82)
-		(uuid "02b94949-fb45-4c18-856d-ef4c45a0e5d6")
+		(at 91.44 101.6)
+		(uuid "36953bc6-871c-4181-9ff3-7ed6ed32aee5")
 	)
 	(no_connect
-		(at 172.72 91.44)
-		(uuid "3720deba-da91-4358-a1c5-79ba47b03540")
+		(at 91.44 104.14)
+		(uuid "57652f9b-4918-4e8b-aa80-147ffe0d9246")
 	)
 	(no_connect
 		(at 91.44 73.66)
 		(uuid "5f579009-1e1b-4245-8820-54c4a614ebad")
-	)
-	(no_connect
-		(at 91.44 106.68)
-		(uuid "747bc0e2-3d70-44fe-a059-5d90a842aa15")
-	)
-	(no_connect
-		(at 172.72 81.28)
-		(uuid "8fa1f752-ba17-488c-8598-206d023a87f3")
-	)
-	(no_connect
-		(at 91.44 109.22)
-		(uuid "ab96b4e7-ff4f-4cca-a81a-552f53065a8d")
-	)
-	(no_connect
-		(at 172.72 88.9)
-		(uuid "bf037ad5-c5db-49e1-878e-df9b94f508a6")
 	)
 	(wire
 		(pts
@@ -1159,7 +1143,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 93.98) (xy 91.44 93.98)
+			(xy 91.44 93.98) (xy 101.6 93.98)
 		)
 		(stroke
 			(width 0)
@@ -1557,7 +1541,7 @@
 		)
 		(uuid "f611d4af-fed8-4c83-a3fb-d879bbec2432")
 	)
-	(global_label "LCD_MOSI"
+	(global_label "SPI1_MOSI"
 		(shape output)
 		(at 91.44 99.06 180)
 		(effects
@@ -1569,28 +1553,6 @@
 		(uuid "00a86832-6886-48f8-931f-794bf177812b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 91.44 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "SAI2_SCK"
-		(shape output)
-		(at 194.31 86.36 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "076a5b64-c5e3-4bbb-a2db-4b520054d66e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 194.31 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1669,7 +1631,31 @@
 			)
 		)
 	)
-	(global_label "LCD_SCK"
+	(global_label "MIDI_TX"
+		(shape input)
+		(at 91.44 106.68 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1d768b4a-2318-4e50-80e9-fa9553f63c5c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 81.284 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "SPI1_SCK"
 		(shape output)
 		(at 91.44 93.98 180)
 		(effects
@@ -1713,18 +1699,19 @@
 			)
 		)
 	)
-	(global_label "I2C1_SDA"
-		(shape bidirectional)
-		(at 91.44 104.14 180)
+	(global_label "MIDI_RX"
+		(shape input)
+		(at 91.44 109.22 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "36446a47-5054-4be5-b5c0-93896e37fbb6")
+		(uuid "4061a261-a6ab-4a6e-b873-fc46bdc44187")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 91.44 104.14 0)
+			(at 80.9816 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1732,28 +1719,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-			)
-		)
-	)
-	(global_label "I2C1_SCL"
-		(shape bidirectional)
-		(at 91.44 101.6 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "40a8f308-e124-414a-8eb2-9105274e1f5b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 91.44 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+				(justify right)
 			)
 		)
 	)
@@ -1778,28 +1744,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-			)
-		)
-	)
-	(global_label "SAI2_FS"
-		(shape output)
-		(at 194.31 88.9 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "54e2741e-223d-4334-8110-d2bb25c4c948")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 194.31 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 	)
@@ -1888,6 +1832,30 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+	)
+	(global_label "USB_D-"
+		(shape input)
+		(at 172.72 83.82 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9aaaf8a2-ea21-461b-aecf-92e2cf6234fe")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 183.4203 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -2003,28 +1971,6 @@
 			)
 		)
 	)
-	(global_label "SAI2_SD_A"
-		(shape output)
-		(at 194.31 91.44 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b11d2c7d-f21d-4f7a-b376-c780084e2556")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 194.31 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "ENC_B_A"
 		(shape input)
 		(at 172.72 99.06 0)
@@ -2106,6 +2052,30 @@
 		(uuid "ceed1576-d152-439a-8998-7f75239dacae")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 183.1179 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "USB_D+"
+		(shape input)
+		(at 172.72 81.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cfad5161-adee-4030-8d39-8452416af1ba")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 183.4203 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2229,6 +2199,30 @@
 			)
 		)
 	)
+	(global_label "DAC_CS"
+		(shape output)
+		(at 172.72 91.44 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e2b773f7-d2be-479d-b8db-4ea911bbf11f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 182.876 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "AUDIO_IN_L"
 		(shape input)
 		(at 91.44 111.76 180)
@@ -2297,18 +2291,19 @@
 			)
 		)
 	)
-	(global_label "SAI2_MCLK"
+	(global_label "DAC_LDAC"
 		(shape output)
-		(at 194.31 96.52 0)
+		(at 172.72 88.9 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "fa1c0a27-429d-4781-a272-ce056d7502fb")
+		(uuid "fb7da56e-3c44-40c6-a946-3828a02276e9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 194.31 96.52 0)
+			(at 185.0532 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2316,28 +2311,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-			)
-		)
-	)
-	(global_label "SAI2_SD_B"
-		(shape output)
-		(at 194.31 93.98 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "fd47662b-aa0b-4bff-8c40-45e6166b772d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 194.31 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+				(justify left)
 			)
 		)
 	)

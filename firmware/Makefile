@@ -6,6 +6,8 @@ src/app_shell.cpp \
 src/board/cv_reference.cpp \
 src/board/cv_calibration.cpp \
 src/board/cv_out.cpp \
+src/board/spi1_bus.cpp \
+src/board/pwr_fail.cpp \
 src/board/enc_debug.cpp \
 src/settings/settings_store.cpp \
 src/display/st7735.cpp \

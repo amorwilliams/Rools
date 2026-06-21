@@ -20,10 +20,11 @@
 
 ## M2 硬件清单
 
-- [ ] KiCad 原理图 / PCB（[ADR-011](decisions/ADR-011-power-supply.md) Buck；[ADR-014](decisions/ADR-014-pcb-4-layer.md) **4 层**）
+- [x] KiCad 原理图 Core 页（Power Rev 0.2 / CV / Audio / UI / Seed；[ADR-011](decisions/ADR-011-power-supply.md) Buck + 掉电检测）
+- [ ] KiCad PCB Layout（[ADR-014](decisions/ADR-014-pcb-4-layer.md) **4 层**）
 - [ ] 10HP 面板 Gerber（[ADR-013](decisions/ADR-013-mechanical-depth.md) 深度预算）
 - [ ] 2HP Exp 面板（可选）
-- [ ] MCP4728 CV Out 校准
+- [ ] DAC8565 CV Out 校准
 - [ ] IN_R normalled 验证（[ADR-010](decisions/ADR-010-mono-stereo-normaling.md)）
 - [ ] 功耗实测（Core / Core+Exp / USB U 盘）
 

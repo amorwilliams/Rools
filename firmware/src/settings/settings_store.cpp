@@ -1,5 +1,7 @@
 #include "settings/settings_store.h"
 
+#include "board/pwr_fail.h"
+
 #include "per/qspi.h"
 #include "sys/system.h"
 
@@ -215,12 +217,12 @@ void SettingsStore::Flush()
 
 bool SettingsStore::HasPowerFailHardware()
 {
-    return false; // 面包板无 hold-up + comparator
+    return true;
 }
 
 void SettingsStore::InitPowerFailDetection()
 {
-    // TODO(M2 PCB): 注册 kPwrFail EXTI 下降沿 → OnPowerFail
+    PwrFail::Init();
 }
 
 void SettingsStore::OnPowerFail()

@@ -2228,7 +2228,7 @@
 			)
 		)
 	)
-	(global_label "LCD_SCK"
+	(global_label "SPI1_SCK"
 		(shape input)
 		(at 66.04 114.3 180)
 		(effects
@@ -2274,7 +2274,7 @@
 			)
 		)
 	)
-	(global_label "LCD_MOSI"
+	(global_label "SPI1_MOSI"
 		(shape input)
 		(at 66.04 116.84 180)
 		(effects

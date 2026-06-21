@@ -8,7 +8,7 @@
 		(title "Audio")
 		(date "2026-06-14")
 		(rev "0.1")
-		(comment 1 "PCM3060 + ±10V 调理 — 对照 Patch Rev8")
+		(comment 1 "Seed 板载音频 + TL074 ±10V 调理 — 对照 Patch Rev8")
 	)
 	(lib_symbols
 		(symbol "Amplifier_Operational:TL074"

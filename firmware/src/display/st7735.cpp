@@ -1,6 +1,7 @@
 #include "display/st7735.h"
 
 #include "board/pins.h"
+#include "board/spi1_bus.h"
 #include "sys/system.h"
 
 #include <cstring>
@@ -52,6 +53,16 @@ enum Cmd : uint8_t {
 
 } // namespace
 
+namespace {
+daisy::GPIO* s_blk_for_emergency = nullptr;
+} // namespace
+
+void EmergencyBacklightOff()
+{
+    if(s_blk_for_emergency)
+        s_blk_for_emergency->Write(false);
+}
+
 void St7735::Init()
 {
     // --- GPIO：CS/DC/RST/BLK 由 MCU 控制，SPI 走软件片选 ---
@@ -71,19 +82,7 @@ void St7735::Init()
 
     gcfg.pin = pins::kLcdBlk;
     blk_.Init(gcfg);
-
-    // SPI1 主机，仅 MOSI；PS_8 分频，过快可能横纹，可改 PS_16/32
-    daisy::SpiHandle::Config scfg;
-    scfg.periph              = daisy::SpiHandle::Config::Peripheral::SPI_1;
-    scfg.mode                = daisy::SpiHandle::Config::Mode::MASTER;
-    scfg.direction           = daisy::SpiHandle::Config::Direction::TWO_LINES_TX_ONLY;
-    scfg.nss                 = daisy::SpiHandle::Config::NSS::SOFT;
-    scfg.baud_prescaler      = daisy::SpiHandle::Config::BaudPrescaler::PS_8;
-    scfg.pin_config.sclk     = pins::kLcdSck;
-    scfg.pin_config.mosi     = pins::kLcdMosi;
-    scfg.pin_config.miso     = daisy::Pin();
-    scfg.pin_config.nss      = daisy::Pin();
-    spi_.Init(scfg);
+    s_blk_for_emergency = &blk_;
 
     Reset();
     InitSequence();
@@ -113,7 +112,7 @@ void St7735::WriteCommand(uint8_t cmd)
     // SPI 写命令：DC=0，CS 拉低发 1 字节指令，CS 拉高
     cs_.Write(false);
     dc_.Write(false);
-    spi_.BlockingTransmit(&cmd, 1, 10);
+    Spi1Bus::Handle().BlockingTransmit(&cmd, 1, 10);
     cs_.Write(true);
 }
 
@@ -129,7 +128,7 @@ void St7735::WriteData(const uint8_t* data, size_t len)
         return;
     cs_.Write(false);
     dc_.Write(true);
-    spi_.BlockingTransmit(const_cast<uint8_t*>(data), len, 100);
+    Spi1Bus::Handle().BlockingTransmit(const_cast<uint8_t*>(data), len, 100);
     cs_.Write(true);
 }
 
@@ -285,7 +284,7 @@ void St7735::WritePixels(const uint16_t* data, size_t count)
             bytes[i * 2 + 1] = static_cast<uint8_t>(c & 0xFF);
         }
 
-        spi_.BlockingTransmit(bytes, chunk * 2, 100);
+        Spi1Bus::Handle().BlockingTransmit(bytes, chunk * 2, 100);
         offset += chunk;
     }
     cs_.Write(true);
@@ -353,7 +352,7 @@ bool St7735::StartNextDmaChunk()
     const size_t remaining = tx_size_ - tx_offset_;
     const size_t chunk     = (remaining > kDmaChunkLen) ? kDmaChunkLen : remaining;
     CleanDCacheRange(tx_buffer_ + tx_offset_, chunk);
-    auto result = spi_.DmaTransmit(tx_buffer_ + tx_offset_, chunk, OnDmaStart, OnDmaDone, this);
+    auto result = Spi1Bus::Handle().DmaTransmit(tx_buffer_ + tx_offset_, chunk, OnDmaStart, OnDmaDone, this);
     if(result != daisy::SpiHandle::Result::OK)
         return false;
 

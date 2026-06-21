@@ -48,7 +48,7 @@ struct ControlColumn {
     float sum;  // cv + knob bipolar 合成（ADR-017）；App 可选用或忽略
 };
 
-/** CV 输出通道(A–D); norm -1..1, 0=0V Eurorack(经 MCP4728+运放) */
+/** CV 输出通道(A–D); norm -1..1, 0=0V Eurorack(经 DAC8565+OPA4171) */
 struct CvOutputs {
     float a, b, c, d;
 };
