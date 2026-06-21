@@ -1391,6 +1391,526 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "patch-eagle:ENCODERNOSILK"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "SW"
+				(at -5.08 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.0795)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" ""
+				(at -5.08 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.0795)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "ES_Daisy_Patch_Rev8:PEC11_NOSILK"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "ALPS rotary Encoder EC12E series with switch"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "ENCODERNOSILK_1_0"
+				(polyline
+					(pts
+						(xy -2.54 5.08) (xy -2.54 4.1275)
+					)
+					(stroke
+						(width 0.3048)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 4.1275) (xy -0.9525 1.905)
+					)
+					(stroke
+						(width 0.3048)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 1.905) (xy -2.54 0)
+					)
+					(stroke
+						(width 0.3048)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 1.905) (xy -2.54 1.905)
+					)
+					(stroke
+						(width 0.3048)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.5679)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 5.08) (xy 2.54 4.1275)
+					)
+					(stroke
+						(width 0.3048)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 4.1275) (xy 4.1275 1.905)
+					)
+					(stroke
+						(width 0.3048)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.905) (xy 2.54 0)
+					)
+					(stroke
+						(width 0.3048)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 1.905) (xy 2.54 1.905)
+					)
+					(stroke
+						(width 0.3048)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -2.54 7.62 270)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "A"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 7.62 270)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "B"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "C"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+			(symbol "ENCODERNOSILK_2_0"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -1.5875 0)
+					)
+					(stroke
+						(width 0.3048)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.5875 0) (xy 0.635 1.5875)
+					)
+					(stroke
+						(width 0.3048)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 3.81) (xy -0.635 3.4925)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 3.81) (xy 0.635 3.81)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 3.81)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 3.81) (xy 0.635 3.4925)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 0.635) (xy 0.635 0)
+					)
+					(stroke
+						(width 0.3048)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0.3048)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "D"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "E"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+			(symbol "ENCODERNOSILK_3_0"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0.9525 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.5875 0) (xy 2.2225 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.8575 0) (xy 3.4925 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1275 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 0)
+					(name "G"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "GND1"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+			)
+			(symbol "ENCODERNOSILK_4_0"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0.9525 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.5875 0) (xy 2.2225 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.8575 0) (xy 3.4925 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1275 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 0)
+					(name "G"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "GND2"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power global)
 			(pin_numbers
@@ -1543,6 +2063,12 @@
 		(uuid "228e61bc-dcf1-4cf8-ab0e-0184ded41642")
 	)
 	(junction
+		(at 120.65 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2bcfb0e0-7fe0-4855-8d01-fda0f76bbf59")
+	)
+	(junction
 		(at 180.34 64.77)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1573,6 +2099,12 @@
 		(uuid "b24e57f5-d0e1-493d-bb43-1faa02687787")
 	)
 	(junction
+		(at 63.5 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "badd4611-7aa4-4071-a7d3-5f84a6431620")
+	)
+	(junction
 		(at 66.04 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1590,6 +2122,16 @@
 	)
 	(wire
 		(pts
+			(xy 58.42 77.47) (xy 63.5 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0988d3a7-b299-458e-bf60-c00c9b806770")
+	)
+	(wire
+		(pts
 			(xy 66.04 60.96) (xy 66.04 57.15)
 		)
 		(stroke
@@ -1597,6 +2139,16 @@
 			(type default)
 		)
 		(uuid "09e882ea-6e43-4109-a95d-9afdaa82602c")
+	)
+	(wire
+		(pts
+			(xy 63.5 71.12) (xy 63.5 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ffeb0f6-003f-45b8-8260-82c240498e3a")
 	)
 	(wire
 		(pts
@@ -1690,16 +2242,6 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 71.12) (xy 63.5 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3f25a1e2-3495-4b3a-9adc-178d548d8ed6")
-	)
-	(wire
-		(pts
 			(xy 50.8 96.52) (xy 50.8 101.6)
 		)
 		(stroke
@@ -1740,6 +2282,16 @@
 	)
 	(wire
 		(pts
+			(xy 67.31 77.47) (xy 63.5 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6074cd4a-789e-4a7a-9d55-ae8d85599714")
+	)
+	(wire
+		(pts
 			(xy 132.08 57.15) (xy 132.08 72.39)
 		)
 		(stroke
@@ -1747,6 +2299,26 @@
 			(type default)
 		)
 		(uuid "609c9d5a-3116-443c-9b39-530f1d0c1aa8")
+	)
+	(wire
+		(pts
+			(xy 120.65 77.47) (xy 125.73 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6540f51d-0e51-4275-80af-784aa64ebc1e")
+	)
+	(wire
+		(pts
+			(xy 63.5 77.47) (xy 63.5 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69d6d9d1-5b0c-45c1-9fca-9ce773a392b7")
 	)
 	(wire
 		(pts
@@ -1777,6 +2349,16 @@
 			(type default)
 		)
 		(uuid "6e8975a2-7bac-472d-90ae-7e4beb83185e")
+	)
+	(wire
+		(pts
+			(xy 116.84 77.47) (xy 120.65 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c77b82e-f4b8-4179-ad82-ff5bd6da6193")
 	)
 	(wire
 		(pts
@@ -1900,16 +2482,6 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 76.2) (xy 120.65 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9be09c1d-c4a0-482e-b42f-bfca3d2ad799")
-	)
-	(wire
-		(pts
 			(xy 55.88 60.96) (xy 60.96 60.96)
 		)
 		(stroke
@@ -1960,6 +2532,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 71.12) (xy 120.65 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4a163bb-1cf3-4a18-a802-cb1deb43f25c")
+	)
+	(wire
+		(pts
 			(xy 180.34 64.77) (xy 184.15 64.77)
 		)
 		(stroke
@@ -1987,6 +2569,16 @@
 			(type default)
 		)
 		(uuid "d5df495e-816f-44f9-b776-5384a6a68741")
+	)
+	(wire
+		(pts
+			(xy 120.65 77.47) (xy 120.65 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8839ab5-bf37-400d-90ea-560efc4f64d2")
 	)
 	(wire
 		(pts
@@ -2946,6 +3538,103 @@
 		)
 	)
 	(symbol
+		(lib_id "patch-eagle:ENCODERNOSILK")
+		(at 58.42 77.47 0)
+		(mirror y)
+		(unit 3)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3277264f-fed0-496c-9a78-5d3d6dd2f74f")
+		(property "Reference" "SW1"
+			(at 50.038 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+			)
+		)
+		(property "Value" "EC11"
+			(at 63.5 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm"
+			(at 58.42 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 58.42 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "ALPS rotary Encoder EC12E series with switch"
+			(at 58.42 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "D"
+			(uuid "dea6cb04-a5ce-48db-a3ce-1d91a9c592db")
+		)
+		(pin "C"
+			(uuid "3d2b20bb-c14a-48b4-8b8c-e5ebf247ebca")
+		)
+		(pin "GND1"
+			(uuid "a0bc98b7-e2d1-4a52-b0ea-9515aa73b650")
+		)
+		(pin "B"
+			(uuid "238c0ef7-161d-45f9-9c79-b2008981608e")
+		)
+		(pin "GND2"
+			(uuid "a3bfea69-c96b-4834-9f27-e213140d0044")
+		)
+		(pin "E"
+			(uuid "53b2e802-7294-404b-aa43-4d7155888f87")
+		)
+		(pin "A"
+			(uuid "6973e7de-69f7-4dc8-bb08-af72240be8d8")
+		)
+		(instances
+			(project "rools-core"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/f04b212c-120a-4768-a529-443de5f485ec"
+					(reference "SW1")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 74.93 53.34 0)
 		(unit 1)
@@ -3162,7 +3851,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 120.65 76.2 0)
+		(at 120.65 81.28 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3172,7 +3861,7 @@
 		(dnp no)
 		(uuid "595be39e-3617-4f32-b065-bf60d96cfe99")
 		(property "Reference" "#G27549e02"
-			(at 120.65 76.2 0)
+			(at 120.65 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3183,7 +3872,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 120.65 80.01 0)
+			(at 120.65 85.09 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3193,7 +3882,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 120.65 76.2 0)
+			(at 120.65 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3203,7 +3892,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 120.65 76.2 0)
+			(at 120.65 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3213,7 +3902,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 120.65 76.2 0)
+			(at 120.65 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3659,6 +4348,202 @@
 		)
 	)
 	(symbol
+		(lib_id "patch-eagle:ENCODERNOSILK")
+		(at 67.31 77.47 0)
+		(unit 4)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a5e0d975-9e92-400c-932a-a4f8e60bd986")
+		(property "Reference" "SW1"
+			(at 73.66 77.4699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "EC11"
+			(at 62.23 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm"
+			(at 67.31 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 67.31 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "ALPS rotary Encoder EC12E series with switch"
+			(at 67.31 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "D"
+			(uuid "dea6cb04-a5ce-48db-a3ce-1d91a9c592db")
+		)
+		(pin "C"
+			(uuid "3d2b20bb-c14a-48b4-8b8c-e5ebf247ebca")
+		)
+		(pin "GND1"
+			(uuid "a0bc98b7-e2d1-4a52-b0ea-9515aa73b650")
+		)
+		(pin "B"
+			(uuid "238c0ef7-161d-45f9-9c79-b2008981608e")
+		)
+		(pin "GND2"
+			(uuid "a3bfea69-c96b-4834-9f27-e213140d0044")
+		)
+		(pin "E"
+			(uuid "53b2e802-7294-404b-aa43-4d7155888f87")
+		)
+		(pin "A"
+			(uuid "6973e7de-69f7-4dc8-bb08-af72240be8d8")
+		)
+		(instances
+			(project "rools-core"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/f04b212c-120a-4768-a529-443de5f485ec"
+					(reference "SW1")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "patch-eagle:ENCODERNOSILK")
+		(at 125.73 77.47 0)
+		(unit 4)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a81aa636-ac04-41d2-992b-de480ff15b35")
+		(property "Reference" "SW2"
+			(at 132.08 77.4699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "EC11"
+			(at 120.65 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm"
+			(at 125.73 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 125.73 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "ALPS rotary Encoder EC12E series with switch"
+			(at 125.73 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "D"
+			(uuid "dea6cb04-a5ce-48db-a3ce-1d91a9c592dc")
+		)
+		(pin "C"
+			(uuid "3d2b20bb-c14a-48b4-8b8c-e5ebf247ebcb")
+		)
+		(pin "GND1"
+			(uuid "a0bc98b7-e2d1-4a52-b0ea-9515aa73b651")
+		)
+		(pin "B"
+			(uuid "238c0ef7-161d-45f9-9c79-b2008981608f")
+		)
+		(pin "GND2"
+			(uuid "12091e3f-21ed-46e7-a947-75c3e5410ba5")
+		)
+		(pin "E"
+			(uuid "53b2e802-7294-404b-aa43-4d7155888f88")
+		)
+		(pin "A"
+			(uuid "6973e7de-69f7-4dc8-bb08-af72240be8d9")
+		)
+		(instances
+			(project "rools-core"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/f04b212c-120a-4768-a529-443de5f485ec"
+					(reference "SW2")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 66.04 53.34 0)
 		(unit 1)
@@ -3848,7 +4733,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 63.5 76.2 0)
+		(at 63.5 81.28 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3858,7 +4743,7 @@
 		(dnp no)
 		(uuid "c5ff13fa-491e-423f-aabe-fc182ad9a506")
 		(property "Reference" "#G27549e01"
-			(at 63.5 76.2 0)
+			(at 63.5 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3869,7 +4754,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 63.5 80.01 0)
+			(at 63.5 85.09 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3879,7 +4764,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 63.5 76.2 0)
+			(at 63.5 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3889,7 +4774,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 63.5 76.2 0)
+			(at 63.5 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3899,7 +4784,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 63.5 76.2 0)
+			(at 63.5 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4172,6 +5057,103 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/f04b212c-120a-4768-a529-443de5f485ec"
 					(reference "#Gfb482e01")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "patch-eagle:ENCODERNOSILK")
+		(at 116.84 77.47 0)
+		(mirror y)
+		(unit 3)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f1968cce-ae72-4b0b-a79a-39dc59866c3f")
+		(property "Reference" "SW2"
+			(at 108.458 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+			)
+		)
+		(property "Value" "EC11"
+			(at 121.92 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm"
+			(at 116.84 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "ALPS rotary Encoder EC12E series with switch"
+			(at 116.84 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "D"
+			(uuid "dea6cb04-a5ce-48db-a3ce-1d91a9c592db")
+		)
+		(pin "C"
+			(uuid "3d2b20bb-c14a-48b4-8b8c-e5ebf247ebca")
+		)
+		(pin "GND1"
+			(uuid "b11fe38d-a5a7-4003-af36-d8321052a02c")
+		)
+		(pin "B"
+			(uuid "238c0ef7-161d-45f9-9c79-b2008981608e")
+		)
+		(pin "GND2"
+			(uuid "a3bfea69-c96b-4834-9f27-e213140d0044")
+		)
+		(pin "E"
+			(uuid "53b2e802-7294-404b-aa43-4d7155888f87")
+		)
+		(pin "A"
+			(uuid "6973e7de-69f7-4dc8-bb08-af72240be8d8")
+		)
+		(instances
+			(project "rools-core"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/f04b212c-120a-4768-a529-443de5f485ec"
+					(reference "SW2")
+					(unit 3)
 				)
 			)
 		)
