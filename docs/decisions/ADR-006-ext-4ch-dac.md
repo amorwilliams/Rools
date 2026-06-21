@@ -16,10 +16,10 @@ v1 采用 **DAC8565**（SPI，4× 16-bit）；**AVDD=`+3V3_DAC`**、**IOVDD=`+3V
 |------|-----------|----------|------|
 | SPI1_SCK | D8 | 10 | 与 ST7735 共用 |
 | SPI1_MOSI | D10 | 11 | 与 ST7735 共用 |
-| DAC_CS (SYNC) | D13 | 14 | `DAC_CS` |
-| DAC_LDAC | D14 | 15 | `DAC_LDAC` |
+| DAC_CS (SYNC) | D26 | 33 | `DAC_CS` |
+| DAC_LDAC | D27 | 34 | `DAC_LDAC` |
 
-D11–D12（原 I2C）**NC**。
+D11–D12 → Exp I2C；D13–D14 → Exp MIDI（USART1）。
 
 ## 理由
 
@@ -29,7 +29,6 @@ D11–D12（原 I2C）**NC**。
 
 ## 后果
 
-- **Exp MIDI UART 原预留 D13–14 与 DAC 冲突**；Exp 需改 UART 引脚或 FFC 侧路由（见 [ADR-003](ADR-003-io-topology-10hp-exp.md) M2 再定）
 - 固件 `CvOutDriver` SPI 写 + LDAC 脉冲同步四路
 - 需 CV Out 校准流程
 

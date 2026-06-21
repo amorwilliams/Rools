@@ -9,7 +9,7 @@ namespace pins {
 
 using Pin = daisy::Pin;
 
-// D0 / pin 1 — NC（GPIO0 / USB Host ID 预留，Exp）
+// D0 / pin 1 — EXP_GPIO0（USB_HS_ID，P2 pin 15）
 
 // Enc A — D1–D3, Seed pins 2–4
 constexpr Pin kEncA_A  = daisy::seed::D1;
@@ -25,11 +25,15 @@ constexpr Pin kLcdSck    = daisy::seed::D8;  // SPI1_SCK — 亦接 DAC8565
 constexpr Pin kLcdDc     = daisy::seed::D9;
 constexpr Pin kLcdMosi   = daisy::seed::D10; // SPI1_MOSI — 亦接 DAC8565
 
-// D11–D12 / pin 12–13 — NC（原 I2C）
+// D11–D12 / pin 12–13 — I2C1 → P2 EXP_BUS（SCL/SDA）
 
-// DAC8565 CV Out — D13–D14, Seed pins 14–15
-constexpr Pin kDacCs   = daisy::seed::D13; // DAC_CS / SYNC
-constexpr Pin kDacLdac = daisy::seed::D14; // DAC_LDAC
+// Exp MIDI — D13–D14, Seed pins 14–15, USART1
+constexpr Pin kMidiTx = daisy::seed::D13;
+constexpr Pin kMidiRx = daisy::seed::D14;
+
+// DAC8565 CV Out — D26–D27, Seed pins 33–34
+constexpr Pin kDacCs   = daisy::seed::D26; // DAC_CS / SYNC
+constexpr Pin kDacLdac = daisy::seed::D27; // DAC_LDAC
 
 // CV in — D15–D18, Seed pins 22–25, ADC0–3
 constexpr Pin kCv1Adc = daisy::seed::D15;

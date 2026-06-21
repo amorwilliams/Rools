@@ -12,8 +12,8 @@ Front Panel (10HP)
 └── IN/OUT Audio ──► TL074 ±10V ──► Seed pin 16–19 (板载 Codec)
 
 Exp Panel (+2HP)
-├── MIDI IN/OUT — UART（**非 D13–14**，与 DAC8565 冲突；M2 再定脚）
-└── USB-A Host ── OTG (D29–30) ──► Seed (+ 5V 供电)
+├── MIDI IN/OUT — USART1（D13/D14，Seed pin 14/15）→ P2 pin 7/8
+└── USB-A Host ── OTG (D29–30, D0 ID) ──► P2 `+5V` + Exp 本地 VBUS 限流
 
 Power: Eurorack ±12V → **Buck +5V** → Seed / Display / USB VBUS（限流）
        详见 [ADR-011](decisions/ADR-011-power-supply.md)
@@ -35,12 +35,12 @@ IN_R jack **normalize 到 IN_L**，KiCad 网 **`IN_L_NORM`**（`J_CV_5` Tip ↔ 
 
 | 功能 | Daisy | Seed pin |
 |------|-------|----------|
-| （NC 预留） | D0 | 1 |
+| Exp `EXP_GPIO0` | D0 | 1 | `USB_HS_ID` → P2 pin 15 |
 | Enc A A/B/Sw | D1–D3 | 2–4 |
 | Btn | D4 | 5 |
 | 显示屏 SPI | D5–D10 | 6–11 | D8/D10 与 DAC8565 共用 |
-| （NC） | D11–D12 | 12–13 | 原 I2C |
-| DAC8565 | D13–D14 | 14–15 | `DAC_CS` / `DAC_LDAC` |
+| Exp I2C1 | D11–D12 | 12–13 | `I2C_SCL` / `I2C_SDA` → P2 pin 13/14 |
+| Exp MIDI | D13–D14 | 14–15 | `MIDI_TX` / `MIDI_RX`（USART1）→ P2 pin 7/8 |
 | Audio L/R In/Out | — | 16–19 |
 
 **右侧 pin 22–32**
@@ -50,7 +50,7 @@ IN_R jack **normalize 到 IN_L**，KiCad 网 **`IN_L_NORM`**（`J_CV_5` Tip ↔ 
 | CV1–4 | D15–D18 | 22–25 | 0–3 |
 | KNOB1–4 | D19–D22 | 26–29 | 4–7 |
 | Enc B A/B/Sw | D23–D25 | 30–32 | — |
-| SAI2 | D26–D27 | 33–34 | NC |
+| DAC8565 | D26–D27 | 33–34 | `DAC_CS` / `DAC_LDAC` |
 | 掉电检测 | D28 | 35 | net `EXTI_PWR` ← LM393（ADR-015） |
 
 ## ADC 分配
@@ -69,6 +69,27 @@ IN_R jack **normalize 到 IN_L**，KiCad 网 **`IN_L_NORM`**（`J_CV_5` Tip ↔ 
 |------|------|
 | DAC8565 ×4 | CV Out A–D（内部 2.5V 基准 → OPA4171 0–2.5V → ±10V；R 12.5k/100k 0.1%） |
 | Seed 内置 DAC ×2 | v1 闲置 |
+
+## P2 EXP_BUS（2×8，Core ↔ Exp）
+
+| Pin | 信号 | 说明 |
+|-----|------|------|
+| 1 | `+3V3_D` | 数字域 |
+| 2 | `+3V3_A` | Seed 模拟域（MIDI 光耦等） |
+| 3 | `SWDIO` | 与 P3 并联，Exp 侧可选接 |
+| 4 | `SWCLK` | |
+| 5 | `RESET` | |
+| 6 | `GND` | |
+| 7 | `MIDI_TX` | D13 / Seed pin 14（USART1_TX） |
+| 8 | `MIDI_RX` | D14 / Seed pin 15（USART1_RX） |
+| 9 | `USB_D-` | D29 |
+| 10 | `USB_D+` | D30 |
+| 11 | `+5V` | Buck 输出；Exp USB Host 本地限流开关 |
+| 12 | `GND` | |
+| 13 | `I2C_SCL` | D11；Core 侧 4.7k→`+3V3_D` |
+| 14 | `I2C_SDA` | D12 |
+| 15 | `EXP_GPIO0` | D0 / `USB_HS_ID`；Exp Host 模式接 GND |
+| 16 | `GND` | |
 
 ## 掉电检测
 

@@ -12,7 +12,7 @@
 
 1. 音频 I/O 走 Seed **AUDIO_IN/OUT_L/R**（板载 WM8731 路径，libDaisy 默认 `StartAudio`）。
 2. Eurorack jack ↔ TL074（×0.1 入 / ×10 出）↔ Seed 16–19。
-3. **不**使用 SAI2（D26–27 等）接外置 Codec；D11–12 **NC**（CV Out 走 SPI1 DAC8565）。
+3. **不**使用 SAI2 接外置 Codec；D26–D27 作 DAC8565 `DAC_CS`/`DAC_LDAC`（CV Out 走 SPI1）。
 4. IN_R **normalled** 经 `IN_L_NORM` 网（见 [ADR-010](ADR-010-mono-stereo-normaling.md)）。
 
 ## 理由

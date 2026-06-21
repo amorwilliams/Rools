@@ -62,7 +62,7 @@ M2 启用后可切换 **PowerFailOnly** 策略：运行期仅改 RAM，每次开
 - [x] 掉电前端原理图（LM393 + hold-up，Power 页 Rev 0.2）
 - [ ] 保持电容容量：\(C \geq I_{hold} \cdot \Delta t / \Delta V\)（hold 电流、目标维持 ms、允许压降）
 - [ ] 比较器阈值实测：+12V 跌至 ~10.6 V 前触发，Buck 仍可供电
-- [x] D28 / `EXTI_PWR` 接线（Seed 页）；勿 D13（Exp MIDI TX）
+- [x] D28 / `EXTI_PWR` 接线（Seed 页）；D13/D14 = Exp MIDI USART1
 - [x] 固件：1 kHz debounce + 关背光 + `Flush()`
 - [ ] 与环形缓冲联调：掉电写下一槽，sequence 递增
 

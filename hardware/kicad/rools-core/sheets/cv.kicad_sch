@@ -3253,16 +3253,6 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 140.97) (xy 212.09 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1b75fe67-f207-444e-9b41-f86251cdb0a7")
-	)
-	(wire
-		(pts
 			(xy 193.04 120.65) (xy 190.5 120.65)
 		)
 		(stroke
@@ -4093,16 +4083,6 @@
 	)
 	(wire
 		(pts
-			(xy 218.44 74.93) (xy 210.82 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "80a40c34-9662-4f61-a84f-a415db86be60")
-	)
-	(wire
-		(pts
 			(xy 264.16 139.7) (xy 254 139.7)
 		)
 		(stroke
@@ -4180,16 +4160,6 @@
 			(type default)
 		)
 		(uuid "90dceecb-4cc8-498f-b14b-4d6ae4aa6e7d")
-	)
-	(wire
-		(pts
-			(xy 219.71 107.95) (xy 212.09 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "917bb5aa-3ba6-462e-97b8-3b77097789b2")
 	)
 	(wire
 		(pts
@@ -5993,7 +5963,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "ES_Daisy_Patch_Rev8:PJ301M-12SLOT"
+		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
 			(at 90.17 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -6016,6 +5986,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 90.17 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 90.17 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -6049,6 +6030,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "J_CV_OUT_4")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -6198,6 +6182,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C69596"
+			(at 50.8 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "e68ba2e8-a3d3-4207-97b6-5843f9235050")
 		)
@@ -6251,6 +6246,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "U9")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -6365,7 +6363,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 62.23 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -6388,6 +6386,17 @@
 			)
 		)
 		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+			(at 63.5 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C46269"
 			(at 63.5 153.67 0)
 			(hide yes)
 			(show_name no)
@@ -6445,6 +6454,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "U4")
 					(unit 3)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -6470,7 +6482,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "200K"
 			(at 198.12 77.47 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6480,7 +6492,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 198.12 76.708 90)
 			(hide yes)
 			(show_name no)
@@ -6513,6 +6525,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C728585"
+			(at 198.12 74.93 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f45f9460-2581-49f2-8621-7488c2bb25ac")
 		)
@@ -6524,6 +6547,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R25")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -6549,7 +6575,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "120K"
 			(at 64.008 191.77 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6559,7 +6585,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 63.5 191.008 90)
 			(hide yes)
 			(show_name no)
@@ -6602,6 +6628,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C136959"
+			(at 63.5 189.23 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "df61b812-29a2-4506-9d36-b84f6cfd3c2b")
 		)
@@ -6613,6 +6650,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R18")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -6638,7 +6678,7 @@
 				)
 			)
 		)
-		(property "Value" "16.5k"
+		(property "Value" "33K"
 			(at 220.218 151.13 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6648,7 +6688,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 219.71 150.368 90)
 			(hide yes)
 			(show_name no)
@@ -6681,6 +6721,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C705768"
+			(at 219.71 148.59 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "229873e0-5bd1-4fdb-8dd1-cb837b33ab24")
 		)
@@ -6692,6 +6743,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R34")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -7118,7 +7172,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 257.048 105.41 90)
 			(hide yes)
 			(show_name no)
@@ -7151,6 +7205,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C21194"
+			(at 255.27 105.41 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "048e1383-0a40-4faf-9d26-0cd2cc293389")
 		)
@@ -7162,6 +7227,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R35")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -7275,7 +7343,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 223.52 122.2248 0)
 			(hide yes)
 			(show_name no)
@@ -7308,6 +7376,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C1710"
+			(at 219.71 123.19 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "4a91c8d0-f9eb-4354-8922-e77df15aa3f3")
 		)
@@ -7319,6 +7398,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "C16")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -7344,7 +7426,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "200K"
 			(at 199.898 151.13 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7354,7 +7436,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 199.39 150.368 90)
 			(hide yes)
 			(show_name no)
@@ -7387,6 +7469,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C728585"
+			(at 199.39 148.59 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "03c32d4b-7b63-4643-afce-6efd75c6afb9")
 		)
@@ -7398,6 +7491,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R30")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -7413,16 +7509,16 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "3753fe3c-3b33-4b94-af32-5c1d28ce2b61")
-		(property "Reference" "J_CV_4"
-			(at 179.07 151.13 0)
+		(property "Reference" "J_CV_IN_4"
+			(at 183.9341 146.05 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.778 1.5113)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" ""
@@ -7436,7 +7532,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "ES_Daisy_Patch_Rev8:PJ301M-12SLOT"
+		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
 			(at 185.42 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -7469,6 +7565,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 185.42 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "TIP"
 			(uuid "e8593657-1b3e-4cad-8557-71282aa82acd")
 		)
@@ -7490,8 +7597,11 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
-					(reference "J_CV_4")
+					(reference "J_CV_IN_4")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -7529,7 +7639,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK09L_Single_Vertical"
 			(at 139.7 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -7595,6 +7705,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 139.7 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "00e0fad2-913b-4852-8d74-7f9fd01c6e83")
 		)
@@ -7609,6 +7730,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "RV3")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -7646,7 +7770,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 124.7648 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -7679,6 +7803,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C14663"
+			(at 125.73 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0f965e69-0d1c-4a2f-b18c-2d96f319efbb")
 		)
@@ -7690,6 +7825,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "C13")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -7793,7 +7931,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "200K"
 			(at 198.628 52.07 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7803,7 +7941,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 198.12 51.308 90)
 			(hide yes)
 			(show_name no)
@@ -7836,6 +7974,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C728585"
+			(at 198.12 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "9887e8c1-5670-43bc-9962-18ff4b9f930a")
 		)
@@ -7847,6 +7996,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R24")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -7885,7 +8037,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "ES_Daisy_Patch_Rev8:PJ301M-12SLOT"
+		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
 			(at 90.17 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -7908,6 +8060,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 90.17 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 90.17 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -7941,6 +8104,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "J_CV_OUT_2")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -7977,7 +8143,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 218.44 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -8000,6 +8166,17 @@
 			)
 		)
 		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+			(at 219.71 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7378"
 			(at 219.71 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -8057,6 +8234,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "U5")
 					(unit 4)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -8160,7 +8340,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "200K"
 			(at 198.628 85.09 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8170,7 +8350,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 198.12 84.328 90)
 			(hide yes)
 			(show_name no)
@@ -8203,6 +8383,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C728585"
+			(at 198.12 82.55 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d2307fd8-fc2d-4cc5-a7f1-933baff52f1c")
 		)
@@ -8214,6 +8405,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R26")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -8229,16 +8423,16 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "49b3d4e7-d656-4bd5-b5e1-8e7f222ed25f")
-		(property "Reference" "J_CV_3"
-			(at 179.07 118.11 0)
+		(property "Reference" "J_CV_IN_3"
+			(at 183.9341 113.03 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.778 1.5113)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" ""
@@ -8252,7 +8446,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "ES_Daisy_Patch_Rev8:PJ301M-12SLOT"
+		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
 			(at 185.42 118.11 0)
 			(hide yes)
 			(show_name no)
@@ -8285,6 +8479,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 185.42 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "TIP"
 			(uuid "7bc93679-caf9-4f88-89cb-44c92edbe6c4")
 		)
@@ -8306,8 +8511,11 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
-					(reference "J_CV_3")
+					(reference "J_CV_IN_3")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -8345,7 +8553,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 124.7648 162.56 0)
 			(hide yes)
 			(show_name no)
@@ -8378,6 +8586,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C14663"
+			(at 125.73 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "58d66cf4-8eaa-4dc0-8b42-4489db24d4a5")
 		)
@@ -8389,6 +8608,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "C12")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -8502,7 +8724,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 265.1252 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -8535,6 +8757,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C14663"
+			(at 264.16 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "5836aa8f-dc26-4138-8eb6-5b2c17ba79fc")
 		)
@@ -8546,6 +8779,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "C18")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -8561,16 +8797,16 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "559d6c75-feb6-43fd-858d-b93b710e4552")
-		(property "Reference" "J_CV_2"
-			(at 177.8 85.09 0)
+		(property "Reference" "J_CV_IN_2"
+			(at 182.6641 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.778 1.5113)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" ""
@@ -8584,7 +8820,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "ES_Daisy_Patch_Rev8:PJ301M-12SLOT"
+		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
 			(at 184.15 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -8607,6 +8843,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 184.15 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 184.15 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -8638,8 +8885,11 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
-					(reference "J_CV_2")
+					(reference "J_CV_IN_2")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -8655,16 +8905,16 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "5a131365-4ef1-4386-a3f2-683ca98bcdc6")
-		(property "Reference" "J_CV_1"
-			(at 177.8 52.07 0)
+		(property "Reference" "J_CV_IN_1"
+			(at 182.6641 46.99 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.778 1.5113)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" ""
@@ -8678,7 +8928,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "ES_Daisy_Patch_Rev8:PJ301M-12SLOT"
+		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
 			(at 184.15 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -8711,6 +8961,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 184.15 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "TIP"
 			(uuid "f1047658-08a6-4b28-b431-687794a3e7db")
 		)
@@ -8732,8 +8993,11 @@
 		(instances
 			(project "rools-core"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
-					(reference "J_CV_1")
+					(reference "J_CV_IN_1")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -8772,7 +9036,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 118.11 167.64 0)
 			(hide yes)
 			(show_name no)
@@ -8795,6 +9059,17 @@
 			)
 		)
 		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+			(at 119.38 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C46269"
 			(at 119.38 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -8852,6 +9127,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "U4")
 					(unit 5)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -8877,7 +9155,7 @@
 				)
 			)
 		)
-		(property "Value" "16.5k"
+		(property "Value" "33K"
 			(at 218.948 85.09 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8887,7 +9165,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 218.44 84.328 90)
 			(hide yes)
 			(show_name no)
@@ -8920,6 +9198,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C705768"
+			(at 218.44 82.55 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3de45943-aef8-4b7b-bb1c-030e22313df9")
 		)
@@ -8931,6 +9220,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R32")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -8967,7 +9259,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 218.44 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -8990,6 +9282,17 @@
 			)
 		)
 		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+			(at 219.71 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7378"
 			(at 219.71 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -9047,6 +9350,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "U5")
 					(unit 3)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -9072,7 +9378,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "200K"
 			(at 199.39 143.51 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9082,7 +9388,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 199.39 142.748 90)
 			(hide yes)
 			(show_name no)
@@ -9115,6 +9421,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C728585"
+			(at 199.39 140.97 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f5588a57-296f-422f-abd3-2bffb10609a8")
 		)
@@ -9126,6 +9443,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R29")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -9241,7 +9561,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK09L_Single_Vertical"
 			(at 165.1 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -9307,6 +9627,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 165.1 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b39f8926-5355-47df-a4a7-eb264cad2e81")
 		)
@@ -9321,6 +9652,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "RV4")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -9358,7 +9692,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK09L_Single_Vertical"
 			(at 114.3 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -9424,6 +9758,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 114.3 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "963c171a-39ff-47be-9b34-6ff0170095f9")
 		)
@@ -9438,6 +9783,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "RV2")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -9474,7 +9822,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 217.17 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -9497,6 +9845,17 @@
 			)
 		)
 		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+			(at 218.44 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7378"
 			(at 218.44 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -9554,6 +9913,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "U5")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -9590,7 +9952,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 62.23 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -9613,6 +9975,17 @@
 			)
 		)
 		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+			(at 63.5 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C46269"
 			(at 63.5 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -9670,6 +10043,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "U4")
 					(unit 2)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -9705,7 +10081,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 78.74 104.648 90)
 			(hide yes)
 			(show_name no)
@@ -9738,6 +10114,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C21190"
+			(at 78.74 102.87 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b578e02b-467e-4f84-a6c1-d1bea4159c02")
 		)
@@ -9749,6 +10136,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R19")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -9930,7 +10320,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "120K"
 			(at 41.91 166.37 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9940,7 +10330,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 41.91 165.608 90)
 			(hide yes)
 			(show_name no)
@@ -9983,6 +10373,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C136959"
+			(at 41.91 163.83 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f4855d3c-3f48-44c2-954e-3e5b2a3c9a57")
 		)
@@ -9994,6 +10395,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R12")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -10097,7 +10501,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "120K"
 			(at 41.91 140.97 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10107,7 +10511,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 41.91 140.208 90)
 			(hide yes)
 			(show_name no)
@@ -10150,6 +10554,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C136959"
+			(at 41.91 138.43 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "4ab71b48-3763-4bad-9854-cacb41d0ec1d")
 		)
@@ -10161,6 +10576,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R10")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -10186,7 +10604,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "120K"
 			(at 64.008 140.97 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10196,7 +10614,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 63.5 140.208 90)
 			(hide yes)
 			(show_name no)
@@ -10239,6 +10657,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C136959"
+			(at 63.5 138.43 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "ede26a19-83db-492b-876d-a22663d954c4")
 		)
@@ -10250,6 +10679,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R16")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -10275,7 +10707,7 @@
 				)
 			)
 		)
-		(property "Value" "12.5K"
+		(property "Value" "15K"
 			(at 41.91 158.496 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10285,7 +10717,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 41.91 157.988 90)
 			(hide yes)
 			(show_name no)
@@ -10328,6 +10760,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C326733"
+			(at 41.91 156.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "21bbb070-33f2-4e61-841d-6ba709c9e899")
 		)
@@ -10339,6 +10782,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R11")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -10376,7 +10822,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 26.67 64.4652 0)
 			(hide yes)
 			(show_name no)
@@ -10409,6 +10855,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C14663"
+			(at 30.48 63.5 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "99b674d7-2176-42df-b64b-09a838fbba23")
 		)
@@ -10420,6 +10877,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "C33")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -10457,7 +10917,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK09L_Single_Vertical"
 			(at 87.63 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -10523,6 +10983,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 87.63 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "dae31257-be8e-4b7b-9fa9-559b8f25a6d6")
 		)
@@ -10537,6 +11008,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "RV1")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -10652,7 +11126,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 255.27 146.05 0)
 			(hide yes)
 			(show_name no)
@@ -10675,6 +11149,17 @@
 			)
 		)
 		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+			(at 256.54 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7378"
 			(at 256.54 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -10732,6 +11217,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "U5")
 					(unit 5)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -11005,7 +11493,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "ES_Daisy_Patch_Rev8:PJ301M-12SLOT"
+		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
 			(at 90.17 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -11028,6 +11516,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 90.17 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 90.17 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -11061,6 +11560,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "J_CV_OUT_3")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -11174,7 +11676,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 222.25 56.1848 0)
 			(hide yes)
 			(show_name no)
@@ -11207,6 +11709,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C1710"
+			(at 218.44 57.15 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "c7f39891-bacc-4583-a3f0-2aa2b8960b88")
 		)
@@ -11218,6 +11731,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "C14")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -11321,7 +11837,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "200K"
 			(at 199.39 110.49 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11331,7 +11847,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 199.39 109.728 90)
 			(hide yes)
 			(show_name no)
@@ -11364,6 +11880,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C728585"
+			(at 199.39 107.95 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "adea86a2-e1a2-4f56-8ce9-f2e6012b2176")
 		)
@@ -11375,6 +11902,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R27")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -11400,7 +11930,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "200K"
 			(at 199.898 118.11 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11410,7 +11940,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 199.39 117.348 90)
 			(hide yes)
 			(show_name no)
@@ -11443,6 +11973,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C728585"
+			(at 199.39 115.57 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "ba83ce36-e6b9-4648-92c6-555c9e373364")
 		)
@@ -11454,6 +11995,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R28")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -11489,7 +12033,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 266.3952 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -11522,6 +12066,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C14663"
+			(at 265.43 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "06e1ae26-6209-4f69-b4da-337e17cb4b02")
 		)
@@ -11533,6 +12088,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "C19")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -11568,7 +12126,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 78.74 180.848 90)
 			(hide yes)
 			(show_name no)
@@ -11601,6 +12159,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C21190"
+			(at 78.74 179.07 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "58b3c3a9-c42a-4f69-b9f4-176bfc2810d9")
 		)
@@ -11612,6 +12181,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R22")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -11648,7 +12220,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 62.23 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -11671,6 +12243,17 @@
 			)
 		)
 		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+			(at 63.5 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C46269"
 			(at 63.5 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -11728,6 +12311,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "U4")
 					(unit 4)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -11753,7 +12339,7 @@
 				)
 			)
 		)
-		(property "Value" "12.5K"
+		(property "Value" "15K"
 			(at 41.91 107.696 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11763,7 +12349,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 41.91 107.188 90)
 			(hide yes)
 			(show_name no)
@@ -11806,6 +12392,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C326733"
+			(at 41.91 105.41 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "fa055b3c-3266-4e8f-9ac3-5e0d22354b5b")
 		)
@@ -11817,6 +12414,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R7")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -11921,7 +12521,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "120K"
 			(at 64.008 115.57 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11931,7 +12531,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 63.5 114.808 90)
 			(hide yes)
 			(show_name no)
@@ -11974,6 +12574,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C136959"
+			(at 63.5 113.03 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f1960e7f-741b-40a6-b68c-413fa8c8c719")
 		)
@@ -11985,6 +12596,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R15")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -12021,7 +12635,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 62.23 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -12044,6 +12658,17 @@
 			)
 		)
 		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+			(at 63.5 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C46269"
 			(at 63.5 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -12101,6 +12726,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "U4")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -12136,7 +12764,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 222.25 89.2048 0)
 			(hide yes)
 			(show_name no)
@@ -12169,6 +12797,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C1710"
+			(at 218.44 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0f43e6c7-3644-4a80-9e61-c016a8b08c6b")
 		)
@@ -12180,6 +12819,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "C15")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -12205,7 +12847,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "120K"
 			(at 41.91 115.57 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12215,7 +12857,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 41.91 114.808 90)
 			(hide yes)
 			(show_name no)
@@ -12258,6 +12900,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C136959"
+			(at 41.91 113.03 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0c74ecd8-e8d0-413f-9c81-ca71e858e750")
 		)
@@ -12269,6 +12922,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R8")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -12294,7 +12950,7 @@
 				)
 			)
 		)
-		(property "Value" "12.5K"
+		(property "Value" "15K"
 			(at 41.91 133.096 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12304,7 +12960,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 41.91 132.588 90)
 			(hide yes)
 			(show_name no)
@@ -12347,6 +13003,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C326733"
+			(at 41.91 130.81 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3fc08b91-dd26-4921-b402-2e69967eca06")
 		)
@@ -12358,6 +13025,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R9")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -12430,6 +13100,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C201738"
+			(at 255.27 118.11 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "a5a7a6a0-37d2-43b1-932e-c6bda3f4e3aa")
 		)
@@ -12444,6 +13125,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "U6")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -12469,7 +13153,7 @@
 				)
 			)
 		)
-		(property "Value" "16.5k"
+		(property "Value" "33K"
 			(at 220.218 118.11 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12479,7 +13163,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 219.71 117.348 90)
 			(hide yes)
 			(show_name no)
@@ -12512,6 +13196,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C705768"
+			(at 219.71 115.57 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "03cea7c1-e104-460b-ad41-7b424f61d967")
 		)
@@ -12523,6 +13218,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R33")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -12558,7 +13256,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 78.74 155.448 90)
 			(hide yes)
 			(show_name no)
@@ -12591,6 +13289,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C21190"
+			(at 78.74 153.67 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "eeba8b66-4bee-49aa-ac82-f032c471bde0")
 		)
@@ -12602,6 +13311,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R21")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -12715,7 +13427,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 223.52 155.2448 0)
 			(hide yes)
 			(show_name no)
@@ -12748,6 +13460,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C1710"
+			(at 219.71 156.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "5b9c682e-64d9-495e-ad74-3338440b98c9")
 		)
@@ -12759,6 +13482,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "C17")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -12872,7 +13598,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 34.29 37.7952 0)
 			(hide yes)
 			(show_name no)
@@ -12905,6 +13631,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C14663"
+			(at 38.1 36.83 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "9bd883b8-3224-43ef-923e-eb97fec26cd5")
 		)
@@ -12916,6 +13653,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "C34")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -13097,7 +13837,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "120K"
 			(at 41.91 191.77 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13107,7 +13847,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 41.91 191.008 90)
 			(hide yes)
 			(show_name no)
@@ -13150,6 +13890,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C136959"
+			(at 41.91 189.23 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d38124f3-e8d2-45f0-b89a-33ed616d6a9d")
 		)
@@ -13161,6 +13912,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R14")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -13275,7 +14029,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 78.74 130.048 90)
 			(hide yes)
 			(show_name no)
@@ -13308,6 +14062,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C21190"
+			(at 78.74 128.27 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b6335744-bd70-43c1-bfab-6bf8e471659d")
 		)
@@ -13319,6 +14084,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R20")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -13357,7 +14125,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "ES_Daisy_Patch_Rev8:PJ301M-12SLOT"
+		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
 			(at 90.17 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -13380,6 +14148,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 90.17 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 90.17 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -13413,6 +14192,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "J_CV_OUT_1")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -13438,7 +14220,7 @@
 				)
 			)
 		)
-		(property "Value" "12.5K"
+		(property "Value" "15K"
 			(at 41.91 183.896 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13448,7 +14230,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 41.91 183.388 90)
 			(hide yes)
 			(show_name no)
@@ -13491,6 +14273,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C326733"
+			(at 41.91 181.61 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "42de6b4b-5c41-4bff-be2e-b89a378cade4")
 		)
@@ -13502,6 +14295,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R13")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -13527,7 +14323,7 @@
 				)
 			)
 		)
-		(property "Value" "16.5k"
+		(property "Value" "33K"
 			(at 218.948 52.07 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13537,7 +14333,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 218.44 51.308 90)
 			(hide yes)
 			(show_name no)
@@ -13570,6 +14366,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C705768"
+			(at 218.44 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a17e3c90-4cb8-40ae-a6f2-8bd2dcadd0a1")
 		)
@@ -13581,6 +14388,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R31")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -13617,7 +14427,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 67.31 37.7952 0)
 			(hide yes)
 			(show_name no)
@@ -13650,6 +14460,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C14663"
+			(at 63.5 36.83 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b98809f8-9db2-46fb-b099-67ddd8e00c0e")
 		)
@@ -13661,6 +14482,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "C35")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -13686,7 +14510,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "200K"
 			(at 198.12 44.45 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13696,7 +14520,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 198.12 43.688 90)
 			(hide yes)
 			(show_name no)
@@ -13729,6 +14553,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C728585"
+			(at 198.12 41.91 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "2371c588-bc61-4619-bf32-1058f4404aaf")
 		)
@@ -13740,6 +14575,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R23")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -13776,7 +14614,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 217.17 69.85 0)
 			(hide yes)
 			(show_name no)
@@ -13799,6 +14637,17 @@
 			)
 		)
 		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+			(at 218.44 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7378"
 			(at 218.44 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -13856,6 +14705,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "U5")
 					(unit 2)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
@@ -14114,7 +14966,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "120K"
 			(at 64.008 166.37 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14124,7 +14976,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 63.5 165.608 90)
 			(hide yes)
 			(show_name no)
@@ -14167,6 +15019,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C136959"
+			(at 63.5 163.83 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "1a6c3336-75ec-4d37-bd50-92fa602e7a1e")
 		)
@@ -14178,6 +15041,9 @@
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
 					(reference "R17")
 					(unit 1)
+					(variant
+						(name "LCSC")
+					)
 				)
 			)
 		)
