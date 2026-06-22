@@ -2603,7 +2603,7 @@
 	)
 	(text "J_CV_OUT_1\nIN: 0V - 2.5V OUT: +10V to -10V"
 		(exclude_from_sim no)
-		(at 97.282 100.33 0)
+		(at 83.82 94.996 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2631,7 +2631,7 @@
 		(uuid "08ad34a2-97cf-4e32-a2b2-cd102cf8763b")
 	)
 	(junction
-		(at 193.04 120.65)
+		(at 125.73 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "08e26c30-169f-4b0c-b939-dcbbaa90697e")
@@ -2667,19 +2667,13 @@
 		(uuid "23fa57c0-76ed-4aea-8053-4914e2cbc715")
 	)
 	(junction
-		(at 191.77 87.63)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2d704fe1-bdef-4ebb-bdee-7c6d098f73da")
-	)
-	(junction
 		(at 212.09 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3908a6e8-61f2-41f6-b88a-748fb9223df9")
 	)
 	(junction
-		(at 116.84 162.56)
+		(at 116.84 124.46)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "392d9eff-bfd6-4a7e-9517-ff3f36ee9c46")
@@ -2721,7 +2715,7 @@
 		(uuid "696c3b69-a4f2-447f-ab4f-5162a38218a6")
 	)
 	(junction
-		(at 116.84 177.8)
+		(at 116.84 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6c06c279-5793-4062-8161-3542f82ecf36")
@@ -2751,7 +2745,7 @@
 		(uuid "7b8854dd-d9e6-41fd-b5ea-02c54b9f6691")
 	)
 	(junction
-		(at 193.04 153.67)
+		(at 160.02 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7ea6c059-83a8-4e8c-848c-872cdf87617a")
@@ -2865,13 +2859,13 @@
 		(uuid "cf7b1ba0-c43f-420b-a7e8-7b37f8165d20")
 	)
 	(junction
-		(at 125.73 170.18)
+		(at 125.73 132.08)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d214ed92-5398-425f-bb81-68f7a533b86b")
 	)
 	(junction
-		(at 191.77 54.61)
+		(at 125.73 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "db97d11e-030f-494a-91e5-90e3341e1d54")
@@ -2901,6 +2895,12 @@
 		(uuid "e8c226b4-6b7e-4a20-a00a-ff6f6c79f605")
 	)
 	(junction
+		(at 160.02 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eb6d72b5-c5df-4afe-9173-4ec0d23b13f1")
+	)
+	(junction
 		(at 212.09 140.97)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2925,24 +2925,24 @@
 		(uuid "fc5833df-217e-45ae-8c90-64a9da3fb612")
 	)
 	(no_connect
-		(at 85.09 130.81)
+		(at 146.05 162.56)
 		(uuid "036a10f8-fb18-4c0a-a9c1-890e70b57a72")
 	)
 	(no_connect
-		(at 85.09 156.21)
+		(at 118.11 181.61)
 		(uuid "429087e5-f8f6-4189-990a-439be121aaec")
 	)
 	(no_connect
-		(at 85.09 105.41)
+		(at 118.11 162.56)
 		(uuid "ae807b6a-c41f-477d-be34-26aa9965bb67")
 	)
 	(no_connect
-		(at 85.09 181.61)
+		(at 146.05 181.61)
 		(uuid "c307b647-77a0-4e06-be3e-f5dd97f426b3")
 	)
 	(wire
 		(pts
-			(xy 194.31 49.53) (xy 189.23 49.53)
+			(xy 128.27 58.42) (xy 123.19 58.42)
 		)
 		(stroke
 			(width 0)
@@ -2962,7 +2962,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 102.87) (xy 85.09 102.87)
+			(xy 115.57 160.02) (xy 118.11 160.02)
 		)
 		(stroke
 			(width 0)
@@ -2982,7 +2982,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 153.67) (xy 85.09 153.67)
+			(xy 115.57 179.07) (xy 118.11 179.07)
 		)
 		(stroke
 			(width 0)
@@ -3022,7 +3022,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 52.07) (xy 191.77 54.61)
+			(xy 125.73 60.96) (xy 125.73 63.5)
 		)
 		(stroke
 			(width 0)
@@ -3052,7 +3052,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 52.07) (xy 189.23 52.07)
+			(xy 125.73 60.96) (xy 123.19 60.96)
 		)
 		(stroke
 			(width 0)
@@ -3062,7 +3062,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 170.18) (xy 138.43 170.18)
+			(xy 125.73 132.08) (xy 138.43 132.08)
 		)
 		(stroke
 			(width 0)
@@ -3072,7 +3072,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 87.63) (xy 189.23 87.63)
+			(xy 160.02 63.5) (xy 157.48 63.5)
 		)
 		(stroke
 			(width 0)
@@ -3102,7 +3102,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 177.8) (xy 125.73 177.8)
+			(xy 116.84 139.7) (xy 125.73 139.7)
 		)
 		(stroke
 			(width 0)
@@ -3112,7 +3112,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 170.18) (xy 138.43 172.72)
+			(xy 138.43 132.08) (xy 138.43 134.62)
 		)
 		(stroke
 			(width 0)
@@ -3152,6 +3152,16 @@
 	)
 	(wire
 		(pts
+			(xy 83.82 179.07) (xy 82.55 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "189a52dd-8c05-407b-936e-e0fc00290019")
+	)
+	(wire
+		(pts
 			(xy 227.33 138.43) (xy 228.6 138.43)
 		)
 		(stroke
@@ -3162,13 +3172,23 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 120.65) (xy 190.5 120.65)
+			(xy 125.73 81.28) (xy 123.19 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "1df099a4-46af-45b9-9eb1-1b52cacad98e")
+	)
+	(wire
+		(pts
+			(xy 191.77 49.53) (xy 194.31 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e05a1c2-d996-43d9-a68b-80dbbdd4b98d")
 	)
 	(wire
 		(pts
@@ -3192,7 +3212,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 153.67) (xy 190.5 153.67)
+			(xy 160.02 81.28) (xy 157.48 81.28)
 		)
 		(stroke
 			(width 0)
@@ -3292,7 +3312,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 82.55) (xy 189.23 82.55)
+			(xy 162.56 58.42) (xy 157.48 58.42)
 		)
 		(stroke
 			(width 0)
@@ -3522,17 +3542,27 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 85.09) (xy 191.77 87.63)
+			(xy 191.77 148.59) (xy 195.58 148.59)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "45df04b9-eea6-498c-bc3a-f287e9fc3bc3")
+		(uuid "426ec870-f7a4-4a32-8ecb-ef57412c5be7")
 	)
 	(wire
 		(pts
-			(xy 191.77 54.61) (xy 189.23 54.61)
+			(xy 83.82 128.27) (xy 82.55 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42836e7a-d1f1-4b7d-8917-ae01fe5fbd7e")
+	)
+	(wire
+		(pts
+			(xy 125.73 63.5) (xy 123.19 63.5)
 		)
 		(stroke
 			(width 0)
@@ -3542,7 +3572,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 118.11) (xy 190.5 118.11)
+			(xy 125.73 78.74) (xy 123.19 78.74)
 		)
 		(stroke
 			(width 0)
@@ -3582,7 +3612,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 137.16) (xy 85.09 133.35)
+			(xy 146.05 168.91) (xy 146.05 165.1)
 		)
 		(stroke
 			(width 0)
@@ -3592,7 +3622,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 162.56) (xy 125.73 162.56)
+			(xy 116.84 124.46) (xy 125.73 124.46)
 		)
 		(stroke
 			(width 0)
@@ -3662,7 +3692,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 160.02) (xy 116.84 162.56)
+			(xy 116.84 121.92) (xy 116.84 124.46)
 		)
 		(stroke
 			(width 0)
@@ -3762,7 +3792,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 184.15) (xy 85.09 187.96)
+			(xy 146.05 184.15) (xy 146.05 187.96)
 		)
 		(stroke
 			(width 0)
@@ -3932,7 +3962,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 120.65) (xy 193.04 123.19)
+			(xy 125.73 81.28) (xy 125.73 83.82)
 		)
 		(stroke
 			(width 0)
@@ -3992,7 +4022,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 54.61) (xy 191.77 57.15)
+			(xy 125.73 63.5) (xy 125.73 66.04)
 		)
 		(stroke
 			(width 0)
@@ -4092,7 +4122,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 85.09) (xy 189.23 85.09)
+			(xy 160.02 60.96) (xy 157.48 60.96)
 		)
 		(stroke
 			(width 0)
@@ -4282,6 +4312,16 @@
 	)
 	(wire
 		(pts
+			(xy 83.82 153.67) (xy 82.55 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a35152c8-53aa-4c18-91db-3eca57dcc211")
+	)
+	(wire
+		(pts
 			(xy 34.29 58.42) (xy 38.1 58.42)
 		)
 		(stroke
@@ -4359,6 +4399,16 @@
 			(type default)
 		)
 		(uuid "aa28be1a-1147-4c5f-8f69-f2f257666095")
+	)
+	(wire
+		(pts
+			(xy 191.77 115.57) (xy 195.58 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aab4a00e-8494-4a56-8b7a-586d06fe05ec")
 	)
 	(wire
 		(pts
@@ -4442,7 +4492,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 118.11) (xy 193.04 120.65)
+			(xy 125.73 78.74) (xy 125.73 81.28)
 		)
 		(stroke
 			(width 0)
@@ -4452,7 +4502,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 128.27) (xy 85.09 128.27)
+			(xy 143.51 160.02) (xy 146.05 160.02)
 		)
 		(stroke
 			(width 0)
@@ -4542,6 +4592,16 @@
 	)
 	(wire
 		(pts
+			(xy 160.02 63.5) (xy 160.02 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c68ae878-cffc-4898-a14d-78576fc95866")
+	)
+	(wire
+		(pts
 			(xy 201.93 74.93) (xy 210.82 74.93)
 		)
 		(stroke
@@ -4572,7 +4632,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 115.57) (xy 190.5 115.57)
+			(xy 128.27 76.2) (xy 123.19 76.2)
 		)
 		(stroke
 			(width 0)
@@ -4672,7 +4732,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 151.13) (xy 190.5 151.13)
+			(xy 160.02 78.74) (xy 157.48 78.74)
 		)
 		(stroke
 			(width 0)
@@ -4682,7 +4742,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 151.13) (xy 193.04 153.67)
+			(xy 160.02 78.74) (xy 160.02 81.28)
 		)
 		(stroke
 			(width 0)
@@ -4692,7 +4752,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 148.59) (xy 190.5 148.59)
+			(xy 162.56 76.2) (xy 157.48 76.2)
 		)
 		(stroke
 			(width 0)
@@ -4712,7 +4772,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 177.8) (xy 116.84 181.61)
+			(xy 116.84 139.7) (xy 116.84 143.51)
 		)
 		(stroke
 			(width 0)
@@ -4722,7 +4782,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 153.67) (xy 193.04 156.21)
+			(xy 160.02 81.28) (xy 160.02 83.82)
 		)
 		(stroke
 			(width 0)
@@ -4772,6 +4832,16 @@
 	)
 	(wire
 		(pts
+			(xy 83.82 102.87) (xy 82.55 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3061f82-1da0-4c7a-a473-613394baff6e")
+	)
+	(wire
+		(pts
 			(xy 34.29 39.37) (xy 34.29 36.83)
 		)
 		(stroke
@@ -4809,6 +4879,16 @@
 			(type default)
 		)
 		(uuid "e74b04be-14d7-47bd-8668-81a3f400871a")
+	)
+	(wire
+		(pts
+			(xy 190.5 82.55) (xy 194.31 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e81d684f-c911-45c0-9e02-d0b2a3558f2e")
 	)
 	(wire
 		(pts
@@ -4872,7 +4952,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 87.63) (xy 191.77 90.17)
+			(xy 160.02 60.96) (xy 160.02 63.5)
 		)
 		(stroke
 			(width 0)
@@ -4902,7 +4982,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 179.07) (xy 82.55 179.07)
+			(xy 146.05 179.07) (xy 143.51 179.07)
 		)
 		(stroke
 			(width 0)
@@ -4922,7 +5002,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 162.56) (xy 85.09 158.75)
+			(xy 118.11 187.96) (xy 118.11 184.15)
 		)
 		(stroke
 			(width 0)
@@ -5002,7 +5082,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 111.76) (xy 85.09 107.95)
+			(xy 118.11 168.91) (xy 118.11 165.1)
 		)
 		(stroke
 			(width 0)
@@ -5068,6 +5148,30 @@
 			)
 		)
 	)
+	(global_label "J_CV_OUT_1"
+		(shape bidirectional)
+		(at 115.57 160.02 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "13ba71aa-d9b4-4f37-b0bf-24192ab09e7d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 100.4066 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "DAC_B"
 		(shape output)
 		(at 67.31 53.34 0)
@@ -5089,6 +5193,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "J_CV_IN_4"
+		(shape bidirectional)
+		(at 191.77 148.59 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1e061392-9633-4ce5-bc59-9cd2ae407a63")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 178.2999 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -5210,6 +5338,78 @@
 			)
 		)
 	)
+	(global_label "J_CV_OUT_4"
+		(shape bidirectional)
+		(at 83.82 179.07 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2fe8b491-4d5d-4c89-b553-4d50beba4f50")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 98.9834 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "J_CV_OUT_4"
+		(shape bidirectional)
+		(at 143.51 179.07 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "35c6ce2f-7b9a-4b9f-bb4e-74ca3bc47312")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 128.3466 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "J_CV_OUT_1"
+		(shape bidirectional)
+		(at 83.82 102.87 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3622389a-173a-48ae-91a3-61388a2ba853")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 98.9834 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "DAC_A"
 		(shape input)
 		(at 34.29 105.41 180)
@@ -5271,6 +5471,30 @@
 		(uuid "464451c6-d08f-4990-8bad-5b5116848b81")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 184.267 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "J_CV_OUT_3"
+		(shape bidirectional)
+		(at 83.82 153.67 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4a075e9e-8ca7-4e0c-9a2f-90b188f4f5eb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 98.9834 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5435,6 +5659,30 @@
 		(uuid "8e2c9633-6f06-48cb-8a3a-0e70c6a749d3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 25.3435 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "J_CV_IN_2"
+		(shape bidirectional)
+		(at 190.5 82.55 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "93f2c847-a295-4f77-b5eb-59844bcf3166")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 177.0299 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5612,6 +5860,102 @@
 			)
 		)
 	)
+	(global_label "J_CV_IN_3"
+		(shape bidirectional)
+		(at 128.27 76.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bf1bdf7b-0b7d-481c-870b-ed4b1cdcc3b8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 141.7401 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "J_CV_OUT_3"
+		(shape bidirectional)
+		(at 115.57 179.07 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c184b370-7ffe-4799-93c4-77aba0cda9cb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 100.4066 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "J_CV_IN_2"
+		(shape bidirectional)
+		(at 162.56 58.42 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c2018682-9305-4063-81f1-a93782923c34")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 176.0301 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "J_CV_OUT_2"
+		(shape bidirectional)
+		(at 83.82 128.27 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c3ab7216-1356-4bf4-804d-edfbf87c7583")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 98.9834 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "+3V3_D"
 		(shape output)
 		(at 53.34 29.21 90)
@@ -5657,6 +6001,78 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "J_CV_IN_4"
+		(shape bidirectional)
+		(at 162.56 76.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d4f2c689-a136-4339-a852-0c004a39474f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 176.0301 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "J_CV_IN_3"
+		(shape bidirectional)
+		(at 191.77 115.57 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d5f40a67-f509-480c-9a43-7a340a807e66")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 178.2999 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "J_CV_IN_1"
+		(shape bidirectional)
+		(at 128.27 58.42 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d6c99db7-2876-4f48-a5ed-dec7b9d6c3fe")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 141.7401 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -5756,6 +6172,30 @@
 			)
 		)
 	)
+	(global_label "J_CV_IN_1"
+		(shape bidirectional)
+		(at 191.77 49.53 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e65354ac-ef2b-437e-a152-1f1e519b2495")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 178.2999 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "DAC_LDAC"
 		(shape input)
 		(at 34.29 50.8 180)
@@ -5769,6 +6209,30 @@
 		(uuid "eecc2fb6-e589-40f4-84e4-f07c75025cd0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 21.9568 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "J_CV_OUT_2"
+		(shape bidirectional)
+		(at 143.51 160.02 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ef1a6056-08f7-4a49-a179-2c3af89f3bd3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 128.3466 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5830,7 +6294,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Audio:AudioJack2_SwitchT")
-		(at 184.15 85.09 0)
+		(at 152.4 60.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5840,7 +6304,7 @@
 		(dnp no)
 		(uuid "02b34389-9478-472d-b9d2-9753dff71319")
 		(property "Reference" "J_CV_IN_2"
-			(at 179.07 85.7249 0)
+			(at 147.32 61.5949 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5851,7 +6315,7 @@
 			)
 		)
 		(property "Value" "AudioJack2_SwitchT"
-			(at 179.07 86.9949 0)
+			(at 147.32 62.8649 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5863,7 +6327,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
-			(at 184.15 85.09 0)
+			(at 152.4 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5874,7 +6338,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 184.15 85.09 0)
+			(at 152.4 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5885,7 +6349,7 @@
 			)
 		)
 		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
-			(at 184.15 85.09 0)
+			(at 152.4 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6628,7 +7092,7 @@
 	)
 	(symbol
 		(lib_id "power:-12V")
-		(at 116.84 181.61 180)
+		(at 116.84 143.51 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6639,7 +7103,7 @@
 		(fields_autoplaced yes)
 		(uuid "113099e7-66ef-4ef1-ad0e-910d06b0cd0e")
 		(property "Reference" "#PWR024"
-			(at 116.84 177.8 0)
+			(at 116.84 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6650,7 +7114,7 @@
 			)
 		)
 		(property "Value" "-12V"
-			(at 116.84 186.69 0)
+			(at 116.84 148.59 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6660,7 +7124,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 116.84 181.61 0)
+			(at 116.84 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6671,7 +7135,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 116.84 181.61 0)
+			(at 116.84 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6682,7 +7146,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"-12V\""
-			(at 116.84 181.61 0)
+			(at 116.84 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6706,7 +7170,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 85.09 162.56 0)
+		(at 118.11 187.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6717,7 +7181,7 @@
 		(fields_autoplaced yes)
 		(uuid "13fc66b9-00de-431c-959e-c039afc8b354")
 		(property "Reference" "#PWR020"
-			(at 85.09 168.91 0)
+			(at 118.11 194.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6728,7 +7192,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 85.09 167.64 0)
+			(at 118.11 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6738,7 +7202,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 85.09 162.56 0)
+			(at 118.11 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6749,7 +7213,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 85.09 162.56 0)
+			(at 118.11 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6760,7 +7224,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 85.09 162.56 0)
+			(at 118.11 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6862,7 +7326,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 85.09 187.96 0)
+		(at 146.05 187.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6873,7 +7337,7 @@
 		(fields_autoplaced yes)
 		(uuid "1909ffb7-9a35-42dd-834a-5dfda76df76d")
 		(property "Reference" "#PWR021"
-			(at 85.09 194.31 0)
+			(at 146.05 194.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6884,7 +7348,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 85.09 193.04 0)
+			(at 146.05 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6894,7 +7358,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 85.09 187.96 0)
+			(at 146.05 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6905,7 +7369,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 85.09 187.96 0)
+			(at 146.05 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6916,7 +7380,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 85.09 187.96 0)
+			(at 146.05 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7376,7 +7840,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Audio:AudioJack2_SwitchT")
-		(at 90.17 156.21 0)
+		(at 123.19 181.61 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -7388,7 +7852,7 @@
 		(fields_autoplaced yes)
 		(uuid "326cae79-e798-4ffc-8e1f-28097600d0f5")
 		(property "Reference" "J_CV_OUT_3"
-			(at 95.25 156.8449 0)
+			(at 128.27 182.2449 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7399,7 +7863,7 @@
 			)
 		)
 		(property "Value" "AudioJack2_SwitchT"
-			(at 95.25 158.1149 0)
+			(at 128.27 183.5149 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7411,7 +7875,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
-			(at 90.17 156.21 0)
+			(at 123.19 181.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7422,7 +7886,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 90.17 156.21 0)
+			(at 123.19 181.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7433,7 +7897,7 @@
 			)
 		)
 		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
-			(at 90.17 156.21 0)
+			(at 123.19 181.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7595,7 +8059,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 125.73 173.99 180)
+		(at 125.73 135.89 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7605,7 +8069,7 @@
 		(dnp no)
 		(uuid "3b245f7d-73d5-4a35-9a3c-c98bc2ac9062")
 		(property "Reference" "C13"
-			(at 127.254 171.704 0)
+			(at 127.254 133.604 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7616,7 +8080,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 127.254 176.784 0)
+			(at 127.254 138.684 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7627,7 +8091,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 124.7648 170.18 0)
+			(at 124.7648 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7638,7 +8102,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 173.99 0)
+			(at 125.73 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7649,7 +8113,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 125.73 173.99 0)
+			(at 125.73 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7660,7 +8124,7 @@
 			)
 		)
 		(property "LCSC" "C14663"
-			(at 125.73 173.99 0)
+			(at 125.73 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7690,7 +8154,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 193.04 123.19 0)
+		(at 125.73 83.82 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7701,7 +8165,7 @@
 		(fields_autoplaced yes)
 		(uuid "3c41b6c2-1eb6-479a-97e9-1497f9df4363")
 		(property "Reference" "#PWR028"
-			(at 193.04 129.54 0)
+			(at 125.73 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7712,7 +8176,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 193.04 128.27 0)
+			(at 125.73 88.9 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7722,7 +8186,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 193.04 123.19 0)
+			(at 125.73 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7733,7 +8197,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 193.04 123.19 0)
+			(at 125.73 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7744,7 +8208,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 193.04 123.19 0)
+			(at 125.73 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7991,7 +8455,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 85.09 137.16 0)
+		(at 146.05 168.91 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8002,7 +8466,7 @@
 		(fields_autoplaced yes)
 		(uuid "47821a1b-fe49-4e72-be42-d764e2b6c2e3")
 		(property "Reference" "#PWR019"
-			(at 85.09 143.51 0)
+			(at 146.05 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8013,7 +8477,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 85.09 142.24 0)
+			(at 146.05 173.99 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8023,7 +8487,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 85.09 137.16 0)
+			(at 146.05 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8034,7 +8498,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 85.09 137.16 0)
+			(at 146.05 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8045,7 +8509,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 85.09 137.16 0)
+			(at 146.05 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8069,7 +8533,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Audio:AudioJack2_SwitchT")
-		(at 185.42 151.13 0)
+		(at 152.4 78.74 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8079,7 +8543,7 @@
 		(dnp no)
 		(uuid "47f7448b-f49f-4267-8b2d-a8468fe7a25b")
 		(property "Reference" "J_CV_IN_4"
-			(at 180.34 151.7649 0)
+			(at 147.32 79.3749 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8090,7 +8554,7 @@
 			)
 		)
 		(property "Value" "AudioJack2_SwitchT"
-			(at 180.34 153.0349 0)
+			(at 147.32 80.6449 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8102,7 +8566,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
-			(at 185.42 151.13 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8113,7 +8577,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 185.42 151.13 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8124,7 +8588,7 @@
 			)
 		)
 		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
-			(at 185.42 151.13 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8247,7 +8711,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 125.73 166.37 180)
+		(at 125.73 128.27 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8257,7 +8721,7 @@
 		(dnp no)
 		(uuid "4b85f254-773a-4edc-af8a-40c0499d2340")
 		(property "Reference" "C12"
-			(at 127 163.83 0)
+			(at 127 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8268,7 +8732,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 127 168.656 0)
+			(at 127 130.556 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8279,7 +8743,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 124.7648 162.56 0)
+			(at 124.7648 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8290,7 +8754,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 166.37 0)
+			(at 125.73 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8301,7 +8765,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 125.73 166.37 0)
+			(at 125.73 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8312,7 +8776,7 @@
 			)
 		)
 		(property "LCSC" "C14663"
-			(at 125.73 166.37 0)
+			(at 125.73 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8513,7 +8977,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Audio:AudioJack2_SwitchT")
-		(at 184.15 52.07 0)
+		(at 118.11 60.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8523,7 +8987,7 @@
 		(dnp no)
 		(uuid "54041ccd-ec99-4775-83c3-a0d702a6dcdc")
 		(property "Reference" "J_CV_IN_1"
-			(at 179.07 52.7049 0)
+			(at 113.03 61.5949 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8534,7 +8998,7 @@
 			)
 		)
 		(property "Value" "AudioJack2_SwitchT"
-			(at 179.07 53.9749 0)
+			(at 113.03 62.8649 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8546,7 +9010,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
-			(at 184.15 52.07 0)
+			(at 118.11 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8557,7 +9021,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 184.15 52.07 0)
+			(at 118.11 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8568,7 +9032,7 @@
 			)
 		)
 		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
-			(at 184.15 52.07 0)
+			(at 118.11 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8598,7 +9062,7 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Operational:TL074")
-		(at 119.38 170.18 0)
+		(at 119.38 132.08 0)
 		(unit 5)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8609,7 +9073,7 @@
 		(fields_autoplaced yes)
 		(uuid "5cdd22e2-891d-468e-acce-0dcfaf8f6567")
 		(property "Reference" "U4"
-			(at 118.11 168.9099 0)
+			(at 118.11 130.8099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8620,7 +9084,7 @@
 			)
 		)
 		(property "Value" "OPA4171"
-			(at 118.11 171.4499 0)
+			(at 118.11 133.3499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8631,7 +9095,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 118.11 167.64 0)
+			(at 118.11 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8642,7 +9106,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tl071.pdf"
-			(at 120.65 165.1 0)
+			(at 120.65 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8653,7 +9117,7 @@
 			)
 		)
 		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
-			(at 119.38 170.18 0)
+			(at 119.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8664,7 +9128,7 @@
 			)
 		)
 		(property "LCSC" "C46269"
-			(at 119.38 170.18 0)
+			(at 119.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9819,7 +10283,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 138.43 172.72 0)
+		(at 138.43 134.62 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9830,7 +10294,7 @@
 		(fields_autoplaced yes)
 		(uuid "7ba8e0d6-3e0d-4f9c-a79b-13bd421f9d7c")
 		(property "Reference" "#PWR025"
-			(at 138.43 179.07 0)
+			(at 138.43 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9841,7 +10305,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 138.43 177.8 0)
+			(at 138.43 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9851,7 +10315,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 138.43 172.72 0)
+			(at 138.43 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9862,7 +10326,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 138.43 172.72 0)
+			(at 138.43 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9873,7 +10337,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 138.43 172.72 0)
+			(at 138.43 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10000,7 +10464,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 193.04 156.21 0)
+		(at 160.02 83.82 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10011,7 +10475,7 @@
 		(fields_autoplaced yes)
 		(uuid "7fb01f7f-8552-4661-bc7e-56475f971d49")
 		(property "Reference" "#PWR029"
-			(at 193.04 162.56 0)
+			(at 160.02 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10022,7 +10486,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 193.04 161.29 0)
+			(at 160.02 88.9 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10032,7 +10496,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 193.04 156.21 0)
+			(at 160.02 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10043,7 +10507,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 193.04 156.21 0)
+			(at 160.02 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10054,7 +10518,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 193.04 156.21 0)
+			(at 160.02 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10078,7 +10542,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Audio:AudioJack2_SwitchT")
-		(at 185.42 118.11 0)
+		(at 118.11 78.74 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10088,7 +10552,7 @@
 		(dnp no)
 		(uuid "8007c506-ef6c-4a81-94f0-6e856c43c50b")
 		(property "Reference" "J_CV_IN_3"
-			(at 180.34 118.7449 0)
+			(at 113.03 79.3749 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10099,7 +10563,7 @@
 			)
 		)
 		(property "Value" "AudioJack2_SwitchT"
-			(at 180.34 120.0149 0)
+			(at 113.03 80.6449 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10111,7 +10575,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
-			(at 185.42 118.11 0)
+			(at 118.11 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10122,7 +10586,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 185.42 118.11 0)
+			(at 118.11 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10133,7 +10597,7 @@
 			)
 		)
 		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
-			(at 185.42 118.11 0)
+			(at 118.11 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10908,7 +11372,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 116.84 162.56 90)
+		(at 116.84 124.46 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -10919,7 +11383,7 @@
 		(dnp no)
 		(uuid "9475a678-8925-46e6-9ad3-4fe7ae22a5e7")
 		(property "Reference" "#FLG08"
-			(at 114.935 162.56 0)
+			(at 114.935 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10930,7 +11394,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 113.03 162.5599 90)
+			(at 113.03 124.4599 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10941,7 +11405,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 116.84 162.56 0)
+			(at 116.84 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10952,7 +11416,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 116.84 162.56 0)
+			(at 116.84 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10963,7 +11427,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 116.84 162.56 0)
+			(at 116.84 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11065,7 +11529,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 191.77 57.15 0)
+		(at 125.73 66.04 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11076,7 +11540,7 @@
 		(fields_autoplaced yes)
 		(uuid "949ec30c-d965-49e4-a212-3acc0364a101")
 		(property "Reference" "#PWR026"
-			(at 191.77 63.5 0)
+			(at 125.73 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11087,7 +11551,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 191.77 62.23 0)
+			(at 125.73 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11097,7 +11561,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 191.77 57.15 0)
+			(at 125.73 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11108,7 +11572,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 191.77 57.15 0)
+			(at 125.73 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11119,7 +11583,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 191.77 57.15 0)
+			(at 125.73 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11221,7 +11685,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Audio:AudioJack2_SwitchT")
-		(at 90.17 130.81 0)
+		(at 151.13 162.56 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -11233,7 +11697,7 @@
 		(fields_autoplaced yes)
 		(uuid "9df2281c-f8ca-4c47-9205-d6d8de1b7238")
 		(property "Reference" "J_CV_OUT_2"
-			(at 95.25 131.4449 0)
+			(at 156.21 163.1949 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11244,7 +11708,7 @@
 			)
 		)
 		(property "Value" "AudioJack2_SwitchT"
-			(at 95.25 132.7149 0)
+			(at 156.21 164.4649 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11256,7 +11720,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
-			(at 90.17 130.81 0)
+			(at 151.13 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11267,7 +11731,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 90.17 130.81 0)
+			(at 151.13 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11278,7 +11742,7 @@
 			)
 		)
 		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
-			(at 90.17 130.81 0)
+			(at 151.13 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12163,7 +12627,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Audio:AudioJack2_SwitchT")
-		(at 90.17 181.61 0)
+		(at 151.13 181.61 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -12175,7 +12639,7 @@
 		(fields_autoplaced yes)
 		(uuid "b56f2cb7-f496-4528-a518-d10cfa7d2b3f")
 		(property "Reference" "J_CV_OUT_4"
-			(at 95.25 182.2449 0)
+			(at 156.21 182.2449 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12186,7 +12650,7 @@
 			)
 		)
 		(property "Value" "AudioJack2_SwitchT"
-			(at 95.25 183.5149 0)
+			(at 156.21 183.5149 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12198,7 +12662,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
-			(at 90.17 181.61 0)
+			(at 151.13 181.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12209,7 +12673,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 90.17 181.61 0)
+			(at 151.13 181.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12220,7 +12684,7 @@
 			)
 		)
 		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
-			(at 90.17 181.61 0)
+			(at 151.13 181.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13410,7 +13874,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 191.77 90.17 0)
+		(at 160.02 66.04 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13421,7 +13885,7 @@
 		(fields_autoplaced yes)
 		(uuid "d3c3752c-d1f1-4ab5-928f-2731c9b95b7f")
 		(property "Reference" "#PWR027"
-			(at 191.77 96.52 0)
+			(at 160.02 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13432,7 +13896,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 191.77 95.25 0)
+			(at 160.02 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13442,7 +13906,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 191.77 90.17 0)
+			(at 160.02 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13453,7 +13917,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 191.77 90.17 0)
+			(at 160.02 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13464,7 +13928,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 191.77 90.17 0)
+			(at 160.02 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14354,7 +14818,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 85.09 111.76 0)
+		(at 118.11 168.91 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14365,7 +14829,7 @@
 		(fields_autoplaced yes)
 		(uuid "ed6d8f19-ddf6-4e82-aa33-d6ff8dd2a89f")
 		(property "Reference" "#PWR018"
-			(at 85.09 118.11 0)
+			(at 118.11 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14376,7 +14840,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 85.09 116.84 0)
+			(at 118.11 173.99 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14386,7 +14850,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 85.09 111.76 0)
+			(at 118.11 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14397,7 +14861,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 85.09 111.76 0)
+			(at 118.11 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14408,7 +14872,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 85.09 111.76 0)
+			(at 118.11 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14432,7 +14896,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Audio:AudioJack2_SwitchT")
-		(at 90.17 105.41 0)
+		(at 123.19 162.56 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -14444,7 +14908,7 @@
 		(fields_autoplaced yes)
 		(uuid "eff17a1a-285c-4208-96a5-8e3f0f3bdd05")
 		(property "Reference" "J_CV_OUT_1"
-			(at 95.25 106.0449 0)
+			(at 128.27 163.1949 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14455,7 +14919,7 @@
 			)
 		)
 		(property "Value" "AudioJack2_SwitchT"
-			(at 95.25 107.3149 0)
+			(at 128.27 164.4649 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14467,7 +14931,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
-			(at 90.17 105.41 0)
+			(at 123.19 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14478,7 +14942,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 90.17 105.41 0)
+			(at 123.19 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14489,7 +14953,7 @@
 			)
 		)
 		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Switched T Pole (Normalling)"
-			(at 90.17 105.41 0)
+			(at 123.19 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14519,7 +14983,7 @@
 	)
 	(symbol
 		(lib_id "power:+12V")
-		(at 116.84 160.02 0)
+		(at 116.84 121.92 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14529,7 +14993,7 @@
 		(dnp no)
 		(uuid "f41e85d0-51d9-4422-94aa-f8b2b221cd32")
 		(property "Reference" "#PWR023"
-			(at 116.84 163.83 0)
+			(at 116.84 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14540,7 +15004,7 @@
 			)
 		)
 		(property "Value" "+12V"
-			(at 116.84 156.21 0)
+			(at 116.84 118.11 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14550,7 +15014,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 116.84 160.02 0)
+			(at 116.84 121.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14561,7 +15025,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 116.84 160.02 0)
+			(at 116.84 121.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14572,7 +15036,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+12V\""
-			(at 116.84 160.02 0)
+			(at 116.84 121.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
