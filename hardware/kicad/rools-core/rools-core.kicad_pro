@@ -538,7 +538,14 @@
     "meta": {
       "version": 5
     },
-    "net_colors": null,
+    "net_colors": {
+      "+12V": "rgb(255, 238, 1)",
+      "+12V_SAFE": "rgb(255, 0, 17)",
+      "+3V3_A": "rgb(255, 0, 199)",
+      "+3V3_D": "rgb(0, 39, 255)",
+      "+3V3_DAC": "rgb(17, 255, 69)",
+      "+5V": "rgb(233, 255, 127)"
+    },
     "netclass_assignments": null,
     "netclass_patterns": []
   },
@@ -725,7 +732,7 @@
         "uuid": "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
       }
     ],
-    "used_designators": "C11,C38,#FLG4,#FLG10,#PWR71-73",
+    "used_designators": "",
     "variants": [
       {
         "name": "LCSC"

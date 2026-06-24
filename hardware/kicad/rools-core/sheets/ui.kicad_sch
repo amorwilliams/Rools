@@ -3725,17 +3725,17 @@
 	)
 	(global_label "J_CV_IN_1"
 		(shape bidirectional)
-		(at 175.26 111.76 180)
+		(at 191.77 109.22 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "2383dbb4-25c9-4e0f-b6ff-db54878547b3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 161.7899 111.76 0)
+			(at 205.2401 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3743,7 +3743,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 	)
@@ -3839,17 +3839,17 @@
 	)
 	(global_label "KNOB1_ADC"
 		(shape input)
-		(at 175.26 101.6 180)
+		(at 191.77 104.14 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "41637649-4cdf-482b-9deb-4c53f3af16c8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 161.173 101.6 0)
+			(at 205.857 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3857,7 +3857,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 	)
@@ -3909,7 +3909,7 @@
 	)
 	(global_label "J_CV_OUT_2"
 		(shape bidirectional)
-		(at 191.77 106.68 0)
+		(at 191.77 111.76 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3919,7 +3919,7 @@
 		)
 		(uuid "47d0b197-260e-489c-8986-ae5ca6bb0e4c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 206.9334 106.68 0)
+			(at 206.9334 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3955,7 +3955,7 @@
 	)
 	(global_label "J_CV_IN_3"
 		(shape bidirectional)
-		(at 175.26 114.3 180)
+		(at 175.26 106.68 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3965,7 +3965,7 @@
 		)
 		(uuid "5ac0b54b-f64d-4a55-bd2f-f207175d0a94")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 161.7899 114.3 0)
+			(at 161.7899 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4001,7 +4001,7 @@
 	)
 	(global_label "J_AUDIO_IN_R"
 		(shape bidirectional)
-		(at 191.77 116.84 0)
+		(at 191.77 119.38 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4011,7 +4011,7 @@
 		)
 		(uuid "63356f91-e7c8-4950-b6bd-3979112b9056")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 208.5664 116.84 0)
+			(at 208.5664 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4183,17 +4183,17 @@
 	)
 	(global_label "J_CV_OUT_4"
 		(shape bidirectional)
-		(at 191.77 109.22 0)
+		(at 175.26 114.3 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "8660d219-c38e-493a-b57c-62615cb6f920")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 206.9334 109.22 0)
+			(at 160.0966 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4201,7 +4201,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 	)
@@ -4254,7 +4254,7 @@
 	)
 	(global_label "J_CV_IN_2"
 		(shape bidirectional)
-		(at 191.77 111.76 0)
+		(at 191.77 106.68 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4264,7 +4264,7 @@
 		)
 		(uuid "931bf27a-8091-4578-a098-2416afe81de2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 205.2401 111.76 0)
+			(at 205.2401 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4278,7 +4278,7 @@
 	)
 	(global_label "J_CV_OUT_3"
 		(shape bidirectional)
-		(at 175.26 109.22 180)
+		(at 175.26 111.76 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4288,7 +4288,7 @@
 		)
 		(uuid "94ec454f-6f28-450e-8c3c-661cb1a1e686")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 160.0966 109.22 0)
+			(at 160.0966 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4325,30 +4325,6 @@
 	)
 	(global_label "J_AUDIO_OUT_R"
 		(shape bidirectional)
-		(at 191.77 119.38 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "99420df8-1c9c-4b2e-b8e5-0b2ab9487b83")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 210.2597 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "J_AUDIO_IN_L"
-		(shape bidirectional)
 		(at 175.26 116.84 180)
 		(fields_autoplaced yes)
 		(effects
@@ -4357,9 +4333,9 @@
 			)
 			(justify right)
 		)
-		(uuid "9c90e57f-a886-49bd-adff-b177c1a6589f")
+		(uuid "99420df8-1c9c-4b2e-b8e5-0b2ab9487b83")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 158.7055 116.84 0)
+			(at 156.7703 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4368,6 +4344,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "J_AUDIO_IN_L"
+		(shape bidirectional)
+		(at 191.77 116.84 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9c90e57f-a886-49bd-adff-b177c1a6589f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 208.3245 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -4397,17 +4397,17 @@
 	)
 	(global_label "KNOB4_ADC"
 		(shape input)
-		(at 191.77 104.14 0)
+		(at 175.26 104.14 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "a597db74-b7de-40ef-9f20-cd6a942104ea")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 205.857 104.14 0)
+			(at 161.173 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4415,7 +4415,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 	)
@@ -4512,30 +4512,6 @@
 	)
 	(global_label "J_CV_OUT_1"
 		(shape bidirectional)
-		(at 175.26 106.68 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "c3b7b34a-fcd1-42da-8ef1-d1e4c4111d11")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 160.0966 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "J_CV_IN_4"
-		(shape bidirectional)
 		(at 191.77 114.3 0)
 		(fields_autoplaced yes)
 		(effects
@@ -4544,9 +4520,9 @@
 			)
 			(justify left)
 		)
-		(uuid "cf42b5cd-54ec-4b35-895f-204bd41adfe2")
+		(uuid "c3b7b34a-fcd1-42da-8ef1-d1e4c4111d11")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 205.2401 114.3 0)
+			(at 206.9334 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4555,6 +4531,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "J_CV_IN_4"
+		(shape bidirectional)
+		(at 175.26 109.22 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cf42b5cd-54ec-4b35-895f-204bd41adfe2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 161.7899 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -4582,7 +4582,7 @@
 	)
 	(global_label "KNOB3_ADC"
 		(shape input)
-		(at 175.26 104.14 180)
+		(at 175.26 101.6 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4592,7 +4592,7 @@
 		)
 		(uuid "d5c2915f-f216-48f3-8966-6408c5a2a056")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 161.173 104.14 0)
+			(at 161.173 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

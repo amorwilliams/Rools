@@ -5174,7 +5174,7 @@
 	)
 	(global_label "DAC_B"
 		(shape output)
-		(at 67.31 53.34 0)
+		(at 67.31 55.88 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5184,7 +5184,7 @@
 		)
 		(uuid "1cf2c592-3014-45f2-a675-7d064f5b5fe1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 76.2565 53.34 0)
+			(at 76.2565 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5222,7 +5222,7 @@
 	)
 	(global_label "DAC_A"
 		(shape output)
-		(at 67.31 50.8 0)
+		(at 67.31 58.42 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5232,7 +5232,7 @@
 		)
 		(uuid "2078a9fb-97d8-4817-9969-baf9ff1cbf54")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 76.0751 50.8 0)
+			(at 76.0751 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5292,7 +5292,7 @@
 	)
 	(global_label "DAC_D"
 		(shape output)
-		(at 67.31 58.42 0)
+		(at 67.31 50.8 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5302,7 +5302,7 @@
 		)
 		(uuid "2d9a8c44-1eeb-46a2-9e89-578fefec8260")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 76.2565 58.42 0)
+			(at 76.2565 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5436,7 +5436,7 @@
 	)
 	(global_label "DAC_C"
 		(shape output)
-		(at 67.31 55.88 0)
+		(at 67.31 53.34 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5446,7 +5446,7 @@
 		)
 		(uuid "3f98394f-6605-4d96-8178-facfcd6cfcf1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 76.2565 55.88 0)
+			(at 76.2565 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11366,85 +11366,6 @@
 					(variant
 						(name "LCSC")
 					)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 116.84 124.46 90)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "9475a678-8925-46e6-9ad3-4fe7ae22a5e7")
-		(property "Reference" "#FLG08"
-			(at 114.935 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 113.03 124.4599 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 116.84 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 116.84 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 116.84 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "abcb94b9-46bf-4ba5-bb29-4bd01e08056f")
-		)
-		(instances
-			(project "rools-core"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ca71e2c3-ddd5-4a27-ab61-3d1f14e38d31"
-					(reference "#FLG08")
-					(unit 1)
 				)
 			)
 		)
